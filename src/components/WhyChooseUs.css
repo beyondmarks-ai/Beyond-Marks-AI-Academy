@@ -1,0 +1,266 @@
+.why-choose-us {
+    padding: 120px 0;
+    background: var(--bg-secondary);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Split Layout */
+.split-layout {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-bottom: 100px;
+}
+
+/* Sidebar (Sticky) */
+.layout-sidebar {
+    position: sticky;
+    top: 120px;
+}
+
+.section-header-left {
+    margin-bottom: 40px;
+}
+
+.section-desc-left {
+    color: var(--text-muted);
+    line-height: 1.7;
+    font-size: 1.05rem;
+    margin-top: 20px;
+}
+
+/* Vertical Tabs */
+.vertical-tabs {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.v-tab-btn {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.v-tab-btn:hover {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.v-tab-btn.active {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.05);
+}
+
+.tab-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.3s ease;
+}
+
+.v-tab-btn.active .tab-icon-box {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.tab-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tab-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+}
+
+.v-tab-btn.active .tab-label {
+    color: white;
+}
+
+.tab-sub {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.active-line {
+    position: absolute;
+    left: 0;
+    top: 15%;
+    bottom: 15%;
+    width: 3px;
+    background: var(--primary);
+    border-radius: 0 4px 4px 0;
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.bento-card {
+    padding: 40px 30px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bento-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.card-icon-floating {
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    margin-bottom: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bento-card h3 {
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.bento-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.card-shine {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bento-card:hover .card-shine {
+    opacity: 1;
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    background: radial-gradient(circle at top right, rgba(59, 130, 246, 0.1), transparent 40%),
+        rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+.philosophy-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.quote-mark {
+    font-size: 6rem;
+    line-height: 1;
+    font-family: serif;
+    color: rgba(255, 255, 255, 0.05);
+    margin-bottom: -20px;
+}
+
+.philosophy-content h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: white;
+}
+
+.philosophy-text {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--text-muted);
+}
+
+.highlight {
+    color: white;
+    font-weight: 600;
+    border-bottom: 1px solid var(--primary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .layout-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .section-header-left {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .layout-sidebar {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .philosophy-section {
+        padding: 40px 24px;
+    }
+
+    .philosophy-text {
+        font-size: 1.1rem;
+    }
+}

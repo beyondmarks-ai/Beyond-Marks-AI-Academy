@@ -1,0 +1,109 @@
+.tools-title {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    font-weight: 600;
+    opacity: 0.8;
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.marquee-container {
+    width: 100%;
+    overflow: hidden;
+    padding: 18px 0;
+    position: relative;
+    z-index: 10;
+
+    /* Premium Dark Glassmorphism - Matches Navbar */
+    background: rgba(5, 5, 10, 0.6) !important;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 24px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Side Fade Masks for smooth entry/exit */
+.marquee-container::before,
+.marquee-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 120px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.marquee-container::before {
+    left: 0;
+    background: linear-gradient(to right, rgba(5, 5, 10, 0.8), transparent);
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.marquee-container::after {
+    right: 0;
+    background: linear-gradient(to left, rgba(5, 5, 10, 0.8), transparent);
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 80px;
+    width: max-content;
+    animation: scroll 40s linear infinite;
+}
+
+.tool-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    opacity: 0.9;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    cursor: pointer;
+    filter: grayscale(20%);
+    padding: 8px 16px;
+    border-radius: 12px;
+}
+
+.tool-item:hover {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.05);
+    filter: grayscale(0%);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.tool-item img {
+    height: 32px;
+    width: auto;
+}
+
+.tool-item span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.marquee-track:hover {
+    animation-play-state: paused;
+}

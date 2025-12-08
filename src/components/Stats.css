@@ -1,0 +1,38 @@
+.stats-section {
+    padding: 50px 0;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.stat-box {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .stats-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

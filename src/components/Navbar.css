@@ -1,0 +1,200 @@
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 20px 0;
+    transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+    background: transparent !important;
+    border-bottom: 1px solid transparent;
+    will-change: background, padding;
+    /* Optimize performance */
+}
+
+.navbar.scrolled {
+    padding: 15px 0;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border-bottom: 1px solid transparent;
+    box-shadow: none !important;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    /* Needed for absolute centering of menu */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 2;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    position: relative;
+    width: 100px;
+    /* Placeholder width */
+    height: 50px;
+    /* Placeholder height to keep navbar small */
+}
+
+.logo:hover {
+    transform: translateY(-1px);
+}
+
+/* New Image Logo Mark */
+.logo-mark {
+    width: 180px;
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Center on the placeholder */
+    z-index: 10;
+}
+
+.logo-mark:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.logo-image-mark {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+/* Centered Desktop Menu */
+.desktop-menu {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 8px 30px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    z-index: 2;
+}
+
+.desktop-menu a {
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.desktop-menu a:hover,
+.desktop-menu a.active-link {
+    color: white;
+}
+
+.desktop-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+    border-radius: 2px;
+}
+
+.desktop-menu a:hover::after,
+.desktop-menu a.active-link::after {
+    width: 100%;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+/* Right-aligned Actions */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    z-index: 2;
+}
+
+.nav-actions .btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+}
+
+.mobile-toggle {
+    display: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.mobile-toggle:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu {
+    display: flex;
+    flex-direction: column;
+    padding: 80px 20px 30px;
+    /* Added top padding for spacing */
+    gap: 25px;
+    position: fixed;
+    /* Fixed for full screen overlay */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(3, 3, 5, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 5;
+    /* Below toggle but above content */
+}
+
+.mobile-menu a {
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.mobile-menu a:hover {
+    color: white;
+}
+
+.mobile-menu .btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 1024px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .nav-actions {
+        display: none;
+        /* Hide button on mobile, it's in the menu */
+    }
+
+    .mobile-toggle {
+        display: block;
+    }
+}

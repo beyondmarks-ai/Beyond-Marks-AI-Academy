@@ -1,0 +1,2538 @@
+---
+
+# **TOPIC 1: UI/UX DESIGN**
+
+---
+
+# **1. Foundations of UI/UX**
+
+* **1.1 What is UX?**
+
+  * 1.1.1 Definition & scope
+  * 1.1.2 UX vs usability
+  * 1.1.3 Examples of good & bad UX
+  * 1.1.4 UX in digital vs physical world
+
+* **1.2 What is UI?**
+
+  * 1.2.1 Definition & scope
+  * 1.2.2 UI as a visual communication tool
+  * 1.2.3 Static UI vs interactive UI
+  * 1.2.4 Real product UI comparisons
+
+* **1.3 UI vs UX – Deep Understanding**
+
+  * 1.3.1 How UI supports UX
+  * 1.3.2 Areas where UI fails but UX succeeds
+  * 1.3.3 Case studies (Zomato / Uber / Instagram)
+
+---
+
+# **2. Design Principles (Core Theory)**
+
+* **2.1 Color Theory**
+
+  * 2.1.1 Hue, saturation, value
+  * 2.1.2 Color psychology
+  * 2.1.3 Creating palettes
+  * 2.1.4 Accessibility contrast ratios
+  * 2.1.5 Tools: Coolors, Adobe Color
+
+* **2.2 Typography**
+
+  * 2.2.1 Serif vs sans serif
+  * 2.2.2 Font pairing logic
+  * 2.2.3 Line height, letter spacing
+  * 2.2.4 Readability rules
+  * 2.2.5 Responsive typography
+
+* **2.3 Layout & Composition**
+
+  * 2.3.1 Grid systems (8px, 12-column)
+  * 2.3.2 Alignment principles
+  * 2.3.3 Visual hierarchy
+  * 2.3.4 White space usage
+  * 2.3.5 F-pattern & Z-pattern layouts
+
+* **2.4 Interaction Design Principles**
+
+  * 2.4.1 Affordance
+  * 2.4.2 Feedback & system response
+  * 2.4.3 Micro-interactions
+  * 2.4.4 Tap vs click vs gesture UX
+  * 2.4.5 Motion design basics
+
+---
+
+# **3. User Research (Deep Study)**
+
+* **3.1 Understanding Users**
+
+  * 3.1.1 Demographics vs psychographics
+  * 3.1.2 Identifying user needs
+  * 3.1.3 Context of use
+
+* **3.2 User Personas**
+
+  * 3.2.1 Data-driven personas
+  * 3.2.2 Behavior mapping
+  * 3.2.3 Pain points and motivations
+
+* **3.3 User Journey Mapping**
+
+  * 3.3.1 Awareness → Purchase → Retention
+  * 3.3.2 Emotion graph mapping
+  * 3.3.3 Touchpoint analysis
+
+* **3.4 Research Methods**
+
+  * 3.4.1 Interviews
+  * 3.4.2 Surveys
+  * 3.4.3 Usability studies
+  * 3.4.4 Field study vs remote study
+  * 3.4.5 Competitor analysis
+
+---
+
+# **4. Wireframing (Structure Building)**
+
+* **4.1 Low-Fidelity Wireframing**
+
+  * 4.1.1 Sketching on paper
+  * 4.1.2 Determining layout blocks
+  * 4.1.3 Basic navigation flow
+  * 4.1.4 CTA placements
+
+* **4.2 High-Fidelity Wireframes**
+
+  * 4.2.1 Adding grid structure
+  * 4.2.2 Content placeholders
+  * 4.2.3 Interactive thinking in static design
+
+* **4.3 Tools for Wireframing**
+
+  * 4.3.1 Figma basics
+  * 4.3.2 Components, assets, styles
+  * 4.3.3 Auto-layout fundamentals
+
+* **4.4 Wireframe Best Practices**
+
+  * 4.4.1 Minimum viable screens
+  * 4.4.2 Avoiding over-designing early
+  * 4.4.3 Understanding flow consistency
+
+---
+
+# **5. Prototyping (Interactive Models)**
+
+* **5.1 Clickable Prototypes**
+
+  * 5.1.1 Creating connections in Figma
+  * 5.1.2 Hotspots
+  * 5.1.3 Prototype navigation logic
+
+* **5.2 Animation & Motion**
+
+  * 5.2.1 Smart animate
+  * 5.2.2 Easing curves
+  * 5.2.3 Loading animations
+  * 5.2.4 State transitions (hover, press, disabled)
+
+* **5.3 Micro-Interactions**
+
+  * 5.3.1 Button ripple
+  * 5.3.2 Drop-down menu motion
+  * 5.3.3 Card hover animations
+
+* **5.4 Responsive Prototypes**
+
+  * 5.4.1 Mobile-first layouts
+  * 5.4.2 Tablet & desktop resizing
+  * 5.4.3 Adaptive components
+
+---
+
+# **6. Usability Testing**
+
+* **6.1 Test Planning**
+
+  * 6.1.1 Goal definition
+  * 6.1.2 User task creation
+  * 6.1.3 Test environment setup
+
+* **6.2 Conducting Tests**
+
+  * 6.2.1 Moderated vs unmoderated tests
+  * 6.2.2 Think-aloud protocol
+  * 6.2.3 Recording user behavior
+
+* **6.3 Data Analysis**
+
+  * 6.3.1 Identifying friction points
+  * 6.3.2 Heatmap analysis
+  * 6.3.3 Success rate calculation
+
+* **6.4 Iteration**
+
+  * 6.4.1 Prioritizing issues
+  * 6.4.2 A/B testing
+  * 6.4.3 Updating wireframes & prototypes
+
+---
+
+# **7. UI Design (Visual Building)**
+
+* **7.1 Component Design**
+
+  * 7.1.1 Buttons
+  * 7.1.2 Cards
+  * 7.1.3 Inputs, dropdowns, toggles
+  * 7.1.4 Navigation bars
+
+* **7.2 Design Systems**
+
+  * 7.2.1 Atomic design method
+  * 7.2.2 Component libraries
+  * 7.2.3 Tokens (colors, spacing, fonts)
+
+* **7.3 Real-World Product UI**
+
+  * 7.3.1 E-commerce UI
+  * 7.3.2 Ed-tech UI
+  * 7.3.3 Fintech UI (UPI apps)
+  * 7.3.4 Food delivery app UI
+
+* **7.4 Branding & Visual Identity**
+
+  * 7.4.1 Logo integration
+  * 7.4.2 Visual tone
+  * 7.4.3 Theme creation
+
+---
+
+# **8. UX Writing (Microcopy)**
+
+* **8.1 Principles of UX Writing**
+
+  * 8.1.1 Clarity
+  * 8.1.2 Brevity
+  * 8.1.3 Guidance tone
+
+* **8.2 Writing for Screens**
+
+  * 8.2.1 Error messages
+  * 8.2.2 Button labels
+  * 8.2.3 Empty states
+
+* **8.3 Writing for User Emotions**
+
+  * 8.3.1 Motivation
+  * 8.3.2 Reducing anxiety
+  * 8.3.3 Encouragement text
+
+---
+
+# **9. Accessibility**
+
+* **9.1 WCAG Principles**
+
+  * 9.1.1 Perceivable
+  * 9.1.2 Operable
+  * 9.1.3 Understandable
+  * 9.1.4 Robust
+
+* **9.2 Designing for Disabilities**
+
+  * 9.2.1 Vision issues
+  * 9.2.2 Motor disabilities
+  * 9.2.3 Cognitive disabilities
+
+* **9.3 Tools**
+
+  * 9.3.1 Accessibility checkers
+  * 9.3.2 Color contrast analyzers
+
+---
+
+# **10. Full Project Execution (End-to-End Workflow)**
+
+* **10.1 Requirement Gathering**
+* **10.2 User Research**
+* **10.3 Wireframes**
+* **10.4 Prototypes**
+* **10.5 Visual UI Design**
+* **10.6 Usability Testing**
+* **10.7 Final Handoff to Developers**
+
+Includes:
+
+* Design documentation
+* Style guide creation
+* Exporting assets
+* Collaboration with developers
+
+
+---
+
+# **TOPIC 2: CURSOR — ADVANCED AI CODING IDE**
+
+---
+
+# **1. Introduction to Cursor**
+
+* **1.1 What is Cursor?**
+
+  * 1.1.1 Purpose of AI-powered IDE
+  * 1.1.2 How Cursor differs from VS Code
+  * 1.1.3 Use cases: frontend, backend, automation, API work
+  * 1.1.4 Productivity benefits & limitations
+
+* **1.2 Understanding AI Coding**
+
+  * 1.2.1 What is AI-assisted code generation
+  * 1.2.2 Prompt-driven programming
+  * 1.2.3 AI understanding of context
+  * 1.2.4 When AI helps vs when humans must decide
+
+* **1.3 Installing & Setting Up Cursor**
+
+  * 1.3.1 Download & OS compatibility
+  * 1.3.2 First-time setup
+  * 1.3.3 Connecting GitHub
+  * 1.3.4 Workspace structure inside Cursor
+
+---
+
+# **2. Cursor Interface Deep Breakdown**
+
+* **2.1 Editor Panel**
+
+  * 2.1.1 Code editing basics
+  * 2.1.2 Syntax highlighting
+  * 2.1.3 Multi-file navigation
+
+* **2.2 Sidebar System**
+
+  * 2.2.1 File explorer
+  * 2.2.2 Folders, modules, components
+  * 2.2.3 Toggle views
+
+* **2.3 AI Chat Panel**
+
+  * 2.3.1 Asking coding questions
+  * 2.3.2 Explaining errors
+  * 2.3.3 Requesting code improvements
+  * 2.3.4 AI memory of context
+
+* **2.4 Command Palette**
+
+  * 2.4.1 Quick actions
+  * 2.4.2 Keyboard shortcuts
+  * 2.4.3 Searching through files
+
+---
+
+# **3. AI-Assisted Code Generation**
+
+* **3.1 Prompt Writing Inside Cursor**
+
+  * 3.1.1 Simple coding prompts
+  * 3.1.2 Complex multi-step prompts
+  * 3.1.3 System prompts for behavior control
+  * 3.1.4 Defining strict rules for the AI
+
+* **3.2 Generating Code Snippets**
+
+  * 3.2.1 HTML/CSS components
+  * 3.2.2 React components
+  * 3.2.3 Backend functions
+  * 3.2.4 API endpoints
+
+* **3.3 Writing Full Files with Cursor**
+
+  * 3.3.1 Create file using natural language
+  * 3.3.2 Full project setup via prompt
+  * 3.3.3 Import handling
+  * 3.3.4 Folder auto-generation
+
+---
+
+# **4. Refactoring & Optimization**
+
+* **4.1 Code Refactoring**
+
+  * 4.1.1 Clean code principles
+  * 4.1.2 Removing dead code
+  * 4.1.3 Improving file structure
+  * 4.1.4 Modularizing functions
+
+* **4.2 Performance Optimization**
+
+  * 4.2.1 Reducing time complexity
+  * 4.2.2 Memory management improvements
+  * 4.2.3 API optimization
+  * 4.2.4 Caching logic suggestions
+
+* **4.3 Code Consistency**
+
+  * 4.3.1 Naming conventions
+  * 4.3.2 Automatic documentation
+  * 4.3.3 Standardizing components
+
+---
+
+# **5. Debugging with Cursor**
+
+* **5.1 Understanding Errors**
+
+  * 5.1.1 Syntax errors
+  * 5.1.2 Runtime errors
+  * 5.1.3 Logical errors
+
+* **5.2 AI Debugging Tools**
+
+  * 5.2.1 “Explain this error”
+  * 5.2.2 “Fix this bug”
+  * 5.2.3 Suggesting alternative solutions
+
+* **5.3 Automated Testing Assistance**
+
+  * 5.3.1 Generating test cases
+  * 5.3.2 Writing unit tests
+  * 5.3.3 Debugging failing tests
+  * 5.3.4 Test coverage improvements
+
+---
+
+# **6. Git & Version Control Integration**
+
+* **6.1 GitHub Setup**
+
+  * 6.1.1 Authentication
+  * 6.1.2 Linking repositories
+  * 6.1.3 Pull & push operations
+
+* **6.2 Version Control Features**
+
+  * 6.2.1 Branch creation
+  * 6.2.2 Staging & committing
+  * 6.2.3 Reviewing code diffs
+
+* **6.3 AI Code Review**
+
+  * 6.3.1 Auto-detecting vulnerabilities
+  * 6.3.2 Optimization advice
+  * 6.3.3 Code style enforcement
+
+---
+
+# **7. Full Project Development**
+
+* **7.1 Frontend Development Workflow**
+
+  * 7.1.1 React project setup
+  * 7.1.2 Component generation with AI
+  * 7.1.3 Styling options
+  * 7.1.4 State management
+
+* **7.2 Backend Development Workflow**
+
+  * 7.2.1 Node.js or Python setup
+  * 7.2.2 Building REST APIs
+  * 7.2.3 Middleware suggestions
+  * 7.2.4 Database integration code
+
+* **7.3 DevOps Tasks**
+
+  * 7.3.1 Docker file generation
+  * 7.3.2 CI/CD pipelines
+  * 7.3.3 Deployment scripts
+
+---
+
+# **8. Cursor Prompt Engineering**
+
+* **8.1 Writing Effective Coding Prompts**
+
+  * 8.1.1 Task-specific prompts
+  * 8.1.2 Step-by-step prompts
+  * 8.1.3 File-creation prompts
+
+* **8.2 Prompt Templates**
+
+  * 8.2.1 Debug template
+  * 8.2.2 Refactor template
+  * 8.2.3 Full project generator template
+
+* **8.3 AI Behavior Control**
+
+  * 8.3.1 Setting coding style rules
+  * 8.3.2 Defining architecture guidelines
+  * 8.3.3 Prompt constraints for consistency
+
+---
+
+# **9. Collaboration Tools**
+
+* **9.1 Shared Workspaces**
+
+  * 9.1.1 Team collaboration
+  * 9.1.2 Real-time code updates
+
+* **9.2 AI-Assisted Planning**
+
+  * 9.2.1 Roadmap generation
+  * 9.2.2 Task breakdown
+  * 9.2.3 Sprint planning
+
+* **9.3 Documentation Automation**
+
+  * 9.3.1 Auto-generate README
+  * 9.3.2 Generate API docs
+  * 9.3.3 Generate component docs
+
+---
+
+# **10. Building Real Projects with Cursor**
+
+* **10.1 Portfolio Projects**
+
+  * 10.1.1 To-do app
+  * 10.1.2 Weather API app
+  * 10.1.3 Authentication system
+
+* **10.2 Advanced Projects**
+
+  * 10.2.1 AI chatbot
+  * 10.2.2 Full e-commerce backend
+  * 10.2.3 Automated task scheduler
+
+* **10.3 Deployment**
+
+  * 10.3.1 Vercel
+  * 10.3.2 Netlify
+  * 10.3.3 Render
+  * 10.3.4 AWS or Firebase deployment
+
+---
+
+
+---
+
+# **TOPIC 3: API DEVELOPMENT**
+
+---
+
+# **1. API Foundations**
+
+* **1.1 What is an API?**
+
+  * 1.1.1 Definition & purpose
+  * 1.1.2 API as communication between systems
+  * 1.1.3 Real-world examples (UPI, Zomato, Google Maps)
+
+* **1.2 Types of APIs**
+
+  * 1.2.1 REST APIs
+  * 1.2.2 GraphQL
+  * 1.2.3 SOAP
+  * 1.2.4 WebSockets
+
+* **1.3 API Architecture**
+
+  * 1.3.1 Client-server model
+  * 1.3.2 Stateless operations
+  * 1.3.3 Cache control
+  * 1.3.4 Layered systems
+
+---
+
+# **2. HTTP Essentials**
+
+* **2.1 HTTP Methods**
+
+  * 2.1.1 GET
+  * 2.1.2 POST
+  * 2.1.3 PUT
+  * 2.1.4 DELETE
+  * 2.1.5 PATCH
+  * 2.1.6 When to use which method
+
+* **2.2 HTTP Status Codes**
+
+  * 2.2.1 2xx — Success
+  * 2.2.2 3xx — Redirection
+  * 2.2.3 4xx — Client errors
+  * 2.2.4 5xx — Server errors
+  * 2.2.5 Custom error handling
+
+* **2.3 Request Structure**
+
+  * 2.3.1 Headers
+  * 2.3.2 Body
+  * 2.3.3 Params
+  * 2.3.4 Query strings
+
+* **2.4 Response Structure**
+
+  * 2.4.1 JSON responses
+  * 2.4.2 XML responses
+  * 2.4.3 Pagination
+
+---
+
+# **3. Designing REST APIs**
+
+* **3.1 REST Principles**
+
+  * 3.1.1 Resource-based structure
+  * 3.1.2 URI naming conventions
+  * 3.1.3 Versioning (v1, v2)
+
+* **3.2 CRUD API Design**
+
+  * 3.2.1 Create → POST
+  * 3.2.2 Read → GET
+  * 3.2.3 Update → PUT/PATCH
+  * 3.2.4 Delete → DELETE
+
+* **3.3 Error Handling**
+
+  * 3.3.1 Standardized error objects
+  * 3.3.2 Meaningful error messages
+  * 3.3.3 Validation errors
+
+* **3.4 API Security Basics**
+
+  * 3.4.1 HTTPS
+  * 3.4.2 Rate limiting
+  * 3.4.3 CORS control
+
+---
+
+# **4. Authentication & Authorization**
+
+* **4.1 API Keys**
+
+  * 4.1.1 Public vs private keys
+  * 4.1.2 Key rotation
+  * 4.1.3 API key misuse prevention
+
+* **4.2 Token Authentication**
+
+  * 4.2.1 JWT (JSON Web Token)
+  * 4.2.2 Token expiry
+  * 4.2.3 Refresh tokens
+  * 4.2.4 Token signature verification
+
+* **4.3 OAuth 2.0**
+
+  * 4.3.1 Client ID & secret
+  * 4.3.2 Redirect flow
+  * 4.3.3 Access token vs refresh token
+
+* **4.4 Role-Based Access Control (RBAC)**
+
+  * 4.4.1 User roles
+  * 4.4.2 Permission mapping
+  * 4.4.3 Access control middleware
+
+---
+
+# **5. API Tools**
+
+* **5.1 Postman**
+
+  * 5.1.1 Sending GET/POST requests
+  * 5.1.2 Collections & environments
+  * 5.1.3 Writing tests in Postman
+  * 5.1.4 Automation using Pre-request scripts
+
+* **5.2 Swagger / OpenAPI**
+
+  * 5.2.1 API documentation
+  * 5.2.2 Auto-generating docs
+  * 5.2.3 Try-out feature
+
+* **5.3 cURL**
+
+  * 5.3.1 Command-line API testing
+  * 5.3.2 Sending headers & bodies
+  * 5.3.3 Debugging using curl
+
+---
+
+# **6. Building APIs (Backend Language-Agnostic)**
+
+* **6.1 Routing**
+
+  * 6.1.1 Route creation
+  * 6.1.2 Dynamic routes
+  * 6.1.3 Nested routes
+
+* **6.2 Controllers**
+
+  * 6.2.1 Handling business logic
+  * 6.2.2 Separating concerns
+
+* **6.3 Middleware**
+
+  * 6.3.1 Authentication middleware
+  * 6.3.2 Validation middleware
+  * 6.3.3 Error middleware
+
+* **6.4 Validating Input**
+
+  * 6.4.1 Schema validation (Joi, Zod)
+  * 6.4.2 Sanitizing inputs
+  * 6.4.3 Preventing injection attacks
+
+---
+
+# **7. Database Connections in APIs**
+
+* **7.1 SQL Databases**
+
+  * 7.1.1 Writing queries from API
+  * 7.1.2 Parameterized queries
+  * 7.1.3 Handling transactions
+
+* **7.2 NoSQL Databases**
+
+  * 7.2.1 MongoDB integration
+  * 7.2.2 Document validation
+  * 7.2.3 Aggregation pipeline
+
+* **7.3 ORM/ODM Tools**
+
+  * 7.3.1 Prisma
+  * 7.3.2 Sequelize
+  * 7.3.3 Mongoose
+
+---
+
+# **8. API Performance Optimization**
+
+* **8.1 Caching**
+
+  * 8.1.1 Redis caching
+  * 8.1.2 Query caching
+  * 8.1.3 Caching strategies (TTL, LRU)
+
+* **8.2 Pagination**
+
+  * 8.2.1 Limit & skip
+  * 8.2.2 Cursor-based pagination
+  * 8.2.3 Infinite scrolling APIs
+
+* **8.3 Rate Limiting**
+
+  * 8.3.1 Prevent DDoS
+  * 8.3.2 IP-based throttling
+  * 8.3.3 Burst limits
+
+---
+
+# **9. API Security (Advanced)**
+
+* **9.1 Common Attacks**
+
+  * 9.1.1 SQL Injection
+  * 9.1.2 CSRF
+  * 9.1.3 XSS
+  * 9.1.4 Man-in-the-middle attacks
+
+* **9.2 Secure API Patterns**
+
+  * 9.2.1 Hashing sensitive data
+  * 9.2.2 Secrets management
+  * 9.2.3 Using HTTPS everywhere
+
+* **9.3 Logging & Monitoring**
+
+  * 9.3.1 Error tracking
+  * 9.3.2 Request monitors
+  * 9.3.3 Audit logs
+
+---
+
+# **10. Real-World API Integrations**
+
+* **10.1 Payment Gateways**
+
+  * 10.1.1 Razorpay
+  * 10.1.2 Stripe
+  * 10.1.3 UPI flows
+
+* **10.2 Social Logins**
+
+  * 10.2.1 Google OAuth
+  * 10.2.2 GitHub OAuth
+
+* **10.3 Third-Party APIs**
+
+  * 10.3.1 Weather APIs
+  * 10.3.2 SMS/OTP APIs
+  * 10.3.3 AI APIs (OpenAI, Gemini)
+
+---
+
+# **11. Deploying APIs**
+
+* **11.1 Hosting Providers**
+
+  * 11.1.1 Vercel
+  * 11.1.2 Render
+  * 11.1.3 AWS Lambda
+  * 11.1.4 Firebase Cloud Functions
+
+* **11.2 CI/CD Integration**
+
+  * 11.2.1 GitHub Actions
+  * 11.2.2 Deployment automation
+
+* **11.3 Scaling APIs**
+
+  * 11.3.1 Horizontal scaling
+  * 11.3.2 Load balancing
+  * 11.3.3 Auto-scaling groups
+
+---
+
+# **12. Building Real Projects**
+
+* **12.1 Beginners**
+
+  * 12.1.1 Login/Signup API
+  * 12.1.2 To-do app backend
+  * 12.1.3 Quotes or weather API
+
+* **12.2 Intermediate**
+
+  * 12.2.1 Chat system API
+  * 12.2.2 E-commerce API
+  * 12.2.3 Payment integration
+
+* **12.3 Advanced**
+
+  * 12.3.1 Microservices
+  * 12.3.2 Event-driven APIs
+  * 12.3.3 AI-enabled APIs
+
+---
+
+
+---
+
+# **TOPIC 4: n8n — VISUAL AUTOMATION & WORKFLOW BUILDING**
+
+---
+
+# **1. Introduction to n8n**
+
+* **1.1 What is n8n?**
+
+  * 1.1.1 Definition: Node-based automation platform
+  * 1.1.2 No-code vs low-code features
+  * 1.1.3 Comparisons (n8n vs Zapier vs Make)
+  * 1.1.4 Open-source advantage
+
+* **1.2 Where n8n is used**
+
+  * 1.2.1 Automating business workflows
+  * 1.2.2 API orchestration
+  * 1.2.3 Email & marketing automation
+  * 1.2.4 Database syncing
+  * 1.2.5 AI workflow automation
+
+* **1.3 Installing n8n**
+
+  * 1.3.1 Cloud version
+  * 1.3.2 Local installation using npm
+  * 1.3.3 Docker installation
+  * 1.3.4 URL endpoints & dashboard basics
+
+---
+
+# **2. Understanding the n8n Interface**
+
+* **2.1 Canvas Overview**
+
+  * 2.1.1 Node placement
+  * 2.1.2 Node connection logic
+  * 2.1.3 Drag-and-drop interactions
+
+* **2.2 Node Editor**
+
+  * 2.2.1 Parameters panel
+  * 2.2.2 Fields, expressions, variables
+  * 2.2.3 JSON view toggle
+
+* **2.3 Workflow Settings**
+
+  * 2.3.1 Name, tags, version
+  * 2.3.2 Environment variables
+  * 2.3.3 Workflow ID
+
+---
+
+# **3. n8n Nodes — Deep Breakdown**
+
+* **3.1 Trigger Nodes**
+
+  * 3.1.1 Webhook Trigger
+  * 3.1.2 Cron Trigger
+  * 3.1.3 Interval Trigger
+  * 3.1.4 Manual Trigger
+
+* **3.2 Data Nodes**
+
+  * 3.2.1 Set Node (defining output fields)
+  * 3.2.2 Move Node
+  * 3.2.3 Function Node (custom JavaScript)
+  * 3.2.4 Merge Node (combine branches)
+
+* **3.3 Flow Control Nodes**
+
+  * 3.3.1 IF Node (conditional logic)
+  * 3.3.2 Switch Node
+  * 3.3.3 Wait Node
+  * 3.3.4 Split In Batches
+
+* **3.4 API Nodes**
+
+  * 3.4.1 HTTP Request Node
+  * 3.4.2 OAuth2 Node
+  * 3.4.3 Header & parameter configuration
+
+* **3.5 Integration Nodes**
+
+  * 3.5.1 Gmail
+  * 3.5.2 Airtable
+  * 3.5.3 Google Sheets
+  * 3.5.4 Notion
+  * 3.5.5 Slack / Discord
+
+* **3.6 AI Nodes**
+
+  * 3.6.1 OpenAI Node
+  * 3.6.2 Gemini API Node
+  * 3.6.3 AI-driven decision flows
+
+---
+
+# **4. Working with Data in n8n**
+
+* **4.1 Understanding n8n Data Structure**
+
+  * 4.1.1 Items & binary files
+  * 4.1.2 JSON data flow
+  * 4.1.3 Branch-based output
+
+* **4.2 Expressions**
+
+  * 4.2.1 Basic expressions (`{{$json.field}}`)
+  * 4.2.2 JavaScript expressions inside nodes
+  * 4.2.3 Global variables (#, $, workflow)
+
+* **4.3 Data Transformation**
+
+  * 4.3.1 Mapping data fields
+  * 4.3.2 Cleaning inputs
+  * 4.3.3 Restructuring JSON
+  * 4.3.4 Combining API outputs
+
+---
+
+# **5. Building Workflows**
+
+* **5.1 Designing Automation Logic**
+
+  * 5.1.1 Reading requirements
+  * 5.1.2 Mapping triggers → actions
+  * 5.1.3 Identifying async steps
+
+* **5.2 Connecting Nodes**
+
+  * 5.2.1 Main connections
+  * 5.2.2 Conditional branches
+  * 5.2.3 Multiple actions from one trigger
+
+* **5.3 Error Handling**
+
+  * 5.3.1 Error workflow
+  * 5.3.2 Error retry strategies
+  * 5.3.3 Custom error messages
+
+---
+
+# **6. Working with APIs in n8n**
+
+* **6.1 HTTP Request Node**
+
+  * 6.1.1 Setting URL
+  * 6.1.2 GET/POST/PUT/DELETE
+  * 6.1.3 Query parameters
+  * 6.1.4 JSON body
+  * 6.1.5 Handling API errors
+
+* **6.2 Authentication Methods**
+
+  * 6.2.1 Basic Auth
+  * 6.2.2 API Key Auth
+  * 6.2.3 OAuth 2.0
+  * 6.2.4 Token refresh
+
+* **6.3 Multi-Step API Automation**
+
+  * 6.3.1 Fetch → transform → post
+  * 6.3.2 Looping over API items
+  * 6.3.3 Saving API results
+
+---
+
+# **7. Database Automations**
+
+* **7.1 MySQL Node**
+
+  * 7.1.1 Making connections
+  * 7.1.2 Insert / update / select queries
+  * 7.1.3 Query parameters
+
+* **7.2 PostgreSQL Node**
+
+  * 7.2.1 Running SQL scripts
+  * 7.2.2 Handling multiple rows
+
+* **7.3 MongoDB Node**
+
+  * 7.3.1 Document insert/update
+  * 7.3.2 Handling nested data
+
+* **7.4 Google Sheets**
+
+  * 7.4.1 Appending rows
+  * 7.4.2 Reading and filtering
+
+---
+
+# **8. AI Automations**
+
+* **8.1 AI Content Flows**
+
+  * 8.1.1 Auto-writing emails
+  * 8.1.2 Auto-generating documents
+  * 8.1.3 Summarization flows
+
+* **8.2 Decision-Making with AI**
+
+  * 8.2.1 AI-generated conditions
+  * 8.2.2 Intelligent routing
+
+* **8.3 Multi-Agent Style Workflows**
+
+  * 8.3.1 AI as worker
+  * 8.3.2 AI as reviewer
+  * 8.3.3 AI as decision engine
+
+---
+
+# **9. Advanced Workflow Techniques**
+
+* **9.1 Looping & Iterations**
+
+  * 9.1.1 Split In Batches
+  * 9.1.2 Recursive workflows
+
+* **9.2 Parallel Processes**
+
+  * 9.2.1 Running two actions at once
+  * 9.2.2 Syncing parallel results
+
+* **9.3 Sub-Workflows**
+
+  * 9.3.1 Reusable workflow modules
+  * 9.3.2 Passing data to sub-workflows
+
+---
+
+# **10. Deployment & Operations**
+
+* **10.1 Hosting Options**
+
+  * 10.1.1 n8n Cloud
+  * 10.1.2 Self-hosting
+  * 10.1.3 Docker server deployment
+
+* **10.2 Security Setup**
+
+  * 10.2.1 Basic Auth login
+  * 10.2.2 Environment variables
+  * 10.2.3 Secret management
+
+* **10.3 Workflow Monitoring**
+
+  * 10.3.1 Execution logs
+  * 10.3.2 Error monitoring
+  * 10.3.3 Performance checks
+
+---
+
+# **11. Real-World Automation Projects**
+
+* **11.1 Beginner-Level**
+
+  * 11.1.1 Auto-email sender
+  * 11.1.2 Google Sheets → Email updates
+  * 11.1.3 Daily reminders
+
+* **11.2 Intermediate**
+
+  * 11.2.1 CRM automation
+  * 11.2.2 Lead scoring system
+  * 11.2.3 WhatsApp message automation
+
+* **11.3 Advanced**
+
+  * 11.3.1 AI-powered customer support bot
+  * 11.3.2 Marketing funnel automation
+  * 11.3.3 Complete business automation suite
+
+---
+
+---
+
+# **TOPIC 5: ADVANCED PROMPTING & AI INSTRUCTIONS**
+
+---
+
+# **1. Foundations of Prompting**
+
+* **1.1 What is a Prompt?**
+
+  * 1.1.1 Definition
+  * 1.1.2 AI input → output pattern
+  * 1.1.3 Why structure matters
+
+* **1.2 AI Models & How They Think**
+
+  * 1.2.1 Token prediction
+  * 1.2.2 Context window
+  * 1.2.3 Bias & limitations
+  * 1.2.4 Deterministic vs creative responses
+
+* **1.3 Types of Prompts**
+
+  * 1.3.1 Instruction prompts
+  * 1.3.2 Creative prompts
+  * 1.3.3 Analytical prompts
+  * 1.3.4 Conversational prompts
+  * 1.3.5 Role-based prompts
+
+---
+
+# **2. Prompt Structure**
+
+* **2.1 Core Components**
+
+  * 2.1.1 Task (what you want)
+  * 2.1.2 Context (information AI needs)
+  * 2.1.3 Constraints (rules)
+  * 2.1.4 Examples (demonstrations)
+  * 2.1.5 Output format
+
+* **2.2 The 4C Framework**
+
+  * 2.2.1 Clear
+  * 2.2.2 Complete
+  * 2.2.3 Concise
+  * 2.2.4 Controlled
+
+* **2.3 Prompt Templates**
+
+  * 2.3.1 Explanation template
+  * 2.3.2 Coding help template
+  * 2.3.3 Marketing template
+  * 2.3.4 Analysis template
+
+---
+
+# **3. Role-Based Prompting**
+
+* **3.1 Why Assign Roles?**
+
+  * 3.1.1 Behavior control
+  * 3.1.2 Knowledge depth simulation
+
+* **3.2 Common AI Roles**
+
+  * 3.2.1 Expert programmer
+  * 3.2.2 UI/UX designer
+  * 3.2.3 Data scientist
+  * 3.2.4 Lawyer
+  * 3.2.5 Doctor (general guidance, not diagnostic)
+
+* **3.3 Multi-role Prompts**
+
+  * 3.3.1 AI as builder + reviewer
+  * 3.3.2 AI as teacher + grader
+  * 3.3.3 AI as researcher + summarizer
+
+---
+
+# **4. Step-by-Step Prompting (Chain-of-Thought)**
+
+* **4.1 Why Step-by-Step?**
+
+  * 4.1.1 Helps AI reason better
+  * 4.1.2 Reduces hallucination
+
+* **4.2 Breaking Tasks**
+
+  * 4.2.1 Start → process → solve
+  * 4.2.2 Teaching AI intermediate steps
+
+* **4.3 Creating Multi-Step Prompts**
+
+  * 4.3.1 Deconstructing complex tasks
+  * 4.3.2 Layered instructions
+  * 4.3.3 Using subtasks
+
+---
+
+# **5. Context Engineering**
+
+* **5.1 Providing Context**
+
+  * 5.1.1 Background information
+  * 5.1.2 User goals
+  * 5.1.3 Tone & writing style
+
+* **5.2 Controlling AI Memory**
+
+  * 5.2.1 Relevant vs irrelevant information
+  * 5.2.2 Resetting or enriching context
+
+* **5.3 Long Prompt Strategy**
+
+  * 5.3.1 Modular prompting
+  * 5.3.2 Breaking long tasks into sections
+
+---
+
+# **6. Constraint-based Prompting**
+
+* **6.1 Why Constraints Work**
+
+  * 6.1.1 Limits shape output
+  * 6.1.2 Precision improves results
+
+* **6.2 Types of Constraints**
+
+  * 6.2.1 Word count
+  * 6.2.2 Format (JSON, table, code)
+  * 6.2.3 Tone (professional, funny, formal)
+  * 6.2.4 Domain restrictions
+
+* **6.3 Using Hard Rules**
+
+  * 6.3.1 “DO NOT…” rules
+  * 6.3.2 Strict formatting instructions
+  * 6.3.3 Banned words
+
+---
+
+# **7. Fine-Tuning Output Format**
+
+* **7.1 Formatting Techniques**
+
+  * 7.1.1 JSON outputs
+  * 7.1.2 Markdown
+  * 7.1.3 HTML
+  * 7.1.4 Tables
+
+* **7.2 Enforcing Structure**
+
+  * 7.2.1 “Return only the result”
+  * 7.2.2 “No explanations”
+  * 7.2.3 “Single paragraph”
+  * 7.2.4 “Use bullet points”
+
+* **7.3 System Prompting**
+
+  * 7.3.1 Defining AI's personality
+  * 7.3.2 Instruction hierarchy
+  * 7.3.3 Persistent rules
+
+---
+
+# **8. Troubleshooting Prompts**
+
+* **8.1 Common Issues**
+
+  * 8.1.1 AI hallucinating
+  * 8.1.2 Wrong format
+  * 8.1.3 Missing information
+  * 8.1.4 Low-quality outputs
+
+* **8.2 Fixing Outputs**
+
+  * 8.2.1 Add clearer constraints
+  * 8.2.2 Provide examples
+  * 8.2.3 Reduce ambiguity
+  * 8.2.4 Increase structure
+
+* **8.3 Iterative Prompting**
+
+  * 8.3.1 Prompt → feedback → improve
+  * 8.3.2 Layer-by-layer refinement
+
+---
+
+# **9. Image & Video Prompting**
+
+* **9.1 Image Prompts**
+
+  * 9.1.1 Camera angles
+  * 9.1.2 Lighting
+  * 9.1.3 Art styles
+  * 9.1.4 Composition
+  * 9.1.5 Subject detailing
+
+* **9.2 JSON-Based Image Prompts**
+
+  * 9.2.1 `{ "prompt": "", "style": "", "details": "" }`
+  * 9.2.2 Object-level control
+  * 9.2.3 Scene descriptors
+
+* **9.3 Video Prompting**
+
+  * 9.3.1 Motion instructions
+  * 9.3.2 Frame-by-frame guidance
+  * 9.3.3 Camera panning
+  * 9.3.4 Character behavior
+
+---
+
+# **10. Prompting for Coding & Debugging**
+
+* **10.1 Code Generation**
+
+  * 10.1.1 Function generation
+  * 10.1.2 Full project setup
+  * 10.1.3 API routes
+  * 10.1.4 UI components
+
+* **10.2 Debugging Prompts**
+
+  * 10.2.1 “Explain the error”
+  * 10.2.2 “Fix step-by-step”
+  * 10.2.3 “Optimize performance”
+
+* **10.3 Code Review Prompts**
+
+  * 10.3.1 Efficiency checks
+  * 10.3.2 Security suggestions
+  * 10.3.3 Clean code enforcement
+
+---
+
+# **11. Business Prompting**
+
+* **11.1 Marketing**
+
+  * 11.1.1 Ads
+  * 11.1.2 Social media content
+  * 11.1.3 Email campaigns
+
+* **11.2 Entrepreneurship**
+
+  * 11.2.1 Pitch decks
+  * 11.2.2 Product descriptions
+  * 11.2.3 Sales scripts
+
+* **11.3 Automation**
+
+  * 11.3.1 Workflow prompts
+  * 11.3.2 Customer support prompts
+  * 11.3.3 AI agent prompts
+
+---
+
+# **12. Real-World Projects (Student Assignments)**
+
+* **12.1 Beginner Projects**
+
+  * 12.1.1 Rewrite text in different tones
+  * 12.1.2 Create JSON output prompts
+  * 12.1.3 Simple coding instructions
+
+* **12.2 Intermediate Projects**
+
+  * 12.2.1 Build an AI chatbot prompt system
+  * 12.2.2 Create full image prompt sets
+  * 12.2.3 Write a multi-step reasoning prompt
+
+* **12.3 Advanced Projects**
+
+  * 12.3.1 AI agent design (worker + reviewer)
+  * 12.3.2 Business automation prompt suite
+  * 12.3.3 Large structured document generation
+
+---
+
+
+---
+
+# **TOPIC 6: NANO BANANA — AI APP BUILDER / NO-CODE APPLICATION DEVELOPMENT**
+
+---
+
+# **1. Introduction to Nano Banana**
+
+* **1.1 What is Nano Banana?**
+
+  * 1.1.1 Purpose: Create apps without coding
+  * 1.1.2 AI-assisted app generation
+  * 1.1.3 Use cases: dashboards, chat apps, workflows, internal tools
+
+* **1.2 No-Code vs Low-Code**
+
+  * 1.2.1 Where no-code is powerful
+  * 1.2.2 When low-code scripting is needed
+  * 1.2.3 Integrating written code inside no-code apps
+
+* **1.3 Platform Overview**
+
+  * 1.3.1 Workspace
+  * 1.3.2 Screen builder
+  * 1.3.3 Data manager
+  * 1.3.4 API connectors
+
+---
+
+# **2. Understanding the Editor Interface**
+
+* **2.1 Canvas & Layout**
+
+  * 2.1.1 Drag-and-drop UI
+  * 2.1.2 Page-level settings
+  * 2.1.3 Component alignment
+
+* **2.2 Components Panel**
+
+  * 2.2.1 Buttons
+  * 2.2.2 Input fields
+  * 2.2.3 Cards
+  * 2.2.4 Containers
+  * 2.2.5 Lists & grids
+
+* **2.3 Inspector Panel**
+
+  * 2.3.1 Styling options
+  * 2.3.2 Events/actions
+  * 2.3.3 Dynamic data binding
+
+---
+
+# **3. UI/UX Building Inside Nano Banana**
+
+* **3.1 Page Structure**
+
+  * 3.1.1 Header, footer, sidebar
+  * 3.1.2 Navigation menus
+  * 3.1.3 Multi-page apps
+
+* **3.2 Styling**
+
+  * 3.2.1 Colors
+  * 3.2.2 Spacing
+  * 3.2.3 Typography
+
+* **3.3 Responsive Design**
+
+  * 3.3.1 Mobile layouts
+  * 3.3.2 Tablet vs desktop
+  * 3.3.3 Flexible grid usage
+
+---
+
+# **4. Data Management**
+
+* **4.1 Internal Data**
+
+  * 4.1.1 Local state
+  * 4.1.2 Global app state
+  * 4.1.3 Binding state to UI components
+
+* **4.2 External Data**
+
+  * 4.2.1 APIs
+  * 4.2.2 Webhooks
+  * 4.2.3 3rd-party services
+
+* **4.3 Data Variables**
+
+  * 4.3.1 Inputs
+  * 4.3.2 Outputs
+  * 4.3.3 Dynamic fields
+
+---
+
+# **5. API Integration**
+
+* **5.1 API Connector Setup**
+
+  * 5.1.1 HTTP GET
+  * 5.1.2 POST with body
+  * 5.1.3 Auth headers
+  * 5.1.4 API key storage
+
+* **5.2 Dynamic Data Binding**
+
+  * 5.2.1 Mapping API results to UI
+  * 5.2.2 Using JSON paths
+  * 5.2.3 Handling lists from API responses
+
+* **5.3 Error Management**
+
+  * 5.3.1 API failure handling
+  * 5.3.2 Displaying error messages
+  * 5.3.3 Retry workflows
+
+---
+
+# **6. Logic & Events**
+
+* **6.1 Event Triggers**
+
+  * 6.1.1 On click
+  * 6.1.2 On load
+  * 6.1.3 On form submit
+
+* **6.2 Action Types**
+
+  * 6.2.1 Navigate to page
+  * 6.2.2 Set state
+  * 6.2.3 Call API
+  * 6.2.4 Show/hide components
+  * 6.2.5 Conditional rendering
+
+* **6.3 Conditional Logic**
+
+  * 6.3.1 IF/ELSE logic
+  * 6.3.2 Comparing variables
+  * 6.3.3 Multi-branch logic
+
+---
+
+# **7. Using AI in Nano Banana**
+
+* **7.1 AI-Generated UI**
+
+  * 7.1.1 Generate full screens
+  * 7.1.2 Auto-filling component layouts
+  * 7.1.3 UI styling via AI
+
+* **7.2 AI Data Processing**
+
+  * 7.2.1 Text summarization
+  * 7.2.2 AI chatbot integration
+  * 7.2.3 Categorization & analysis
+
+* **7.3 Multi-Agent AI Flows**
+
+  * 7.3.1 AI as writer
+  * 7.3.2 AI as reviewer
+  * 7.3.3 AI as logic decision engine
+
+---
+
+# **8. Forms & User Inputs**
+
+* **8.1 Form Builder**
+
+  * 8.1.1 Text fields
+  * 8.1.2 Dropdowns
+  * 8.1.3 Checkboxes & multiple select
+
+* **8.2 Input Handling**
+
+  * 8.2.1 Validation rules
+  * 8.2.2 Storing form data
+  * 8.2.3 Displaying submission success
+
+* **8.3 Submission Actions**
+
+  * 8.3.1 Send data to API
+  * 8.3.2 Save to database
+  * 8.3.3 Trigger email / notification
+
+---
+
+# **9. Authentication**
+
+* **9.1 User Login Systems**
+
+  * 9.1.1 Email-password login
+  * 9.1.2 Token storage
+  * 9.1.3 Restricting access
+
+* **9.2 Secure Pages**
+
+  * 9.2.1 Protected routes
+  * 9.2.2 Logout flow
+  * 9.2.3 Conditional UI based on login
+
+---
+
+# **10. Database Integrations**
+
+* **10.1 Firebase Integration**
+
+  * 10.1.1 Fetching data
+  * 10.1.2 Writing data
+  * 10.1.3 Real-time updates
+
+* **10.2 MongoDB/SQL via API**
+
+  * 10.2.1 Querying data
+  * 10.2.2 Saving data
+  * 10.2.3 Editing & deleting
+
+* **10.3 Google Sheets as DB**
+
+  * 10.3.1 Append row
+  * 10.3.2 Update row
+  * 10.3.3 Filter results
+
+---
+
+# **11. Workflows & Automations**
+
+* **11.1 Triggers**
+
+  * 11.1.1 Time-based triggers
+  * 11.1.2 Button triggers
+  * 11.1.3 Form submission triggers
+
+* **11.2 Automation Examples**
+
+  * 11.2.1 Auto-send email
+  * 11.2.2 Auto-generate PDF
+  * 11.2.3 Auto-update database
+
+* **11.3 Event Logging**
+
+  * 11.3.1 Track user actions
+  * 11.3.2 Debugging logs
+  * 11.3.3 Performance tracking
+
+---
+
+# **12. Publishing & Deployment**
+
+* **12.1 Testing the App**
+
+  * 12.1.1 Preview mode
+  * 12.1.2 Debugging errors
+  * 12.1.3 Mobile testing
+
+* **12.2 App Deployment**
+
+  * 12.2.1 Publishing link
+  * 12.2.2 Custom domain setup
+  * 12.2.3 Version management
+
+* **12.3 App Optimization**
+
+  * 12.3.1 Reducing API calls
+  * 12.3.2 Reducing component load
+  * 12.3.3 Improved UI performance
+
+---
+
+# **13. Real-World Projects**
+
+* **13.1 Beginner Projects**
+
+  * 13.1.1 Personal portfolio app
+  * 13.1.2 Contact form → Google Sheet
+  * 13.1.3 Weather dashboard
+
+* **13.2 Intermediate Projects**
+
+  * 13.2.1 CRM tool
+  * 13.2.2 Task management app
+  * 13.2.3 API-driven news dashboard
+
+* **13.3 Advanced Projects**
+
+  * 13.3.1 AI chatbot application
+  * 13.3.2 Full e-commerce admin panel
+  * 13.3.3 SaaS-style analytics dashboard
+
+---
+
+
+---
+
+# **TOPIC 7: BACKEND DEVELOPMENT WITH FIREBASE**
+
+---
+
+# **1. Introduction to Firebase**
+
+* **1.1 What is Firebase?**
+
+  * 1.1.1 Google-backed backend-as-a-service
+  * 1.1.2 Real-time cloud-powered backend
+  * 1.1.3 Use cases: apps, SaaS tools, admin panels, mobile apps
+
+* **1.2 Firebase vs Traditional Backend**
+
+  * 1.2.1 No server management
+  * 1.2.2 Auto-scaling
+  * 1.2.3 Event-driven architecture
+  * 1.2.4 When NOT to use Firebase
+
+* **1.3 Firebase Products Overview**
+
+  * 1.3.1 Authentication
+  * 1.3.2 Firestore Database
+  * 1.3.3 Realtime Database
+  * 1.3.4 Cloud Storage
+  * 1.3.5 Cloud Functions
+  * 1.3.6 Hosting
+  * 1.3.7 Remote Config
+  * 1.3.8 Analytics
+
+---
+
+# **2. Firebase Setup**
+
+* **2.1 Creating a Firebase Project**
+
+  * 2.1.1 Console navigation
+  * 2.1.2 App registration (Web, Android, iOS)
+  * 2.1.3 API keys & app config
+
+* **2.2 Development Environment Setup**
+
+  * 2.2.1 Installing Firebase CLI
+  * 2.2.2 Initializing project folder
+  * 2.2.3 Enabling services
+
+* **2.3 Environment Files**
+
+  * 2.3.1 Storing keys securely
+  * 2.3.2 .env configuration
+
+---
+
+# **3. Firebase Authentication**
+
+* **3.1 Authentication Methods**
+
+  * 3.1.1 Email/password
+  * 3.1.2 Phone OTP
+  * 3.1.3 Google login
+  * 3.1.4 GitHub login
+
+* **3.2 Authentication Flows**
+
+  * 3.2.1 Signup → OTP → verification
+  * 3.2.2 Login → session persistence
+  * 3.2.3 Forgot password
+
+* **3.3 Managing Users**
+
+  * 3.3.1 User object structure
+  * 3.3.2 Updating profile info
+  * 3.3.3 Deleting accounts
+  * 3.3.4 Handling inactive users
+
+* **3.4 Security Rules for Auth**
+
+  * 3.4.1 Allow only logged-in users
+  * 3.4.2 Prevent data exposure
+  * 3.4.3 Role-based access
+
+---
+
+# **4. Firestore Database**
+
+* **4.1 Firestore Structure**
+
+  * 4.1.1 Collections
+  * 4.1.2 Documents
+  * 4.1.3 Sub-collections
+  * 4.1.4 Document IDs
+
+* **4.2 CRUD Operations**
+
+  * 4.2.1 Create → add/set
+  * 4.2.2 Read → get
+  * 4.2.3 Update → update fields
+  * 4.2.4 Delete document
+
+* **4.3 Advanced Queries**
+
+  * 4.3.1 Where filters
+  * 4.3.2 OrderBy
+  * 4.3.3 Range queries
+  * 4.3.4 Pagination
+
+* **4.4 Real-Time Listeners**
+
+  * 4.4.1 Snapshot listeners
+  * 4.4.2 Real-time chat app logic
+  * 4.4.3 Auto-updating UI
+
+---
+
+# **5. Realtime Database**
+
+* **5.1 Structure**
+
+  * 5.1.1 JSON tree system
+  * 5.1.2 Differences vs Firestore
+
+* **5.2 Operations**
+
+  * 5.2.1 Set
+  * 5.2.2 Update
+  * 5.2.3 Push (auto-ID)
+  * 5.2.4 Remove
+
+* **5.3 Real-Time Sync**
+
+  * 5.3.1 Listeners
+  * 5.3.2 Live dashboards
+  * 5.3.3 Multi-user apps
+
+---
+
+# **6. Firebase Cloud Storage**
+
+* **6.1 Uploading Files**
+
+  * 6.1.1 Images
+  * 6.1.2 PDFs
+  * 6.1.3 Videos
+
+* **6.2 Download URLs**
+
+  * 6.2.1 Public vs restricted
+  * 6.2.2 Expiring URLs
+
+* **6.3 Storage Rules**
+
+  * 6.3.1 Allow only authenticated uploads
+  * 6.3.2 File type restrictions
+  * 6.3.3 File size limits
+
+---
+
+# **7. Firebase Cloud Functions**
+
+* **7.1 Introduction**
+
+  * 7.1.1 Serverless functions
+  * 7.1.2 Pay-per-use architecture
+
+* **7.2 Function Types**
+
+  * 7.2.1 HTTPS functions (APIs)
+  * 7.2.2 Firestore triggers
+  * 7.2.3 Auth triggers
+  * 7.2.4 Storage triggers
+  * 7.2.5 Scheduled cron jobs
+
+* **7.3 Practical Examples**
+
+  * 7.3.1 Auto-generate user profile
+  * 7.3.2 Send email after signup
+  * 7.3.3 Create analytics logs
+  * 7.3.4 Image optimization
+
+---
+
+# **8. Firebase Hosting**
+
+* **8.1 Deploying Websites**
+
+  * 8.1.1 React/Vue/Next apps
+  * 8.1.2 Single-page apps
+
+* **8.2 Config File (firebase.json)**
+
+  * 8.2.1 Rewrite rules
+  * 8.2.2 Caching rules
+
+* **8.3 Custom Domain Setup**
+
+  * 8.3.1 DNS verification
+  * 8.3.2 SSL setup
+  * 8.3.3 Multiple domain routing
+
+---
+
+# **9. Security Rules**
+
+* **9.1 Firestore Rules**
+
+  * 9.1.1 Read/write constraints
+  * 9.1.2 Role-based access
+  * 9.1.3 Document-level rules
+
+* **9.2 Storage Rules**
+
+  * 9.2.1 Prevent unauthorized uploads
+  * 9.2.2 Allow only specific file types
+
+* **9.3 Realtime Database Rules**
+
+  * 9.3.1 Path-specific access
+  * 9.3.2 Write validation rules
+
+---
+
+# **10. Firebase Performance & Optimization**
+
+* **10.1 Reducing Reads/Writes**
+
+  * 10.1.1 Caching data
+  * 10.1.2 Batched writes
+  * 10.1.3 Avoiding unnecessary listeners
+
+* **10.2 Indexing**
+
+  * 10.2.1 Compound index
+  * 10.2.2 Query performance improvement
+
+* **10.3 Cost Optimization**
+
+  * 10.3.1 Reducing document reads
+  * 10.3.2 Scheduled cleanups
+  * 10.3.3 Avoiding chatty apps
+
+---
+
+# **11. Firebase Integration with Other Tools**
+
+* **11.1 Firebase + React**
+
+  * 11.1.1 Hooks
+  * 11.1.2 Custom context provider
+  * 11.1.3 Firestore listeners
+
+* **11.2 Firebase + n8n**
+
+  * 11.2.1 Database triggers → workflow
+  * 11.2.2 Data sync automation
+
+* **11.3 Firebase + Nano Banana**
+
+  * 11.3.1 CRUD from interface
+  * 11.3.2 Authentication handling
+
+---
+
+# **12. Real-World Firebase Projects**
+
+* **12.1 Beginner**
+
+  * 12.1.1 Login/Signup page
+  * 12.1.2 To-do app
+  * 12.1.3 Notes app
+
+* **12.2 Intermediate**
+
+  * 12.2.1 Real-time chat app
+  * 12.2.2 Dashboard with charts
+  * 12.2.3 File uploader
+
+* **12.3 Advanced**
+
+  * 12.3.1 E-commerce backend
+  * 12.3.2 Payment+Auth hybrid apps
+  * 12.3.3 AI integrated chatbot system
+
+---
+
+
+---
+
+# **TOPIC 8: BACKEND DEVELOPMENT WITH AWS**
+
+---
+
+# **1. Introduction to AWS**
+
+* **1.1 What is AWS?**
+
+  * 1.1.1 Amazon Web Services overview
+  * 1.1.2 Cloud infrastructure basics
+  * 1.1.3 Global availability zones
+  * 1.1.4 Pay-as-you-go model
+
+* **1.2 Why Use AWS for Backend**
+
+  * 1.2.1 Scalability
+  * 1.2.2 Reliability
+  * 1.2.3 Enterprise-grade security
+  * 1.2.4 Large ecosystem of services
+
+* **1.3 Core AWS Concepts**
+
+  * 1.3.1 IAM
+  * 1.3.2 Regions & zones
+  * 1.3.3 Networking basics
+  * 1.3.4 Resource provisioning
+
+---
+
+# **2. Identity and Access Management (IAM)**
+
+* **2.1 IAM Users & Roles**
+
+  * 2.1.1 Root user vs IAM users
+  * 2.1.2 Creating users with permissions
+  * 2.1.3 Assigning roles to services
+
+* **2.2 IAM Policies**
+
+  * 2.2.1 JSON policy structure
+  * 2.2.2 Permission boundaries
+  * 2.2.3 Least privilege principle
+
+* **2.3 Access Keys & Security**
+
+  * 2.3.1 Access key creation
+  * 2.3.2 Secret key management
+  * 2.3.3 Key rotation
+
+---
+
+# **3. EC2 — Virtual Cloud Servers**
+
+* **3.1 EC2 Basics**
+
+  * 3.1.1 What is a virtual machine
+  * 3.1.2 EC2 instance types
+  * 3.1.3 CPU, RAM, Storage options
+
+* **3.2 Launching EC2**
+
+  * 3.2.1 Choosing AMI (Linux/Ubuntu)
+  * 3.2.2 Instance sizing
+  * 3.2.3 SSH key pair
+  * 3.2.4 Security groups
+
+* **3.3 Managing EC2**
+
+  * 3.3.1 SSH connection
+  * 3.3.2 Installing apps (Node, Nginx, etc.)
+  * 3.3.3 Auto-recovery & backups
+
+* **3.4 Hosting Backend on EC2**
+
+  * 3.4.1 Deploying Node.js API
+  * 3.4.2 Reverse proxy with Nginx
+  * 3.4.3 Mapping domain name
+
+---
+
+# **4. S3 — Cloud Storage**
+
+* **4.1 What is S3?**
+
+  * 4.1.1 Object storage
+  * 4.1.2 Buckets & objects
+  * 4.1.3 Region architecture
+
+* **4.2 Working with Buckets**
+
+  * 4.2.1 Creating buckets
+  * 4.2.2 Folder structure
+  * 4.2.3 Uploading files
+
+* **4.3 Access Controls**
+
+  * 4.3.1 Public vs private access
+  * 4.3.2 Bucket policies
+  * 4.3.3 Signed URLs
+
+* **4.4 S3 for Applications**
+
+  * 4.4.1 Saving user uploads
+  * 4.4.2 Hosting static websites
+  * 4.4.3 Using S3 with CloudFront CDN
+
+---
+
+# **5. AWS Lambda — Serverless Backend**
+
+* **5.1 Understanding Serverless**
+
+  * 5.1.1 No servers to manage
+  * 5.1.2 Event-driven execution
+  * 5.1.3 Cost efficiency
+
+* **5.2 Creating Lambda Functions**
+
+  * 5.2.1 Runtime selection (Node, Python)
+  * 5.2.2 Handler function
+  * 5.2.3 Environment variables
+
+* **5.3 Triggering Lambdas**
+
+  * 5.3.1 API Gateway triggers
+  * 5.3.2 S3 triggers
+  * 5.3.3 CloudWatch scheduled events
+  * 5.3.4 DynamoDB triggers
+
+* **5.4 Lambda Use Cases**
+
+  * 5.4.1 API backends
+  * 5.4.2 Image processing
+  * 5.4.3 Automation tasks
+  * 5.4.4 Real-time notifications
+
+---
+
+# **6. API Gateway — Creating APIs**
+
+* **6.1 Basics of API Gateway**
+
+  * 6.1.1 REST API creation
+  * 6.1.2 HTTP methods
+  * 6.1.3 Stages & deployments
+
+* **6.2 Integrating with Lambda**
+
+  * 6.2.1 Route mapping
+  * 6.2.2 Passing request data
+  * 6.2.3 Response transformation
+
+* **6.3 Security**
+
+  * 6.3.1 API keys
+  * 6.3.2 Usage plans
+  * 6.3.3 Throttling
+
+* **6.4 Monitoring**
+
+  * 6.4.1 API logs
+  * 6.4.2 Performance metrics
+
+---
+
+# **7. DynamoDB — NoSQL Database**
+
+* **7.1 DynamoDB Concepts**
+
+  * 7.1.1 Key-value & document store
+  * 7.1.2 Tables
+  * 7.1.3 Partition key, sort key
+
+* **7.2 DynamoDB CRUD**
+
+  * 7.2.1 PutItem
+  * 7.2.2 GetItem
+  * 7.2.3 Query vs Scan
+  * 7.2.4 UpdateItem
+  * 7.2.5 DeleteItem
+
+* **7.3 Indexing**
+
+  * 7.3.1 Global secondary index (GSI)
+  * 7.3.2 Local secondary index (LSI)
+
+* **7.4 Use Cases**
+
+  * 7.4.1 User profiles
+  * 7.4.2 Realtime leaderboards
+  * 7.4.3 Queue systems
+
+---
+
+# **8. RDS — SQL Databases on AWS**
+
+* **8.1 RDS Engines**
+
+  * 8.1.1 MySQL
+  * 8.1.2 PostgreSQL
+  * 8.1.3 MariaDB
+
+* **8.2 Setting Up RDS**
+
+  * 8.2.1 Instance class
+  * 8.2.2 Storage type
+  * 8.2.3 VPC networking
+
+* **8.3 Connecting Backend to RDS**
+
+  * 8.3.1 Connection strings
+  * 8.3.2 SSL certificates
+  * 8.3.3 Connection pooling
+
+* **8.4 Scaling**
+
+  * 8.4.1 Read replicas
+  * 8.4.2 Auto-scaling storage
+
+---
+
+# **9. CloudWatch — Monitoring & Logs**
+
+* **9.1 Logs**
+
+  * 9.1.1 Lambda logs
+  * 9.1.2 API gateway logs
+  * 9.1.3 EC2 logs
+
+* **9.2 Metrics**
+
+  * 9.2.1 CPU/Memory usage
+  * 9.2.2 API latency
+  * 9.2.3 Error rates
+
+* **9.3 Alerts**
+
+  * 9.3.1 Threshold alerts
+  * 9.3.2 Email/SMS notifications
+
+---
+
+# **10. VPC — Networking Layer**
+
+* **10.1 VPC Components**
+
+  * 10.1.1 Subnets
+  * 10.1.2 Route tables
+  * 10.1.3 Gateways (IGW/NAT)
+
+* **10.2 Security Groups**
+
+  * 10.2.1 Firewall rules
+  * 10.2.2 Inbound/outbound control
+
+* **10.3 Private vs Public Subnets**
+
+  * 10.3.1 Use cases
+  * 10.3.2 Database in private subnet
+
+---
+
+# **11. Deployment & CI/CD**
+
+* **11.1 CodePipeline**
+
+  * 11.1.1 Automated deploys
+  * 11.1.2 Build workflows
+
+* **11.2 CodeBuild**
+
+  * 11.2.1 Build automation
+  * 11.2.2 Environment variables
+
+* **11.3 Infrastructure as Code**
+
+  * 11.3.1 CloudFormation
+  * 11.3.2 Terraform basics
+
+---
+
+# **12. Real-World AWS Projects**
+
+* **12.1 Beginner**
+
+  * 12.1.1 File hosting on S3
+  * 12.1.2 Simple serverless function
+
+* **12.2 Intermediate**
+
+  * 12.2.1 Serverless CRUD API
+  * 12.2.2 User authentication system
+  * 12.2.3 Payment webhook handler
+
+* **12.3 Advanced**
+
+  * 12.3.1 Full e-commerce backend
+  * 12.3.2 Video processing pipeline
+  * 12.3.3 Multi-region scalable API
+
+---
+
+---
+
+# **TOPIC 9: DATABASES (SQL + NoSQL)**
+
+---
+
+# **1. Introduction to Databases**
+
+* **1.1 What is a Database?**
+
+  * 1.1.1 Structured storage of information
+  * 1.1.2 Data retrieval & manipulation
+  * 1.1.3 Real-world examples (banking, e-commerce, hospitals)
+
+* **1.2 Types of Databases**
+
+  * 1.2.1 SQL (Structured Query Language)
+  * 1.2.2 NoSQL (Non-relational)
+  * 1.2.3 Differences: schema, flexibility, scaling
+
+* **1.3 When to Use Which**
+
+  * 1.3.1 SQL for transactions
+  * 1.3.2 NoSQL for flexible & scalable systems
+  * 1.3.3 Hybrid database architecture
+
+---
+
+# **2. SQL Databases (MySQL, PostgreSQL)**
+
+* **2.1 SQL Structure**
+
+  * 2.1.1 Tables
+  * 2.1.2 Rows
+  * 2.1.3 Columns
+  * 2.1.4 Primary keys
+
+* **2.2 SQL Commands**
+
+  * 2.2.1 SELECT → Read data
+  * 2.2.2 INSERT → Add data
+  * 2.2.3 UPDATE → Modify data
+  * 2.2.4 DELETE → Remove data
+
+* **2.3 Constraints**
+
+  * 2.3.1 PRIMARY KEY
+  * 2.3.2 FOREIGN KEY
+  * 2.3.3 UNIQUE
+  * 2.3.4 NOT NULL
+  * 2.3.5 CHECK
+
+* **2.4 Joins (Combining Tables)**
+
+  * 2.4.1 INNER JOIN
+  * 2.4.2 LEFT JOIN
+  * 2.4.3 RIGHT JOIN
+  * 2.4.4 FULL JOIN
+
+* **2.5 Indexing**
+
+  * 2.5.1 What is an index?
+  * 2.5.2 Speeds up queries
+  * 2.5.3 B-tree index
+  * 2.5.4 When indexing becomes bad
+
+* **2.6 Normalization**
+
+  * 2.6.1 1NF
+  * 2.6.2 2NF
+  * 2.6.3 3NF
+  * 2.6.4 Avoiding redundant data
+
+---
+
+# **3. Advanced SQL Concepts**
+
+* **3.1 Stored Procedures**
+
+  * 3.1.1 Pre-written functions inside DB
+  * 3.1.2 Automation of complex tasks
+
+* **3.2 Views**
+
+  * 3.2.1 Virtual tables
+  * 3.2.2 Data abstraction
+
+* **3.3 Transactions**
+
+  * 3.3.1 BEGIN
+  * 3.3.2 COMMIT
+  * 3.3.3 ROLLBACK
+  * 3.3.4 ACID properties
+
+* **3.4 Query Optimization**
+
+  * 3.4.1 EXPLAIN
+  * 3.4.2 Reducing joins
+  * 3.4.3 Using indexes efficiently
+
+---
+
+# **4. NoSQL Databases (MongoDB, Firebase, DynamoDB)**
+
+* **4.1 NoSQL Structure**
+
+  * 4.1.1 Key-value
+  * 4.1.2 Document
+  * 4.1.3 Column family
+  * 4.1.4 Graph databases
+
+* **4.2 Document Databases (MongoDB)**
+
+  * 4.2.1 Collections
+  * 4.2.2 Documents
+  * 4.2.3 Nested objects
+  * 4.2.4 Schemaless flexibility
+
+* **4.3 CRUD in NoSQL**
+
+  * 4.3.1 insertOne
+  * 4.3.2 find
+  * 4.3.3 updateOne
+  * 4.3.4 deleteOne
+
+* **4.4 Query Patterns**
+
+  * 4.4.1 Match
+  * 4.4.2 Project
+  * 4.4.3 Sort
+  * 4.4.4 Limit
+
+* **4.5 Aggregation Framework**
+
+  * 4.5.1 Pipeline stages
+  * 4.5.2 Lookup (NoSQL join)
+  * 4.5.3 Grouping & summarizing
+
+---
+
+# **5. Differences: SQL vs NoSQL**
+
+* **5.1 Structure**
+
+  * SQL → Tables
+  * NoSQL → Collections
+
+* **5.2 Flexibility**
+
+  * SQL → strict schema
+  * NoSQL → flexible schema
+
+* **5.3 Scaling**
+
+  * SQL → vertical scaling
+  * NoSQL → horizontal scaling
+
+* **5.4 Query Power**
+
+  * SQL → powerful joins
+  * NoSQL → fast document reads
+
+---
+
+# **6. Database Design**
+
+* **6.1 Schema Design (SQL)**
+
+  * 6.1.1 Entities
+  * 6.1.2 Relationships
+  * 6.1.3 ER diagrams
+
+* **6.2 Schema Design (NoSQL)**
+
+  * 6.2.1 Embedding vs referencing
+  * 6.2.2 Avoiding joins
+  * 6.2.3 Designing for queries, not data
+
+* **6.3 Normalization vs Denormalization**
+
+  * 6.3.1 SQL → Normalize
+  * 6.3.2 NoSQL → Denormalize
+
+---
+
+# **7. Database Security**
+
+* **7.1 Authentication**
+
+  * 7.1.1 Database user accounts
+  * 7.1.2 API key-based DB access
+
+* **7.2 Authorization**
+
+  * 7.2.1 Read/write permissions
+  * 7.2.2 Role-based access
+
+* **7.3 Data Encryption**
+
+  * 7.3.1 Encryption at rest
+  * 7.3.2 Encryption in transit
+
+* **7.4 SQL Injection Protection**
+
+  * 7.4.1 Prepared statements
+  * 7.4.2 Input sanitization
+
+---
+
+# **8. Performance Optimization**
+
+* **8.1 Query Optimization**
+
+  * 8.1.1 Avoiding SELECT *
+  * 8.1.2 Using indexes
+  * 8.1.3 Reducing joins
+
+* **8.2 Caching**
+
+  * 8.2.1 Redis caching
+  * 8.2.2 Application-level cache
+
+* **8.3 Sharding & Replication**
+
+  * 8.3.1 Horizontal partitioning
+  * 8.3.2 Replica sets (NoSQL)
+  * 8.3.3 Read replicas (SQL)
+
+---
+
+# **9. Backup & Recovery**
+
+* **9.1 SQL Backup**
+
+  * 9.1.1 Full backup
+  * 9.1.2 Incremental backup
+
+* **9.2 NoSQL Backup**
+
+  * 9.2.1 Dumping collections
+  * 9.2.2 Snapshot backups
+
+* **9.3 Disaster Recovery**
+
+  * 9.3.1 Multi-region backups
+  * 9.3.2 Failover strategies
+
+---
+
+# **10. Real-World Database Projects**
+
+* **10.1 Beginner**
+
+  * 10.1.1 Student records DB
+  * 10.1.2 Authentication DB
+  * 10.1.3 Notes or tasks DB
+
+* **10.2 Intermediate**
+
+  * 10.2.1 Blog database
+  * 10.2.2 Inventory system
+  * 10.2.3 Payment transaction DB
+
+* **10.3 Advanced**
+
+  * 10.3.1 E-commerce DB design
+  * 10.3.2 Real-time chat database
+  * 10.3.3 Analytics + logs DB
+
+---
