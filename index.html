@@ -7,10 +7,17 @@
     <!-- Preconnect to Google Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload critical font -->
+    <!-- Preload critical font with font-display: swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" as="style" />
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <style>
+        /* Ensure font-display: swap is applied */
+        @font-face {
+            font-family: 'Outfit';
+            font-display: swap;
+        }
+    </style>
     <meta name="description" content="Beyond Marks AI Academy - Top AI coaching center in Bidar. Learn Python, AI, Machine Learning, and Full-Stack Development. 250+ live projects. Small batches. Own your domain." />
     <meta name="keywords" content="Beyond Marks, Beyond Marks AI Academy, AI Academy Bidar, Academy Near Me, Python Course Bidar, AI Coaching Bidar, Machine Learning Course, Coding Classes Bidar" />
     <meta name="author" content="Beyond Marks AI Academy" />

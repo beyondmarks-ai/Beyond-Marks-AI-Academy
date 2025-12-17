@@ -12,6 +12,79 @@
     /* Optimize performance */
 }
 
+/* Performance-optimized CSS animations (non-blocking) */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.navbar-slide-down {
+    animation: slideDown 0.5s ease-out;
+}
+
+.mobile-menu-fade-in {
+    animation: fadeIn 0.3s ease-out;
+}
+
+.mobile-menu-content-fade-in {
+    animation: fadeIn 0.3s ease-out 0.1s both;
+}
+
+.mobile-menu-item-slide-1 {
+    animation: slideInLeft 0.3s ease-out 0.15s both;
+}
+
+.mobile-menu-item-slide-2 {
+    animation: slideInLeft 0.3s ease-out 0.2s both;
+}
+
+.mobile-menu-item-slide-3 {
+    animation: slideInLeft 0.3s ease-out 0.25s both;
+}
+
+.mobile-menu-item-slide-4 {
+    animation: slideInLeft 0.3s ease-out 0.3s both;
+}
+
+.mobile-menu-button-pop {
+    animation: popIn 0.3s ease-out 0.35s both;
+}
+
 .navbar.scrolled {
     padding: 15px 0;
     background: transparent !important;

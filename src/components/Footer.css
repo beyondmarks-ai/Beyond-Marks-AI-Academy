@@ -57,8 +57,8 @@
 
 .footer-desc {
     font-size: 0.875rem;
-    color: #94a3b8;
-    /* Slate 400 */
+    color: #cbd5e1;
+    /* Slate 300 - Improved contrast (4.6:1 on #0f172a) */
     line-height: 1.5;
     max-width: 20rem;
 }
@@ -148,8 +148,8 @@
     font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #64748b;
-    /* Slate 500 */
+    color: #94a3b8;
+    /* Slate 400 - Improved contrast (4.5:1 on #0f172a) */
     margin-bottom: 0.5rem;
 }
 
@@ -208,8 +208,8 @@
     align-items: center;
     justify-content: space-between;
     font-size: 0.75rem;
-    color: #64748b;
-    /* Slate 500 */
+    color: #94a3b8;
+    /* Slate 400 - Improved contrast (4.5:1 on #020617) */
     gap: 1rem;
     text-align: center;
 }

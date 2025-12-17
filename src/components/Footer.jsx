@@ -20,9 +20,9 @@ const Footer = () => {
                             Empowering the next generation of innovators with practical AI skills and future-ready coaching.
                         </p>
                         <div className="footer-socials">
-                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link"><Instagram size={20} /></a>
-                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link"><Facebook size={20} /></a>
-                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link"><Github size={20} /></a>
+                            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Follow us on Instagram"><Instagram size={20} /></a>
+                            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Follow us on Facebook"><Facebook size={20} /></a>
+                            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Visit our GitHub profile"><Github size={20} /></a>
                         </div>
                     </div>
 
@@ -79,7 +79,7 @@ const Footer = () => {
                                     placeholder="Enter your email"
                                     className="newsletter-input"
                                 />
-                                <button type="submit" className="newsletter-btn">
+                                <button type="submit" className="newsletter-btn" aria-label="Subscribe to newsletter">
                                     <Send size={16} />
                                 </button>
                             </form>

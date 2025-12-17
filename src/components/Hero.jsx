@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
@@ -7,8 +6,14 @@ import './Hero.css';
 // Lazy load ToolsMarquee as it's below the fold
 const ToolsMarquee = lazy(() => import('./ToolsMarquee'));
 
-const Hero = () => {
+// Lazy load framer-motion for floating cards (below the fold, non-critical)
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
 
+const Hero = () => {
     return (
         <section className="hero" id="home">
             <div className="hero-grid-bg"></div>
@@ -16,21 +21,12 @@ const Hero = () => {
             <div className="hero-glow-spot bottom-right"></div>
 
             <div className="container hero-container">
-                <motion.div
-                    className="hero-content"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                >
-                    <motion.div
-                        className="badge glass"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                    >
+                {/* Use CSS animations for above-the-fold content - non-blocking */}
+                <div className="hero-content hero-fade-in">
+                    <div className="badge glass badge-fade-in">
                         <Sparkles size={14} className="badge-icon" />
                         <span>The Future of AI Education</span>
-                    </motion.div>
+                    </div>
 
                     <h1>
                         Don&apos;t Just Learn AI. <br />
@@ -68,38 +64,56 @@ const Hero = () => {
                             <span>Project Based</span>
                         </div>
                     </div>
-                </motion.div>
+                </div>
 
                 <Suspense fallback={null}>
                     <ToolsMarquee />
                 </Suspense>
             </div>
 
-            {/* Abstract 3D Elements */}
+            {/* Abstract 3D Elements - Lazy load framer-motion for these decorative elements */}
             <div className="hero-3d-elements">
-                <motion.div
-                    className="floating-card glass card-1"
-                    animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                    transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                >
-                    <div className="card-icon" style={{ background: '#3b82f6' }}></div>
-                    <div className="card-lines">
-                        <div className="line long"></div>
-                        <div className="line short"></div>
-                    </div>
-                </motion.div>
-
-                <motion.div
-                    className="floating-card glass card-2"
-                    animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-                    transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                >
-                    <div className="card-icon" style={{ background: '#8b5cf6' }}></div>
-                    <div className="card-lines">
-                        <div className="line long"></div>
-                        <div className="line short"></div>
-                    </div>
-                </motion.div>
+                <Suspense fallback={
+                    <>
+                        <div className="floating-card glass card-1 float-animation">
+                            <div className="card-icon" style={{ background: '#3b82f6' }}></div>
+                            <div className="card-lines">
+                                <div className="line long"></div>
+                                <div className="line short"></div>
+                            </div>
+                        </div>
+                        <div className="floating-card glass card-2 float-animation-delayed">
+                            <div className="card-icon" style={{ background: '#8b5cf6' }}></div>
+                            <div className="card-lines">
+                                <div className="line long"></div>
+                                <div className="line short"></div>
+                            </div>
+                        </div>
+                    </>
+                }>
+                    <MotionDiv
+                        className="floating-card glass card-1"
+                        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
+                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+                    >
+                        <div className="card-icon" style={{ background: '#3b82f6' }}></div>
+                        <div className="card-lines">
+                            <div className="line long"></div>
+                            <div className="line short"></div>
+                        </div>
+                    </MotionDiv>
+                    <MotionDiv
+                        className="floating-card glass card-2"
+                        animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
+                        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                    >
+                        <div className="card-icon" style={{ background: '#8b5cf6' }}></div>
+                        <div className="card-lines">
+                            <div className="line long"></div>
+                            <div className="line short"></div>
+                        </div>
+                    </MotionDiv>
+                </Suspense>
             </div>
         </section>
     );

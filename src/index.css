@@ -162,6 +162,13 @@ ul {
   background: #475569;
 }
 
+/* Loading spinner animation */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Remove noise background in header area on courses page */
 .courses-page .navbar {
   background: var(--bg-color) !important;

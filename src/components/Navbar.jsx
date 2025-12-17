@@ -1,5 +1,4 @@
 import React, { useState, useEffect, lazy, Suspense } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import bmLogo from '../assets/Logo M.png';
@@ -29,12 +28,7 @@ const Navbar = () => {
 
   return (
     <>
-      <motion.nav
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.5 }}
-        className={`navbar ${scrolled ? 'scrolled' : ''}`}
-      >
+      <nav className={`navbar navbar-slide-down ${scrolled ? 'scrolled' : ''}`}>
         <div className="container nav-container">
           <Link to="/" className="logo">
             <div className="logo-mark">
@@ -70,62 +64,28 @@ const Navbar = () => {
           </button>
         </div>
 
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.3, ease: "easeOut" }}
-              className="mobile-menu"
-            >
-              <motion.div
-                className="mobile-menu-content"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ delay: 0.1, duration: 0.3 }}
-              >
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.15, duration: 0.3 }}
-                >
-                  <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.2, duration: 0.3 }}
-                >
-                  <a href="/#features" onClick={() => setIsOpen(false)}>Why Us</a>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.25, duration: 0.3 }}
-                >
-                  <Link to="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: 0.3, duration: 0.3 }}
-                >
-                  <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
-                </motion.div>
-                <motion.div
-                  initial={{ opacity: 0, y: 20, scale: 0.9 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  transition={{ delay: 0.35, duration: 0.3, ease: "easeOut" }}
-                  className="mobile-menu-button"
-                >
-                  <button className="btn btn-primary" onClick={() => { setIsOpen(false); setShowDemoModal(true); }}>Join Now</button>
-                </motion.div>
-              </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </motion.nav>
+        {isOpen && (
+          <div className="mobile-menu mobile-menu-fade-in">
+            <div className="mobile-menu-content mobile-menu-content-fade-in">
+              <div className="mobile-menu-item mobile-menu-item-slide-1">
+                <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
+              </div>
+              <div className="mobile-menu-item mobile-menu-item-slide-2">
+                <a href="/#features" onClick={() => setIsOpen(false)}>Why Us</a>
+              </div>
+              <div className="mobile-menu-item mobile-menu-item-slide-3">
+                <Link to="/courses" onClick={() => setIsOpen(false)}>Courses</Link>
+              </div>
+              <div className="mobile-menu-item mobile-menu-item-slide-4">
+                <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
+              </div>
+              <div className="mobile-menu-button mobile-menu-button-pop">
+                <button className="btn btn-primary" onClick={() => { setIsOpen(false); setShowDemoModal(true); }}>Join Now</button>
+              </div>
+            </div>
+          </div>
+        )}
+      </nav>
       <Suspense fallback={null}>
         <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
       </Suspense>
