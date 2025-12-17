@@ -59,7 +59,7 @@ const WhyChooseUs = () => {
     const [activeTab, setActiveTab] = useState('parents');
 
     return (
-        <section className="why-choose-us" id="why-choose-us">
+        <section className="why-choose-us" id="features">
             <div className="container">
                 <div className="split-layout">
                     {/* Left Side: Sticky Header & Navigation */}

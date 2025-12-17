@@ -1,10 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, PlayCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import './Hero.css';
 import ToolsMarquee from './ToolsMarquee';
 
 const Hero = () => {
+
     return (
         <section className="hero" id="home">
             <div className="hero-grid-bg"></div>
@@ -40,12 +42,12 @@ const Hero = () => {
                     </p>
 
                     <div className="hero-buttons">
-                        <a href="#courses" className="btn btn-primary flex-center">
+                        <Link to="/courses" className="btn btn-primary flex-center">
                             Explore Curriculum <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-                        </a>
-                        <button className="btn btn-outline flex-center">
-                            <PlayCircle size={18} style={{ marginRight: '8px' }} /> View Demo
-                        </button>
+                        </Link>
+                        <Link to="/why-choose-us" className="btn btn-outline flex-center">
+                            <PlayCircle size={18} style={{ marginRight: '8px' }} /> What Makes Us Different
+                        </Link>
                     </div>
 
                     <div className="hero-stats">

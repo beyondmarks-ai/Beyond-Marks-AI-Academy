@@ -74,3 +74,110 @@
     font-size: 0.95rem;
     line-height: 1.6;
 }
+
+/* ============================================
+   RESPONSIVE DESIGN - All Device Sizes
+   ============================================ */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .features {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 30px 24px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.15rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .features {
+        padding: 70px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .section-header h2 {
+        font-size: 2.3rem;
+    }
+}
+
+/* Medium Devices - Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .features {
+        padding: 80px 0;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 26px;
+    }
+
+    .section-header h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* Large Devices (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+/* Extra Large Devices (1441px+) */
+@media (min-width: 1441px) {
+    .features {
+        padding: 120px 0;
+    }
+
+    .section-header {
+        margin-bottom: 100px;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 35px;
+    }
+
+    .feature-card {
+        padding: 45px 35px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.35rem;
+    }
+
+    .feature-card p {
+        font-size: 1rem;
+    }
+}

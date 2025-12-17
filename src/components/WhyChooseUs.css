@@ -226,7 +226,265 @@
     border-bottom: 1px solid var(--primary);
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE DESIGN - All Device Sizes
+   ============================================ */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .why-choose-us {
+        padding: 60px 0;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 60px;
+    }
+
+    .layout-sidebar {
+        position: static;
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .section-header-left h2 {
+        font-size: 2rem;
+    }
+
+    .section-desc-left {
+        font-size: 0.95rem;
+    }
+
+    .vertical-tabs {
+        gap: 12px;
+    }
+
+    .v-tab-btn {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .tab-icon-box {
+        width: 42px;
+        height: 42px;
+    }
+
+    .tab-label {
+        font-size: 1rem;
+    }
+
+    .tab-sub {
+        font-size: 0.8rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .bento-card {
+        padding: 28px 20px;
+    }
+
+    .bento-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .bento-card p {
+        font-size: 0.9rem;
+    }
+
+    .card-icon-floating {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 20px;
+    }
+
+    .philosophy-section {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+
+    .quote-mark {
+        font-size: 4rem;
+        margin-bottom: -15px;
+    }
+
+    .philosophy-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .philosophy-text {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+/* Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .why-choose-us {
+        padding: 70px 0;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        margin-bottom: 70px;
+    }
+
+    .layout-sidebar {
+        position: static;
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .section-header-left h2 {
+        font-size: 2.3rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .philosophy-section {
+        padding: 45px 28px;
+    }
+
+    .philosophy-content h3 {
+        font-size: 1.7rem;
+    }
+
+    .philosophy-text {
+        font-size: 1.05rem;
+    }
+}
+
+/* Medium Devices - Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .why-choose-us {
+        padding: 90px 0;
+    }
+
+    .split-layout {
+        grid-template-columns: 1fr;
+        gap: 60px;
+        margin-bottom: 80px;
+    }
+
+    .layout-sidebar {
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+
+    .section-header-left {
+        margin-bottom: 0;
+    }
+
+    .section-header-left h2 {
+        font-size: 2.5rem;
+    }
+
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .philosophy-section {
+        padding: 50px;
+    }
+
+    .philosophy-content h3 {
+        font-size: 1.85rem;
+    }
+}
+
+/* Large Devices (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .split-layout {
+        grid-template-columns: 320px 1fr;
+        gap: 70px;
+    }
+
+    .bento-grid {
+        gap: 22px;
+    }
+}
+
+/* Extra Large Devices (1441px+) */
+@media (min-width: 1441px) {
+    .why-choose-us {
+        padding: 140px 0;
+    }
+
+    .split-layout {
+        grid-template-columns: 400px 1fr;
+        gap: 100px;
+        margin-bottom: 120px;
+    }
+
+    .section-header-left h2 {
+        font-size: 3.2rem;
+    }
+
+    .section-desc-left {
+        font-size: 1.15rem;
+    }
+
+    .v-tab-btn {
+        padding: 24px;
+    }
+
+    .tab-icon-box {
+        width: 52px;
+        height: 52px;
+    }
+
+    .tab-label {
+        font-size: 1.15rem;
+    }
+
+    .bento-grid {
+        gap: 28px;
+    }
+
+    .bento-card {
+        padding: 45px 35px;
+    }
+
+    .bento-card h3 {
+        font-size: 1.45rem;
+    }
+
+    .bento-card p {
+        font-size: 1rem;
+    }
+
+    .card-icon-floating {
+        width: 56px;
+        height: 56px;
+    }
+
+    .philosophy-section {
+        padding: 70px;
+        border-radius: 35px;
+    }
+
+    .philosophy-content h3 {
+        font-size: 2.3rem;
+    }
+
+    .philosophy-text {
+        font-size: 1.35rem;
+    }
+}
+
+/* Legacy support - Original breakpoints */
 @media (max-width: 1024px) {
     .split-layout {
         grid-template-columns: 1fr;

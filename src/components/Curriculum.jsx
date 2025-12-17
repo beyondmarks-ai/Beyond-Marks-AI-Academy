@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
     Palette, Terminal, Globe, Share2, Sparkles,
-    Smartphone, Flame, Cloud, Database, ChevronDown, ChevronUp, CheckCircle2
+    Smartphone, Flame, Cloud, Database, ChevronDown, ChevronUp, CheckCircle2,
+    Code2, GitBranch, Server, X, ArrowRight, BookOpen, Brain, Monitor, Rocket, Search, Bot, Mic
 } from 'lucide-react';
 import './Curriculum.css';
 
@@ -11,6 +12,7 @@ const syllabusData = [
         id: 'uiux',
         title: 'UI/UX Design',
         icon: <Palette size={24} />,
+        logo: 'https://cdn.simpleicons.org/figma/ff0055',
         color: '#ff0055',
         topics: [
             {
@@ -59,6 +61,7 @@ const syllabusData = [
         id: 'cursor',
         title: 'Cursor — Advanced AI IDE',
         icon: <Terminal size={24} />,
+        logo: 'https://cdn.simpleicons.org/cursor/00f0ff',
         color: '#00f0ff',
         topics: [
             {
@@ -107,6 +110,7 @@ const syllabusData = [
         id: 'api',
         title: 'API Development',
         icon: <Globe size={24} />,
+        logo: 'https://cdn.simpleicons.org/swagger/7000ff',
         color: '#7000ff',
         topics: [
             { title: '1. API Foundations', subtopics: ['What is an API?', 'Types of APIs', 'API Architecture'] },
@@ -127,6 +131,7 @@ const syllabusData = [
         id: 'n8n',
         title: 'n8n Automation',
         icon: <Share2 size={24} />,
+        logo: 'https://cdn.simpleicons.org/n8n/ff9900',
         color: '#ff9900',
         topics: [
             { title: '1. Introduction to n8n', subtopics: ['What is n8n?', 'Where n8n is used', 'Installing n8n'] },
@@ -146,6 +151,7 @@ const syllabusData = [
         id: 'prompting',
         title: 'Advanced Prompting',
         icon: <Sparkles size={24} />,
+        logo: 'https://www.svgrepo.com/show/306500/openai.svg',
         color: '#00ffaa',
         topics: [
             { title: '1. Foundations', subtopics: ['What is a Prompt?', 'AI Models & How They Think', 'Types of Prompts'] },
@@ -166,6 +172,7 @@ const syllabusData = [
         id: 'nano',
         title: 'Nano Banana (No-Code)',
         icon: <Smartphone size={24} />,
+        logo: 'https://cdn.simpleicons.org/webflow/ffe600',
         color: '#ffe600',
         topics: [
             { title: '1. Introduction', subtopics: ['What is Nano Banana?', 'No-Code vs Low-Code', 'Platform Overview'] },
@@ -187,6 +194,7 @@ const syllabusData = [
         id: 'firebase',
         title: 'Firebase Backend',
         icon: <Flame size={24} />,
+        logo: 'https://cdn.simpleicons.org/firebase/ffca28',
         color: '#ffca28',
         topics: [
             { title: '1. Introduction', subtopics: ['What is Firebase?', 'Firebase vs Traditional Backend', 'Products Overview'] },
@@ -207,6 +215,7 @@ const syllabusData = [
         id: 'aws',
         title: 'AWS Backend',
         icon: <Cloud size={24} />,
+        logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg',
         color: '#ff9900',
         topics: [
             { title: '1. Introduction', subtopics: ['What is AWS?', 'Why Use AWS', 'Core Concepts'] },
@@ -227,6 +236,7 @@ const syllabusData = [
         id: 'db',
         title: 'Databases (SQL + NoSQL)',
         icon: <Database size={24} />,
+        logo: 'https://cdn.simpleicons.org/postgresql/3b82f6',
         color: '#3b82f6',
         topics: [
             { title: '1. Introduction', subtopics: ['What is a Database?', 'Types of Databases', 'When to Use Which'] },
@@ -240,13 +250,177 @@ const syllabusData = [
             { title: '9. Backup & Recovery', subtopics: ['SQL Backup', 'NoSQL Backup', 'Disaster Recovery'] },
             { title: '10. Real-World Projects', subtopics: ['Beginner', 'Intermediate', 'Advanced'] }
         ]
+    },
+    {
+        id: 'python',
+        title: 'Python Programming',
+        icon: null,
+        logo: 'https://cdn.simpleicons.org/python/3776ab',
+        color: '#3776ab',
+        topics: [
+            { title: '1. Python Basics', subtopics: ['Introduction to Python', 'Installing Python', 'Python Syntax', 'Variables & Data Types', 'Input/Output'] },
+            { title: '2. Control Flow', subtopics: ['Conditional Statements', 'Loops (for, while)', 'Break & Continue', 'Nested Loops'] },
+            { title: '3. Data Structures', subtopics: ['Lists', 'Tuples', 'Dictionaries', 'Sets', 'List Comprehensions'] },
+            { title: '4. Functions', subtopics: ['Defining Functions', 'Parameters & Arguments', 'Return Values', 'Lambda Functions', 'Scope & Namespace'] },
+            { title: '5. Object-Oriented Programming', subtopics: ['Classes & Objects', 'Inheritance', 'Polymorphism', 'Encapsulation', 'Special Methods'] },
+            { title: '6. File Handling', subtopics: ['Reading Files', 'Writing Files', 'File Modes', 'CSV & JSON Handling'] },
+            { title: '7. Error Handling', subtopics: ['Try-Except Blocks', 'Exception Types', 'Custom Exceptions', 'Finally Clause'] },
+            { title: '8. Modules & Packages', subtopics: ['Importing Modules', 'Creating Modules', 'Package Structure', 'Standard Library'] },
+            { title: '9. Working with APIs', subtopics: ['HTTP Requests', 'REST API Integration', 'JSON Parsing', 'API Authentication'] },
+            { title: '10. Data Processing', subtopics: ['Working with DataFrames', 'Data Cleaning', 'Data Analysis', 'Data Visualization'] },
+            { title: '11. Web Development', subtopics: ['Flask Basics', 'Django Basics', 'Routing', 'Templates', 'Database Integration'] },
+            { title: '12. Real-World Projects', subtopics: ['Beginner Projects', 'Intermediate Projects', 'Advanced Projects'] }
+        ]
+    },
+    {
+        id: 'supabase',
+        title: 'Supabase Backend',
+        icon: null,
+        logo: 'https://cdn.simpleicons.org/supabase/3ecf8e',
+        color: '#3ecf8e',
+        topics: [
+            { title: '1. Introduction to Supabase', subtopics: ['What is Supabase?', 'Supabase vs Firebase', 'Supabase Features', 'Setting Up Account'] },
+            { title: '2. Project Setup', subtopics: ['Creating a Project', 'Project Settings', 'API Keys & URLs', 'Environment Configuration'] },
+            { title: '3. Database (PostgreSQL)', subtopics: ['Database Overview', 'Creating Tables', 'Table Relationships', 'Row Level Security', 'Database Functions'] },
+            { title: '4. Authentication', subtopics: ['Auth Methods', 'Email/Password Auth', 'OAuth Providers', 'Magic Links', 'User Management', 'Session Management'] },
+            { title: '5. Row Level Security (RLS)', subtopics: ['Understanding RLS', 'Creating Policies', 'Policy Types', 'Testing Security'] },
+            { title: '6. Storage', subtopics: ['Storage Buckets', 'Uploading Files', 'File Access Control', 'Image Transformations', 'CDN Integration'] },
+            { title: '7. Realtime Subscriptions', subtopics: ['Realtime Concepts', 'Subscribing to Changes', 'Channel Management', 'Presence System'] },
+            { title: '8. Edge Functions', subtopics: ['What are Edge Functions?', 'Creating Functions', 'Deploying Functions', 'Function Triggers', 'Database Functions'] },
+            { title: '9. API Integration', subtopics: ['REST API', 'GraphQL API', 'Auto-generated APIs', 'API Authentication', 'Querying Data'] },
+            { title: '10. Integrations', subtopics: ['Supabase + React', 'Supabase + Next.js', 'Supabase + Python', 'Supabase + n8n'] },
+            { title: '11. Advanced Features', subtopics: ['Database Migrations', 'Backups & Restores', 'Performance Optimization', 'Monitoring & Logs'] },
+            { title: '12. Real-World Projects', subtopics: ['Beginner Projects', 'Intermediate Projects', 'Advanced Projects'] }
+        ]
+    },
+    {
+        id: 'github',
+        title: 'Git & GitHub',
+        icon: null,
+        logo: 'https://cdn.simpleicons.org/github/ffffff',
+        color: '#24292e',
+        topics: [
+            { title: '1. Introduction to Version Control', subtopics: ['What is Version Control?', 'Why Use Git?', 'Git vs Other VCS', 'GitHub Overview'] },
+            { title: '2. Git Basics', subtopics: ['Installing Git', 'Git Configuration', 'Initializing Repository', 'Git Workflow', 'Basic Commands'] },
+            { title: '3. Commits & History', subtopics: ['Making Commits', 'Commit Messages', 'Viewing History', 'Commit Amending', 'Reverting Changes'] },
+            { title: '4. Branching', subtopics: ['What are Branches?', 'Creating Branches', 'Switching Branches', 'Merging Branches', 'Branch Management'] },
+            { title: '5. Remote Repositories', subtopics: ['What is Remote?', 'Connecting to GitHub', 'Push & Pull', 'Clone & Fork', 'Remote Management'] },
+            { title: '6. Collaboration', subtopics: ['Pull Requests', 'Code Reviews', 'Merge Conflicts', 'Resolving Conflicts', 'Team Workflows'] },
+            { title: '7. GitHub Features', subtopics: ['Issues & Projects', 'GitHub Actions', 'GitHub Pages', 'Releases & Tags', 'GitHub CLI'] },
+            { title: '8. Advanced Git', subtopics: ['Rebasing', 'Cherry-picking', 'Stashing', 'Git Hooks', 'Submodules'] },
+            { title: '9. Git Workflows', subtopics: ['Feature Branch Workflow', 'Gitflow Workflow', 'Forking Workflow', 'Best Practices'] },
+            { title: '10. CI/CD Integration', subtopics: ['GitHub Actions Basics', 'Automated Testing', 'Deployment Pipelines', 'Workflow Automation'] },
+            { title: '11. Security & Best Practices', subtopics: ['SSH Keys', 'Personal Access Tokens', 'Branch Protection', 'Security Best Practices'] },
+            { title: '12. Real-World Projects', subtopics: ['Open Source Contribution', 'Project Management', 'Team Collaboration'] }
+        ]
     }
 ];
 
-import { X, ArrowRight, BookOpen } from 'lucide-react';
+const smartProModules = [
+    {
+        id: 'sp_phase1',
+        title: 'Phase 1: Cognitive Foundation',
+        icon: <Brain size={24} />,
+        color: '#8b5cf6',
+        topics: [
+            { title: '1. AI-Assisted Research', subtopics: ['Smart Interpretation', 'Fact Checking', 'Deep Diving'] },
+            { title: '2. Critical Thinking', subtopics: ['Problem Identification', 'Logic Building', 'Solution Mapping'] },
+            { title: '3. Presentation Mastery', subtopics: ['Storytelling', 'Slide Design', 'Public Speaking'] }
+        ]
+    },
+    {
+        id: 'sp_phase2',
+        title: 'Phase 2: Tech Acceleration',
+        icon: <Rocket size={24} />,
+        color: '#f43f5e',
+        topics: [
+            { title: '1. Python Core', subtopics: ['Logic', 'Syntax', 'Automation Scripting'] },
+            { title: '2. AI Power Tools', subtopics: ['Generative AI', 'Voice AI', 'Image Generation'] },
+            { title: '3. Web Portfolio', subtopics: ['Personal Website', 'Hosting', 'Showcasing Work'] }
+        ]
+    }
+];
+
+const curiosityModules = [
+    {
+        id: 'cur_research',
+        title: 'Deep Research & Truth Seeking',
+        icon: <Search size={24} />,
+        color: '#f59e0b',
+        topics: [
+            { title: '1. The "Why" Framework', subtopics: ['Moving Beyond "What"', 'First Principles Thinking', 'Root Cause Analysis'] },
+            { title: '2. Source Triangulation', subtopics: ['Verifying Facts', 'Identifying Bias', 'Primary vs Secondary Data'] },
+            { title: '3. The Digital Detective', subtopics: ['Google Search Operators', 'Finding Academic Papers', 'Fact-Checking Tools'] },
+            { title: '4. Questioning Authority', subtopics: ['Scientific Skepticism', 'Challenging Assumptions', 'Constructive Debating'] }
+        ]
+    },
+    {
+        id: 'cur_mastery',
+        title: 'Mastery Without Memorization',
+        icon: <Brain size={24} />,
+        color: '#8b5cf6',
+        topics: [
+            { title: '1. The Feynman Technique', subtopics: ['Teaching to Learn', 'Simplifying Complexity', 'Identifying Gaps'] },
+            { title: '2. Mental Models', subtopics: ['Visualization', 'Mind Mapping', 'Memory Palaces'] },
+            { title: '3. Analogical Thinking', subtopics: ['Connecting Concepts', 'Real-World Metaphors', 'Pattern Recognition'] },
+            { title: '4. Active Recall', subtopics: ['Spaced Repetition', 'Self-Testing', 'Flashcard Strategies'] }
+        ]
+    },
+    {
+        id: 'cur_ai',
+        title: 'AI Interaction & Logic',
+        icon: <Bot size={24} />,
+        color: '#10b981',
+        topics: [
+            { title: '1. Socratic AI Dialogues', subtopics: ['Using AI as a Tutor', 'Debating with AI', 'Asking Better Questions'] },
+            { title: '2. Prompting for Understanding', subtopics: ['"Explain Like I\'m 5"', 'Scenario Generation', 'Counter-Argument Prompting'] },
+            { title: '3. Logic Building', subtopics: ['Algorithmic Thinking', 'Flowcharts', 'If-This-Then-That Logic'] }
+        ]
+    },
+    {
+        id: 'cur_present',
+        title: 'Storytelling & Expression',
+        icon: <Mic size={24} />,
+        color: '#ec4899',
+        topics: [
+            { title: '1. Structuring Ideas', subtopics: ['Beginning-Middle-End', 'The Hero\'s Journey', 'Hook-Body-Conclusion'] },
+            { title: '2. Visual Communication', subtopics: ['Slide Design (No Clutter)', 'Data Visualization', 'Color Psychology'] },
+            { title: '3. Public Speaking', subtopics: ['Body Language', 'Voice Modulation', 'Overcoming Stage Fright'] }
+        ]
+    }
+];
+
+const foundationModules = [
+    {
+        id: 'fnd_main',
+        title: 'Digital Literacy',
+        icon: <Monitor size={24} />,
+        color: '#10b981',
+        topics: [
+            { title: '1. Computer Basics', subtopics: ['Hardware Components', 'Windows Interface', 'File Management'] },
+            { title: '2. Typing Master', subtopics: ['Keyboard Shortcuts', 'Typing Speed', 'Ergonomics'] },
+            { title: '3. Internet Safety', subtopics: ['Browsers', 'Phishing Awareness', 'Digital Hygiene'] }
+        ]
+    }
+];
 
 const Curriculum = () => {
     const [selectedModule, setSelectedModule] = useState(null);
+    const [activeTab, setActiveTab] = useState('flagship');
+
+    const courses = {
+        flagship: syllabusData,
+        smart_pro: smartProModules,
+        curiosity: curiosityModules,
+        foundation: foundationModules
+    };
+
+    const tabs = [
+        { id: 'flagship', label: 'Flagship AI & Full-Stack' },
+        { id: 'smart_pro', label: 'Smart Pro Combo' },
+        { id: 'curiosity', label: 'Curiosity Program' },
+        { id: 'foundation', label: 'Foundation Literacy' }
+    ];
 
     // Prevent body scroll when drawer is open
     React.useEffect(() => {
@@ -269,8 +443,22 @@ const Curriculum = () => {
                     </p>
                 </div>
 
+                <div className="course-tabs-container">
+                    <div className="course-tabs">
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab.id}
+                                className={`course-tab ${activeTab === tab.id ? 'active' : ''}`}
+                                onClick={() => setActiveTab(tab.id)}
+                            >
+                                {tab.label}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+
                 <div className="modules-grid">
-                    {syllabusData.map((module) => (
+                    {courses[activeTab].map((module) => (
                         <motion.div
                             key={module.id}
                             className="module-card"
@@ -285,7 +473,11 @@ const Curriculum = () => {
                             <div className="card-content">
                                 <div className="card-top">
                                     <div className="module-icon-wrapper">
-                                        {module.icon}
+                                        {module.logo ? (
+                                            <img src={module.logo} alt={module.title} className="module-logo" />
+                                        ) : (
+                                            module.icon
+                                        )}
                                     </div>
                                     <div className="module-arrow">
                                         <ArrowRight size={20} />
@@ -330,7 +522,24 @@ const Curriculum = () => {
                                     </button>
                                     <div className="drawer-title-area">
                                         <div className="module-icon-wrapper large">
-                                            {selectedModule.icon}
+                                            {selectedModule.logo ? (
+                                                <img
+                                                    src={selectedModule.logo}
+                                                    alt={selectedModule.title}
+                                                    className="module-logo large"
+                                                    onError={(e) => {
+                                                        e.target.style.display = 'none';
+                                                        e.target.nextSibling && (e.target.nextSibling.style.display = 'flex');
+                                                    }}
+                                                />
+                                            ) : null}
+                                            {selectedModule.logo ? (
+                                                <div style={{ display: 'none', width: '100%', height: '100%', alignItems: 'center', justifyContent: 'center' }}>
+                                                    {selectedModule.icon}
+                                                </div>
+                                            ) : (
+                                                selectedModule.icon
+                                            )}
                                         </div>
                                         <div>
                                             <span className="drawer-subtitle">CURRICULUM DETAIL</span>

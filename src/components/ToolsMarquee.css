@@ -1,3 +1,13 @@
+/* Container wrapper for ToolsMarquee */
+.tools-marquee-wrapper {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .tools-title {
     text-align: center;
     color: var(--text-muted);
@@ -11,14 +21,17 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+    box-sizing: border-box;
 }
 
 .marquee-container {
     width: 100%;
+    max-width: 100%;
     overflow: hidden;
     padding: 18px 0;
     position: relative;
     z-index: 10;
+    box-sizing: border-box;
 
     /* Premium Dark Glassmorphism - Matches Navbar */
     background: rgba(5, 5, 10, 0.6) !important;
@@ -60,6 +73,7 @@
     gap: 80px;
     width: max-content;
     animation: scroll 40s linear infinite;
+    will-change: transform;
 }
 
 .tool-item {
@@ -69,28 +83,63 @@
     opacity: 0.9;
     transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
     cursor: pointer;
-    filter: grayscale(20%);
     padding: 8px 16px;
     border-radius: 12px;
+    flex-shrink: 0;
+    white-space: nowrap;
 }
 
 .tool-item:hover {
     opacity: 1;
     transform: translateY(-2px) scale(1.05);
-    filter: grayscale(0%);
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.tool-item img {
+.tool-item img,
+.tool-logo {
     height: 32px;
     width: auto;
+    max-width: 100%;
+    max-height: 32px;
+    min-width: 24px;
+    min-height: 24px;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+    visibility: visible;
+    opacity: 1;
+    filter: brightness(1.2) saturate(1.1);
+}
+
+/* Make dark logos visible by inverting to white */
+.tool-item img[src*="github"],
+.tool-item img[src*="notion"],
+.tool-item img[src*="openai"],
+.tool-item img[src*="midjourney"] {
+    filter: brightness(0) invert(1) brightness(1.2) !important;
+    opacity: 1 !important;
+}
+
+/* Ensure all logos are visible on hover with original colors */
+.tool-item:hover img,
+.tool-item:hover .tool-logo {
+    filter: brightness(1.4) saturate(1.2);
+    transform: scale(1.1);
+}
+
+.tool-item:hover img[src*="github"],
+.tool-item:hover img[src*="notion"],
+.tool-item:hover img[src*="openai"],
+.tool-item:hover img[src*="midjourney"] {
+    filter: brightness(0) invert(1) brightness(1.4);
 }
 
 .tool-item span {
     font-size: 1.1rem;
     font-weight: 500;
     color: #ffffff;
+    white-space: nowrap;
 }
 
 @keyframes scroll {
@@ -106,4 +155,320 @@
 /* Pause animation on hover */
 .marquee-track:hover {
     animation-play-state: paused;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - All Device Sizes
+   ============================================ */
+
+/* Ultra Small Devices (below 320px) */
+@media (max-width: 319px) {
+    .tools-marquee-wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .tools-title {
+        font-size: 0.65rem;
+        letter-spacing: 1.5px;
+        margin-bottom: 15px;
+        padding: 0 10px;
+    }
+
+    .marquee-container {
+        padding: 10px 0;
+        border-radius: 50px;
+        width: calc(100% - 20px);
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: rgba(10, 10, 15, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 30px;
+        border-radius: 50px;
+        z-index: 5;
+    }
+
+    .marquee-track {
+        gap: 20px;
+        animation: scroll 18s linear infinite;
+    }
+
+    .tool-item {
+        gap: 6px;
+        padding: 3px 8px;
+        border-radius: 6px;
+        flex-shrink: 0;
+    }
+
+    .tool-item img,
+    .tool-logo {
+        height: 18px;
+        width: auto;
+        max-width: 100%;
+        max-height: 18px;
+        object-fit: contain;
+        filter: brightness(1.2) saturate(1.1);
+    }
+    
+    .tool-item img[src*="github"],
+    .tool-item img[src*="notion"],
+    .tool-item img[src*="openai"],
+    .tool-item img[src*="midjourney"] {
+        filter: brightness(0) invert(1) brightness(1.2);
+    }
+
+    .tool-item span {
+        font-size: 0.75rem;
+        white-space: nowrap;
+    }
+}
+
+/* Extra Small Devices (320px - 480px) */
+@media (min-width: 320px) and (max-width: 480px) {
+    .tools-marquee-wrapper {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .tools-title {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+        padding: 0 10px;
+    }
+
+    .marquee-container {
+        padding: 12px 0;
+        border-radius: 50px;
+        width: calc(100% - 20px);
+        max-width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        background: rgba(10, 10, 15, 0.9) !important;
+        border: 1px solid rgba(255, 255, 255, 0.25) !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* Reduce fade masks to show more content */
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 40px;
+        border-radius: 50px;
+        z-index: 5;
+    }
+
+    .marquee-track {
+        gap: 30px;
+        animation: scroll 20s linear infinite;
+    }
+
+    .tool-item {
+        gap: 8px;
+        padding: 4px 10px;
+        border-radius: 8px;
+        flex-shrink: 0;
+    }
+
+    .tool-item img,
+    .tool-logo {
+        height: 20px;
+        width: auto;
+        max-width: 100%;
+        max-height: 20px;
+        object-fit: contain;
+        filter: brightness(1.2) saturate(1.1);
+    }
+    
+    .tool-item img[src*="github"],
+    .tool-item img[src*="notion"],
+    .tool-item img[src*="openai"],
+    .tool-item img[src*="midjourney"] {
+        filter: brightness(0) invert(1) brightness(1.2);
+    }
+
+    .tool-item span {
+        font-size: 0.85rem;
+        white-space: nowrap;
+    }
+}
+
+
+/* Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .tools-title {
+        font-size: 0.75rem;
+        margin-bottom: 35px;
+        padding: 0 15px;
+    }
+
+    .marquee-container {
+        padding: 16px 0;
+        border-radius: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 60px;
+    }
+
+    .marquee-track {
+        gap: 50px;
+        animation: scroll 35s linear infinite;
+    }
+
+    .tool-item {
+        flex-shrink: 0;
+    }
+
+    .tool-item img,
+    .tool-logo {
+        height: 28px;
+        width: auto;
+        max-width: 100%;
+        max-height: 28px;
+        object-fit: contain;
+        filter: brightness(1.2) saturate(1.1);
+    }
+    
+    .tool-item img[src*="github"],
+    .tool-item img[src*="notion"],
+    .tool-item img[src*="openai"],
+    .tool-item img[src*="midjourney"] {
+        filter: brightness(0) invert(1) brightness(1.2);
+    }
+
+    .tool-item span {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+}
+
+/* Medium Devices - Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .marquee-container {
+        padding: 17px 0;
+        border-radius: 22px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 100px;
+    }
+
+    .marquee-track {
+        gap: 60px;
+    }
+
+    .tool-item {
+        flex-shrink: 0;
+    }
+
+    .tool-item img,
+    .tool-logo {
+        height: 30px;
+        width: auto;
+        max-width: 100%;
+        max-height: 30px;
+        object-fit: contain;
+        filter: brightness(1.2) saturate(1.1);
+    }
+    
+    .tool-item img[src*="github"],
+    .tool-item img[src*="notion"],
+    .tool-item img[src*="openai"],
+    .tool-item img[src*="midjourney"] {
+        filter: brightness(0) invert(1) brightness(1.2);
+    }
+
+    .tool-item span {
+        white-space: nowrap;
+    }
+}
+
+/* Large Devices (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .marquee-container {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .marquee-track {
+        gap: 70px;
+    }
+
+    .tool-item {
+        flex-shrink: 0;
+    }
+
+    .tool-item span {
+        white-space: nowrap;
+    }
+}
+
+/* Extra Large Devices (1441px+) */
+@media (min-width: 1441px) {
+    .tools-title {
+        font-size: 0.85rem;
+        letter-spacing: 3.5px;
+        margin-bottom: 50px;
+    }
+
+    .marquee-container {
+        padding: 22px 0;
+        border-radius: 28px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .marquee-container::before,
+    .marquee-container::after {
+        width: 150px;
+    }
+
+    .marquee-track {
+        gap: 100px;
+        animation: scroll 50s linear infinite;
+    }
+
+    .tool-item {
+        gap: 16px;
+        padding: 10px 20px;
+        flex-shrink: 0;
+    }
+
+    .tool-item img,
+    .tool-logo {
+        height: 38px;
+        width: auto;
+        max-width: 100%;
+        max-height: 38px;
+        object-fit: contain;
+        filter: brightness(1.2) saturate(1.1);
+    }
+    
+    .tool-item img[src*="github"],
+    .tool-item img[src*="notion"],
+    .tool-item img[src*="openai"],
+    .tool-item img[src*="midjourney"] {
+        filter: brightness(0) invert(1) brightness(1.2);
+    }
+
+    .tool-item span {
+        font-size: 1.2rem;
+        white-space: nowrap;
+    }
 }

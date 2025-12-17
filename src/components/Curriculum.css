@@ -11,8 +11,63 @@
     margin: 20px auto 0;
     text-align: center;
     padding: 0 20px;
-    font-size: 1.1rem;
     line-height: 1.6;
+}
+
+/* --- Course Tabs (New) --- */
+.course-tabs-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px auto 20px;
+    padding: 0 20px;
+}
+
+.course-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 6px;
+    border-radius: 100px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.course-tab {
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.course-tab:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.course-tab.active {
+    background: #3b82f6;
+    color: white;
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+@media (max-width: 768px) {
+    .course-tabs {
+        border-radius: 20px;
+        width: 100%;
+    }
+
+    .course-tab {
+        width: 100%;
+        text-align: center;
+        border-radius: 12px;
+    }
 }
 
 .modules-grid {
@@ -109,13 +164,67 @@
     color: var(--module-color);
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.module-logo {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+.logo-fallback {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.module-card:hover .module-logo {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+/* Force visibility for SVG logos on dark background */
+.module-icon-wrapper .module-logo[src*=".svg"] {
+    filter: brightness(0) invert(1);
+    opacity: 1 !important;
+}
+
+.module-card:hover .module-icon-wrapper .module-logo[src*=".svg"] {
+    filter: brightness(0) invert(1) brightness(1.2);
+}
+
+/* Ensure logos are visible with better background */
+.module-icon-wrapper img.module-logo {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 4px;
+}
+
+/* Ensure logos are visible even if they have transparent backgrounds */
+.module-icon-wrapper:has(.module-logo) {
+    background: rgba(255, 255, 255, 0.08);
 }
 
 .module-card:hover .module-icon-wrapper {
-    background: var(--module-color);
-    color: white;
+    background: rgba(255, 255, 255, 0.1);
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.module-card:hover .module-logo {
+    filter: brightness(1.2);
 }
 
 .module-arrow {
@@ -191,23 +300,27 @@
 }
 
 .drawer-header {
-    padding: 40px;
+    padding: 20px 30px;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0.02), transparent);
     border-bottom: 1px solid var(--glass-border);
     position: relative;
+    min-height: auto;
 }
 
 .drawer-close {
     position: absolute;
-    top: 30px;
-    right: 30px;
+    top: 18px;
+    right: 20px;
     background: transparent;
     border: none;
     color: var(--text-muted);
     cursor: pointer;
-    padding: 8px;
+    padding: 6px;
     border-radius: 50%;
     transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .drawer-close:hover {
@@ -218,35 +331,47 @@
 .drawer-title-area {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-top: 20px;
+    gap: 16px;
+    margin-top: 0;
+    padding-right: 40px;
 }
 
 .module-icon-wrapper.large {
-    width: 80px;
-    height: 80px;
-    font-size: 2rem;
-    background: var(--module-color);
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
     color: white;
-    border: none;
-    box-shadow: 0 10px 30px -10px var(--module-color);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 24px -8px var(--module-color);
+    flex-shrink: 0;
+    padding: 10px;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.module-logo.large {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .drawer-subtitle {
-    font-size: 0.85rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.2px;
     color: var(--module-color);
     font-weight: 600;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
 }
 
 .drawer-title-area h3 {
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: white;
-    line-height: 1.1;
+    line-height: 1.2;
+    margin: 0;
 }
 
 .drawer-content {
@@ -342,7 +467,273 @@
     border-radius: 3px;
 }
 
-/* Responsive */
+/* ============================================
+   RESPONSIVE DESIGN - All Device Sizes
+   ============================================ */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .curriculum-section {
+        padding: 60px 0;
+    }
+
+    .section-desc {
+        font-size: 0.95rem;
+        padding: 0 16px;
+    }
+
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+        margin-top: 40px;
+    }
+
+    .module-card {
+        height: auto;
+        min-height: 200px;
+    }
+
+    .card-content {
+        padding: 24px;
+    }
+
+    .module-icon-wrapper {
+        width: 48px;
+        height: 48px;
+    }
+
+    .card-info h3 {
+        font-size: 1.25rem;
+    }
+
+    .card-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .meta-item {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+
+    .drawer-container {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .drawer-header {
+        padding: 16px;
+    }
+
+    .drawer-close {
+        top: 12px;
+        right: 12px;
+        padding: 4px;
+    }
+
+    .drawer-title-area {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding-right: 35px;
+    }
+
+    .drawer-title-area h3 {
+        font-size: 1.25rem;
+    }
+
+    .module-icon-wrapper.large {
+        width: 48px;
+        height: 48px;
+        font-size: 1.25rem;
+    }
+
+    .drawer-subtitle {
+        font-size: 0.7rem;
+        margin-bottom: 2px;
+    }
+
+    .drawer-content {
+        padding: 24px 16px;
+    }
+
+    .topic-title {
+        font-size: 1.1rem;
+    }
+
+    .subtopic-tag {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+}
+
+/* Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .curriculum-section {
+        padding: 70px 0;
+    }
+
+    .modules-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .module-card {
+        height: auto;
+        min-height: 210px;
+    }
+
+    .drawer-container {
+        width: 100%;
+    }
+
+    .drawer-header {
+        padding: 18px 20px;
+    }
+
+    .drawer-close {
+        top: 14px;
+        right: 16px;
+    }
+
+    .drawer-title-area {
+        gap: 14px;
+        padding-right: 40px;
+    }
+
+    .drawer-content {
+        padding: 28px 20px;
+    }
+
+    .drawer-title-area h3 {
+        font-size: 1.35rem;
+    }
+
+    .module-icon-wrapper.large {
+        width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
+    }
+}
+
+/* Medium Devices - Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .curriculum-section {
+        padding: 80px 0;
+    }
+
+    .modules-grid {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+    }
+
+    .drawer-container {
+        width: 500px;
+        max-width: 85%;
+    }
+
+    .drawer-header {
+        padding: 22px 30px;
+    }
+
+    .drawer-close {
+        top: 18px;
+        right: 24px;
+    }
+
+    .drawer-title-area {
+        gap: 16px;
+    }
+
+    .drawer-content {
+        padding: 35px;
+    }
+
+    .drawer-title-area h3 {
+        font-size: 1.6rem;
+    }
+
+    .module-icon-wrapper.large {
+        width: 56px;
+        height: 56px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Large Devices (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .modules-grid {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+
+    .drawer-container {
+        width: 580px;
+    }
+}
+
+/* Extra Large Devices (1441px+) */
+@media (min-width: 1441px) {
+    .curriculum-section {
+        padding: 120px 0;
+    }
+
+    .modules-grid {
+        grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+        gap: 28px;
+        max-width: 1400px;
+    }
+
+    .module-card {
+        height: 240px;
+    }
+
+    .card-content {
+        padding: 35px;
+    }
+
+    .card-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .drawer-container {
+        width: 700px;
+    }
+
+    .drawer-header {
+        padding: 24px 35px;
+    }
+
+    .drawer-close {
+        top: 20px;
+        right: 28px;
+    }
+
+    .drawer-title-area {
+        gap: 18px;
+    }
+
+    .drawer-content {
+        padding: 45px;
+    }
+
+    .drawer-title-area h3 {
+        font-size: 2.4rem;
+    }
+
+    .module-icon-wrapper.large {
+        width: 90px;
+        height: 90px;
+        font-size: 2.2rem;
+    }
+
+    .topic-title {
+        font-size: 1.3rem;
+    }
+}
+
+/* Legacy support - Original breakpoint */
 @media (max-width: 768px) {
     .drawer-container {
         width: 100%;
@@ -350,7 +741,12 @@
     }
 
     .drawer-header {
-        padding: 30px 20px;
+        padding: 18px 20px;
+    }
+
+    .drawer-close {
+        top: 14px;
+        right: 16px;
     }
 
     .drawer-content {
@@ -358,12 +754,12 @@
     }
 
     .drawer-title-area h3 {
-        font-size: 1.8rem;
+        font-size: 1.35rem;
     }
 
     .module-icon-wrapper.large {
-        width: 60px;
-        height: 60px;
-        font-size: 1.5rem;
+        width: 52px;
+        height: 52px;
+        font-size: 1.35rem;
     }
 }

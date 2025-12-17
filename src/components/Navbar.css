@@ -26,6 +26,7 @@
     justify-content: space-between;
     align-items: center;
     position: relative;
+    background: transparent !important;
     /* Needed for absolute centering of menu */
 }
 
@@ -49,8 +50,9 @@
 
 /* New Image Logo Mark */
 .logo-mark {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    /* Mobile: Very prominent */
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,9 +60,39 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    /* Center on the placeholder */
     z-index: 10;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Premium Pop Effect */
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.25));
+    /* Professional Depth */
 }
+
+/* Tablet Scaling */
+@media (min-width: 768px) {
+    .logo-mark {
+        width: 160px;
+        height: 160px;
+    }
+
+    .logo {
+        width: 130px;
+        /* Space for the larger logo */
+    }
+}
+
+/* Desktop Scaling */
+@media (min-width: 1025px) {
+    .logo-mark {
+        width: 200px;
+        /* Maximum Desktop Impact */
+        height: 200px;
+    }
+
+    .logo {
+        width: 140px;
+    }
+}
+
 
 .logo-mark:hover {
     transform: translate(-50%, -50%) scale(1.1);
@@ -81,11 +113,11 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    background: rgba(255, 255, 255, 0.03);
+    background: transparent;
     padding: 8px 30px;
     border-radius: 50px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(8px);
+    border: none;
+    backdrop-filter: none;
     z-index: 2;
 }
 
@@ -138,8 +170,8 @@
     cursor: pointer;
     padding: 8px;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: transparent;
+    border: none;
     transition: all 0.3s;
     z-index: 10;
 }
@@ -149,41 +181,199 @@
 }
 
 .mobile-menu {
-    display: flex;
-    flex-direction: column;
-    padding: 80px 20px 30px;
-    /* Added top padding for spacing */
-    gap: 25px;
     position: fixed;
-    /* Fixed for full screen overlay */
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
     background: rgba(3, 3, 5, 0.98);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 5;
-    /* Below toggle but above content */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    padding: 100px 20px 30px;
+    gap: 0;
+    min-height: 100vh;
+}
+
+.mobile-menu-content > div {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-menu-content > div:last-of-type {
+    border-bottom: none;
 }
 
 .mobile-menu a {
     color: var(--text-muted);
-    font-size: 1.5rem;
-    text-align: center;
+    font-size: 1.25rem;
+    text-align: left;
     font-weight: 500;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
+    display: block;
+    padding: 8px 0;
+    position: relative;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 0;
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-radius: 2px;
+    transition: height 0.3s ease;
+}
+
+.mobile-menu a:hover,
+.mobile-menu a:active {
     color: white;
+    padding-left: 12px;
 }
 
-.mobile-menu .btn {
+.mobile-menu a:hover::before,
+.mobile-menu a:active::before {
+    height: 24px;
+}
+
+.mobile-menu-button {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-menu-button .btn {
     width: 100%;
     justify-content: center;
-    margin-top: 20px;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 600;
 }
 
+/* ============================================
+   RESPONSIVE DESIGN - All Device Sizes
+   ============================================ */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px 0;
+    }
+
+    .logo {
+        width: 80px;
+        height: 40px;
+    }
+
+    .logo-mark {
+        width: 140px;
+        height: 140px;
+    }
+
+    .mobile-menu-content {
+        padding: 90px 16px 30px;
+    }
+
+    .mobile-menu-content > div {
+        padding: 14px 0;
+    }
+
+    .mobile-menu a {
+        font-size: 1.15rem;
+    }
+
+    .mobile-menu-button .btn {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+
+    .mobile-toggle {
+        padding: 6px;
+    }
+}
+
+/* Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+    .logo-mark {
+        width: 160px;
+        height: 160px;
+    }
+
+    .mobile-menu-content {
+        padding: 95px 20px 30px;
+    }
+
+    .mobile-menu-content > div {
+        padding: 15px 0;
+    }
+
+    .mobile-menu a {
+        font-size: 1.2rem;
+    }
+}
+
+/* Medium Devices - Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .desktop-menu {
+        gap: 25px;
+        padding: 8px 24px;
+    }
+
+    .desktop-menu a {
+        font-size: 0.9rem;
+    }
+
+    .logo-mark {
+        width: 170px;
+        height: 170px;
+    }
+
+    .nav-actions .btn {
+        padding: 9px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Large Devices (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .desktop-menu {
+        gap: 35px;
+    }
+}
+
+/* Extra Large Devices (1441px+) */
+@media (min-width: 1441px) {
+    .desktop-menu {
+        gap: 50px;
+        padding: 10px 40px;
+    }
+
+    .desktop-menu a {
+        font-size: 1rem;
+    }
+
+    .logo-mark {
+        width: 200px;
+        height: 200px;
+    }
+
+    .nav-actions .btn {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+}
+
+/* Legacy support - Original breakpoint */
 @media (max-width: 1024px) {
     .desktop-menu {
         display: none;

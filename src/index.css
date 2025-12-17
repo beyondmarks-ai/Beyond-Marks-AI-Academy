@@ -167,3 +167,94 @@ ul {
   background: var(--bg-color) !important;
   background-image: none !important;
 }
+
+/* Force transparent navbar on About Page (Mobile Fix) */
+.about-page-wrapper .navbar,
+.about-page-wrapper .nav-container,
+.about-page-wrapper .mobile-toggle {
+  background: transparent !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border-color: transparent !important;
+}
+
+/* ============================================
+   RESPONSIVE BREAKPOINTS - Mobile First
+   ============================================ */
+
+/* Extra Small Devices (320px - 480px) */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .section-header h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Small Devices (481px - 767px) */
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .section-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .btn {
+    padding: 13px 28px;
+    font-size: 0.95rem;
+  }
+}
+
+/* Medium Devices - Tablets (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+    padding: 0 30px;
+  }
+
+  .section-header h2 {
+    font-size: 2.75rem;
+  }
+}
+
+/* Large Devices (1025px - 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+/* Extra Large Devices (1441px+) */
+@media (min-width: 1441px) {
+  .container {
+    max-width: 1400px;
+  }
+
+  .section-header h2 {
+    font-size: 3.5rem;
+  }
+}
