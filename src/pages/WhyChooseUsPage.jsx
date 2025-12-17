@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { 
     Globe, 
@@ -15,10 +15,12 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import DemoBookingModal from '../components/DemoBookingModal';
 import './WhyChooseUsPage.css';
+
+// Lazy load heavy components
+const Footer = lazy(() => import('../components/Footer'));
+const DemoBookingModal = lazy(() => import('../components/DemoBookingModal'));
 
 const WhyChooseUsPage = () => {
     const [showDemoModal, setShowDemoModal] = useState(false);
@@ -225,8 +227,12 @@ const WhyChooseUsPage = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
-            <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
+            <Suspense fallback={null}>
+                <Footer />
+            </Suspense>
+            <Suspense fallback={null}>
+                <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
+            </Suspense>
         </div>
     );
 };

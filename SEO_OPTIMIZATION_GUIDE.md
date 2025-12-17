@@ -149,3 +149,4 @@ Update `src/components/SEO.jsx` with actual business details:
 - Local SEO is prioritized for "Bidar" and "Academy Near Me" searches
 - Mobile-first approach maintained
 
+

@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import Navbar from '../components/Navbar';
-import Curriculum from '../components/Curriculum';
-import Footer from '../components/Footer';
-
 import SEO from '../components/SEO';
+
+// Lazy load heavy components
+const Curriculum = lazy(() => import('../components/Curriculum'));
+const Footer = lazy(() => import('../components/Footer'));
 
 const CoursesPage = () => {
     // Scroll to top when page loads
@@ -21,9 +22,13 @@ const CoursesPage = () => {
             />
             <Navbar />
             <main style={{ paddingTop: '80px' }}>
-                <Curriculum />
+                <Suspense fallback={<div style={{ minHeight: '600px', padding: '40px 20px', textAlign: 'center' }} aria-label="Loading curriculum">Loading courses...</div>}>
+                    <Curriculum />
+                </Suspense>
             </main>
-            <Footer />
+            <Suspense fallback={null}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

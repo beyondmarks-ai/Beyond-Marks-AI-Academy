@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, PlayCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import './Hero.css';
-import ToolsMarquee from './ToolsMarquee';
+
+// Lazy load ToolsMarquee as it's below the fold
+const ToolsMarquee = lazy(() => import('./ToolsMarquee'));
 
 const Hero = () => {
 
@@ -52,23 +54,25 @@ const Hero = () => {
 
                     <div className="hero-stats">
                         <div className="stat-item">
-                            <h3>10k+</h3>
+                            <h2 className="stat-value">10k+</h2>
                             <span>Active Learners</span>
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
-                            <h3>Industry</h3>
+                            <h2 className="stat-value">Industry</h2>
                             <span>Aligned Skills</span>
                         </div>
                         <div className="stat-divider"></div>
                         <div className="stat-item">
-                            <h3>100%</h3>
+                            <h2 className="stat-value">100%</h2>
                             <span>Project Based</span>
                         </div>
                     </div>
                 </motion.div>
 
-                <ToolsMarquee />
+                <Suspense fallback={null}>
+                    <ToolsMarquee />
+                </Suspense>
             </div>
 
             {/* Abstract 3D Elements */}

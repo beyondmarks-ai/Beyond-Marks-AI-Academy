@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, lazy, Suspense } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import bmLogo from '../assets/Logo M.png';
-import DemoBookingModal from './DemoBookingModal';
 import './Navbar.css';
+
+// Lazy load modal - only loads when needed
+const DemoBookingModal = lazy(() => import('./DemoBookingModal'));
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,7 +38,14 @@ const Navbar = () => {
         <div className="container nav-container">
           <Link to="/" className="logo">
             <div className="logo-mark">
-              <img src={bmLogo} alt="BM Logo" className="logo-image-mark" />
+              <img 
+                src={bmLogo} 
+                alt="Beyond Marks AI Academy Logo" 
+                className="logo-image-mark"
+                width="120"
+                height="120"
+                loading="eager"
+              />
             </div>
           </Link>
 
@@ -51,9 +60,14 @@ const Navbar = () => {
             <button className="btn btn-primary" onClick={() => setShowDemoModal(true)}>Join Now</button>
           </div>
 
-          <div className="mobile-toggle" onClick={() => setIsOpen(!isOpen)}>
+          <button 
+            className="mobile-toggle" 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+          >
             {isOpen ? <X size={24} color="white" /> : <Menu size={24} color="white" />}
-          </div>
+          </button>
         </div>
 
         <AnimatePresence>
@@ -112,7 +126,9 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </motion.nav>
-      <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
+      <Suspense fallback={null}>
+        <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
+      </Suspense>
     </>
   );
 };

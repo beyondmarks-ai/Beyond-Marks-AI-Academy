@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import { motion } from 'framer-motion';
 import { Sparkles, Target, Users, Rocket, Quote } from 'lucide-react';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import SEO from '../components/SEO';
 import './AboutPage.css';
+
+// Lazy load Footer
+const Footer = lazy(() => import('../components/Footer'));
 
 const AboutPage = () => {
     return (
@@ -273,7 +275,9 @@ const AboutPage = () => {
                     </div>
                 </section>
             </main>
-            <Footer />
+            <Suspense fallback={null}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

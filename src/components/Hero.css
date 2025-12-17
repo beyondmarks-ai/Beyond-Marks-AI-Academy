@@ -290,7 +290,8 @@
     text-align: center;
 }
 
-.stat-item h3 {
+.stat-item .stat-value,
+.stat-item h2.stat-value {
     font-size: 1.5rem;
     /* Mobile first */
     font-weight: 700;
@@ -300,18 +301,22 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    margin: 0;
+    padding: 0;
 }
 
 /* Tablet and up */
 @media (min-width: 768px) {
-    .stat-item h3 {
+    .stat-item .stat-value,
+    .stat-item h2.stat-value {
         font-size: 1.6rem;
     }
 }
 
 /* Desktop */
 @media (min-width: 1025px) {
-    .stat-item h3 {
+    .stat-item .stat-value,
+    .stat-item h2.stat-value {
         font-size: 1.75rem;
     }
 }
@@ -464,7 +469,8 @@
         width: 100%;
     }
 
-    .stat-item h3 {
+    .stat-item .stat-value,
+    .stat-item h2.stat-value {
         font-size: 1.5rem;
     }
 
@@ -559,7 +565,8 @@
         padding: 25px 40px;
     }
 
-    .stat-item h3 {
+    .stat-item .stat-value,
+    .stat-item h2.stat-value {
         font-size: 1.6rem;
     }
 
@@ -607,7 +614,8 @@
         padding: 30px 60px;
     }
 
-    .stat-item h3 {
+    .stat-item .stat-value,
+    .stat-item h2.stat-value {
         font-size: 2rem;
     }
 

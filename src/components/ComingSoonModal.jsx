@@ -23,7 +23,11 @@ const ComingSoonModal = ({ isOpen, onClose }) => {
                             exit={{ opacity: 0, scale: 0.95, y: 50 }}
                             transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                         >
-                            <button className="modal-close" onClick={onClose}>
+                            <button 
+                                className="modal-close" 
+                                onClick={onClose}
+                                aria-label="Close coming soon modal"
+                            >
                                 <X size={20} />
                             </button>
                             <div className="modal-content">

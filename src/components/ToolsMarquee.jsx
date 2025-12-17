@@ -24,9 +24,12 @@ const ToolsMarquee = () => {
                         <div className="tool-item" key={`t1-${index}`}>
                             <img 
                                 src={tool.logo} 
-                                alt={tool.name} 
+                                alt={`${tool.name} logo`} 
                                 title={tool.name} 
                                 className={`tool-logo ${tool.name.toLowerCase()}-logo`}
+                                width="32"
+                                height="32"
+                                loading="lazy"
                                 onError={(e) => {
                                     console.error(`Failed to load logo for ${tool.name}:`, tool.logo);
                                     // Fallback: try alternative white source for OpenAI
@@ -49,9 +52,12 @@ const ToolsMarquee = () => {
                         <div className="tool-item" key={`t2-${index}`}>
                             <img 
                                 src={tool.logo} 
-                                alt={tool.name} 
+                                alt={`${tool.name} logo`} 
                                 title={tool.name} 
                                 className={`tool-logo ${tool.name.toLowerCase()}-logo`}
+                                width="32"
+                                height="32"
+                                loading="lazy"
                                 onError={(e) => {
                                     console.error(`Failed to load logo for ${tool.name}:`, tool.logo);
                                     // Fallback: try alternative white source for OpenAI

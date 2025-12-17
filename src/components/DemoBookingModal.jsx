@@ -108,7 +108,12 @@ const DemoBookingModal = ({ isOpen, onClose }) => {
                         */}
 
                         <div className="modal-content-wrapper" style={{ height: '100%', width: '100%' }}>
-                            <button className="modal-close" onClick={onClose} style={{ zIndex: 10 }}>
+                            <button 
+                                className="modal-close" 
+                                onClick={onClose} 
+                                style={{ zIndex: 10 }}
+                                aria-label="Close demo booking modal"
+                            >
                                 <X size={24} />
                             </button>
 

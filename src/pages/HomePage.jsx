@@ -1,11 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, lazy, Suspense } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
-import WhyChooseUs from '../components/WhyChooseUs';
-
-import Footer from '../components/Footer';
-
 import SEO from '../components/SEO';
+
+// Lazy load below-the-fold components for better performance
+const WhyChooseUs = lazy(() => import('../components/WhyChooseUs'));
+const Footer = lazy(() => import('../components/Footer'));
+const ToolsMarquee = lazy(() => import('../components/ToolsMarquee'));
 
 const HomePage = () => {
     useEffect(() => {
@@ -23,9 +24,13 @@ const HomePage = () => {
             <Navbar />
             <main>
                 <Hero />
-                <WhyChooseUs />
+                <Suspense fallback={<div style={{ minHeight: '400px' }} aria-label="Loading content" />}>
+                    <WhyChooseUs />
+                </Suspense>
             </main>
-            <Footer />
+            <Suspense fallback={null}>
+                <Footer />
+            </Suspense>
         </div>
     );
 };

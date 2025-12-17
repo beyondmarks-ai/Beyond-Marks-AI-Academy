@@ -474,7 +474,14 @@ const Curriculum = () => {
                                 <div className="card-top">
                                     <div className="module-icon-wrapper">
                                         {module.logo ? (
-                                            <img src={module.logo} alt={module.title} className="module-logo" />
+                                            <img 
+                                                src={module.logo} 
+                                                alt={`${module.title} logo`} 
+                                                className="module-logo"
+                                                width="48"
+                                                height="48"
+                                                loading="lazy"
+                                            />
                                         ) : (
                                             module.icon
                                         )}
@@ -517,7 +524,11 @@ const Curriculum = () => {
                                 style={{ '--module-color': selectedModule.color }}
                             >
                                 <div className="drawer-header">
-                                    <button className="drawer-close" onClick={() => setSelectedModule(null)}>
+                                    <button 
+                                        className="drawer-close" 
+                                        onClick={() => setSelectedModule(null)}
+                                        aria-label="Close curriculum drawer"
+                                    >
                                         <X size={24} />
                                     </button>
                                     <div className="drawer-title-area">
@@ -525,8 +536,11 @@ const Curriculum = () => {
                                             {selectedModule.logo ? (
                                                 <img
                                                     src={selectedModule.logo}
-                                                    alt={selectedModule.title}
+                                                    alt={`${selectedModule.title} logo`}
                                                     className="module-logo large"
+                                                    width="80"
+                                                    height="80"
+                                                    loading="lazy"
                                                     onError={(e) => {
                                                         e.target.style.display = 'none';
                                                         e.target.nextSibling && (e.target.nextSibling.style.display = 'flex');
