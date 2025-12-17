@@ -2,7 +2,7 @@ import React from 'react';
 import './ToolsMarquee.css';
 
 const tools = [
-    { name: 'OpenAI', logo: 'https://cdn.simpleicons.org/openai/10a37f' },
+    { name: 'OpenAI', logo: 'https://cdn.simpleicons.org/openai/ffffff' },
     { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg' },
     { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
@@ -29,9 +29,9 @@ const ToolsMarquee = () => {
                                 className={`tool-logo ${tool.name.toLowerCase()}-logo`}
                                 onError={(e) => {
                                     console.error(`Failed to load logo for ${tool.name}:`, tool.logo);
-                                    // Fallback: try alternative source for OpenAI
+                                    // Fallback: try alternative white source for OpenAI
                                     if (tool.name === 'OpenAI') {
-                                        e.target.src = 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@main/svg/openai.svg';
+                                        e.target.src = 'https://cdn.simpleicons.org/openai/ffffff';
                                     }
                                 }}
                                 onLoad={() => {
@@ -54,9 +54,9 @@ const ToolsMarquee = () => {
                                 className={`tool-logo ${tool.name.toLowerCase()}-logo`}
                                 onError={(e) => {
                                     console.error(`Failed to load logo for ${tool.name}:`, tool.logo);
-                                    // Fallback: try alternative source for OpenAI
+                                    // Fallback: try alternative white source for OpenAI
                                     if (tool.name === 'OpenAI') {
-                                        e.target.src = 'https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons@main/svg/openai.svg';
+                                        e.target.src = 'https://cdn.simpleicons.org/openai/ffffff';
                                     }
                                 }}
                                 onLoad={() => {
