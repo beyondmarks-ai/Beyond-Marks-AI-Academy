@@ -36,7 +36,7 @@ const DemoBookingModal = ({ isOpen, onClose }) => {
 
         try {
             // Google Sheets Integration
-            const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxI_GYutkbFVs_E8PlxZ2qhha341HyGoT0kTgL6lqWZd66bbEPg8iYQ-3k42j5Iz69YhA/exec'
+            const GOOGLE_SCRIPT_URL = import.meta.env.VITE_GOOGLE_SCRIPT_URL || 'https://script.google.com/macros/s/AKfycbxI_GYutkbFVs_E8PlxZ2qhha341HyGoT0kTgL6lqWZd66bbEPg8iYQ-3k42j5Iz69YhA/exec'
             
             // Prepare form data as URL-encoded string (Google Apps Script expects this format)
             const formDataString = [

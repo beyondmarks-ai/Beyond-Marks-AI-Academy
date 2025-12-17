@@ -114,11 +114,21 @@
 
 /* Make dark logos visible by inverting to white */
 .tool-item img[src*="github"],
-.tool-item img[src*="notion"],
-.tool-item img[src*="openai"],
-.tool-item img[src*="midjourney"] {
+.tool-item img[src*="notion"] {
     filter: brightness(0) invert(1) brightness(1.2) !important;
     opacity: 1 !important;
+}
+
+/* OpenAI logo - keep original colors but ensure visibility */
+.tool-item img[src*="openai"],
+.tool-item img.openai-logo {
+    filter: brightness(1.5) saturate(1.3) contrast(1.1) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    width: auto !important;
+    height: 32px !important;
+    max-height: 32px !important;
 }
 
 /* Ensure all logos are visible on hover with original colors */
@@ -128,10 +138,14 @@
     transform: scale(1.1);
 }
 
+/* OpenAI hover - keep original colors */
+.tool-item:hover img[src*="openai"] {
+    filter: brightness(1.5) saturate(1.3) !important;
+    transform: scale(1.1);
+}
+
 .tool-item:hover img[src*="github"],
-.tool-item:hover img[src*="notion"],
-.tool-item:hover img[src*="openai"],
-.tool-item:hover img[src*="midjourney"] {
+.tool-item:hover img[src*="notion"] {
     filter: brightness(0) invert(1) brightness(1.4);
 }
 
@@ -217,10 +231,16 @@
     }
     
     .tool-item img[src*="github"],
-    .tool-item img[src*="notion"],
-    .tool-item img[src*="openai"],
-    .tool-item img[src*="midjourney"] {
+    .tool-item img[src*="notion"] {
         filter: brightness(0) invert(1) brightness(1.2);
+    }
+    
+    .tool-item img[src*="openai"],
+    .tool-item img.openai-logo {
+        filter: brightness(1.5) saturate(1.3) contrast(1.1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
 
     .tool-item span {
@@ -286,10 +306,16 @@
     }
     
     .tool-item img[src*="github"],
-    .tool-item img[src*="notion"],
-    .tool-item img[src*="openai"],
-    .tool-item img[src*="midjourney"] {
+    .tool-item img[src*="notion"] {
         filter: brightness(0) invert(1) brightness(1.2);
+    }
+    
+    .tool-item img[src*="openai"],
+    .tool-item img.openai-logo {
+        filter: brightness(1.5) saturate(1.3) contrast(1.1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
 
     .tool-item span {
@@ -340,10 +366,16 @@
     }
     
     .tool-item img[src*="github"],
-    .tool-item img[src*="notion"],
-    .tool-item img[src*="openai"],
-    .tool-item img[src*="midjourney"] {
+    .tool-item img[src*="notion"] {
         filter: brightness(0) invert(1) brightness(1.2);
+    }
+    
+    .tool-item img[src*="openai"],
+    .tool-item img.openai-logo {
+        filter: brightness(1.5) saturate(1.3) contrast(1.1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
 
     .tool-item span {
@@ -386,10 +418,16 @@
     }
     
     .tool-item img[src*="github"],
-    .tool-item img[src*="notion"],
-    .tool-item img[src*="openai"],
-    .tool-item img[src*="midjourney"] {
+    .tool-item img[src*="notion"] {
         filter: brightness(0) invert(1) brightness(1.2);
+    }
+    
+    .tool-item img[src*="openai"],
+    .tool-item img.openai-logo {
+        filter: brightness(1.5) saturate(1.3) contrast(1.1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
 
     .tool-item span {
@@ -461,10 +499,16 @@
     }
     
     .tool-item img[src*="github"],
-    .tool-item img[src*="notion"],
-    .tool-item img[src*="openai"],
-    .tool-item img[src*="midjourney"] {
+    .tool-item img[src*="notion"] {
         filter: brightness(0) invert(1) brightness(1.2);
+    }
+    
+    .tool-item img[src*="openai"],
+    .tool-item img.openai-logo {
+        filter: brightness(1.5) saturate(1.3) contrast(1.1) !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        display: block !important;
     }
 
     .tool-item span {
