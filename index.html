@@ -9,15 +9,32 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
-    <!-- Preload critical above-the-fold logo image (highest priority for FCP) -->
-    <link rel="preload" href="/Logo M.png" as="image" type="image/png" fetchpriority="high" />
+    <!-- Preload logo with media queries: mobile gets priority, desktop gets standard -->
+    <!-- Mobile: smaller viewport, prioritize logo for faster LCP -->
+    <link 
+      rel="preload" 
+      href="/Logo M.png" 
+      as="image" 
+      type="image/png" 
+      media="(max-width: 768px)" 
+      fetchpriority="high" 
+    />
+    <!-- Desktop: larger viewport, standard priority -->
+    <link 
+      rel="preload" 
+      href="/Logo M.png" 
+      as="image" 
+      type="image/png" 
+      media="(min-width: 769px)" 
+      fetchpriority="high" 
+    />
     
-    <!-- Preload critical font CSS with font-display: swap (browser will auto-discover font files) -->
+    <!-- Preload critical font CSS with font-display: swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" as="style" />
     
-    <!-- Load font stylesheet asynchronously with font-display: swap -->
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    <!-- Load font stylesheet with standard blocking (prevents desktop CLS) -->
+    <!-- Critical CSS is already inlined, so this won't block render -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     
     <style>
         /* Critical CSS - Inlined for faster FCP (above-the-fold content) */
@@ -156,7 +173,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Defer main script to prevent blocking render (mobile optimization) -->
-    <script type="module" src="/src/main.jsx" defer></script>
+    <!-- Module scripts are deferred by default - no explicit defer needed -->
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
