@@ -156,6 +156,7 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <!-- Defer main script to prevent blocking render (mobile optimization) -->
+    <script type="module" src="/src/main.jsx" defer></script>
   </body>
 </html>

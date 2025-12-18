@@ -4,8 +4,35 @@ import { Link, useLocation } from 'react-router-dom';
 import bmLogo from '../assets/Logo M.png';
 import './Navbar.css';
 
-// Lazy load modal - only loads when needed
-const DemoBookingModal = lazy(() => import('./DemoBookingModal'));
+// Lazy load modal - only loads when needed AND after LCP (mobile optimization)
+// Defer loading until after page is interactive to prevent blocking render
+const DemoBookingModal = lazy(() => {
+  // On mobile, delay loading until after LCP (2.5s) to prevent blocking
+  if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+    return new Promise((resolve) => {
+      // Wait for LCP or minimum 2.5s delay
+      const startTime = performance.now();
+      const checkLCP = () => {
+        const elapsed = performance.now() - startTime;
+        if (elapsed >= 2500) {
+          // Minimum delay reached, safe to load
+          resolve(import('./DemoBookingModal'));
+        } else {
+          // Check if LCP has occurred
+          if (document.readyState === 'complete') {
+            setTimeout(() => resolve(import('./DemoBookingModal')), 500);
+          } else {
+            setTimeout(checkLCP, 100);
+          }
+        }
+      };
+      // Start checking after initial render
+      setTimeout(checkLCP, 100);
+    });
+  }
+  // Desktop: load immediately (already lazy)
+  return import('./DemoBookingModal');
+});
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,6 +88,8 @@ const Navbar = () => {
                 height="120"
                 loading="eager"
                 fetchPriority="high"
+                sizes="(max-width: 640px) 80px, 120px"
+                decoding="async"
               />
             </div>
           </Link>
