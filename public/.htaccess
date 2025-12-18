@@ -1,0 +1,27 @@
+# Apache configuration for React SPA
+# Serve sitemap.xml and robots.txt directly
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  
+  # Serve sitemap.xml directly
+  RewriteRule ^sitemap\.xml$ - [L]
+  
+  # Serve robots.txt directly
+  RewriteRule ^robots\.txt$ - [L]
+  
+  # Serve other static files directly
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !^/sitemap\.xml$
+  RewriteCond %{REQUEST_URI} !^/robots\.txt$
+  
+  # Route everything else to index.html for React Router
+  RewriteRule . /index.html [L]
+</IfModule>
+
+# Set correct Content-Type for XML files
+<IfModule mod_mime.c>
+  AddType application/xml .xml
+</IfModule>
+
