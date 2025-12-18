@@ -46,8 +46,17 @@
     }
 }
 
+/* Ensure container is centered */
+.about-hero .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
 .hero-content {
     max-width: 1400px;
+    margin: 0 auto;
     padding: 0 24px;
     position: relative;
     z-index: 2;
@@ -173,6 +182,16 @@
     grid-template-columns: 1.2fr 0.8fr;
     gap: 100px;
     align-items: center;
+    width: 100%;
+}
+
+/* Desktop: Ensure proper sizing */
+@media (min-width: 1025px) {
+    .hero-two-column {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 100px;
+        max-width: 100%;
+    }
 }
 
 .hero-title {
@@ -506,31 +525,10 @@
     }
 }
 
-.hero-content {
-    max-width: 1400px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-}
-
-.hero-two-column {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 80px;
-    align-items: center;
-}
-
+/* Hero left and right columns */
 .hero-left {
     display: flex;
     flex-direction: column;
-}
-
-.hero-title {
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    color: #ffffff;
-    margin: 0;
 }
 
 .hero-right {
@@ -539,12 +537,15 @@
     justify-content: center;
 }
 
-.hero-description {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    color: #94a3b8;
-    margin: 0;
-    font-weight: 400;
+/* Desktop: Larger hero title */
+@media (min-width: 1025px) {
+    .hero-title {
+        font-size: 5rem;
+    }
+    
+    .hero-description {
+        font-size: 1.25rem;
+    }
 }
 
 /* Story Section */

@@ -68,6 +68,8 @@ export default defineConfig({
     target: 'esnext',
     // CSS code splitting
     cssCodeSplit: true,
+    // CSS minification (enabled by default, but explicit for optimization)
+    cssMinify: true,
     // Report compressed size
     reportCompressedSize: true,
   },

@@ -12,7 +12,7 @@
     <!-- Preload critical above-the-fold logo image (highest priority for FCP) -->
     <link rel="preload" href="/Logo M.png" as="image" type="image/png" fetchpriority="high" />
     
-    <!-- Preload critical font CSS with font-display: swap -->
+    <!-- Preload critical font CSS with font-display: swap (browser will auto-discover font files) -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" as="style" />
     
     <!-- Load font stylesheet asynchronously with font-display: swap -->
@@ -83,8 +83,59 @@
         .hero-content h1 {
             font-size: 2.5rem;
             font-weight: 700;
-            line-height: 1.2;
-            margin-bottom: 16px;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+        
+        /* Critical gradient text styles for LCP element */
+        .gradient-text-accent {
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            display: inline-block;
+        }
+        
+        /* Critical button styles */
+        .btn {
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: none;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-main);
+        }
+        
+        /* Critical badge styles */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
         }
         
         /* Ensure font-display: swap is applied for all font faces */
