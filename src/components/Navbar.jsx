@@ -39,6 +39,7 @@ const Navbar = () => {
                 width="120"
                 height="120"
                 loading="eager"
+                fetchPriority="high"
               />
             </div>
           </Link>

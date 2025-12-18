@@ -4,15 +4,23 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/png" href="/Logo M.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <!-- Preconnect to Google Fonts for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <!-- Preload critical font with font-display: swap -->
+    
+    <!-- Preload critical above-the-fold logo image (highest priority for FCP) -->
+    <link rel="preload" href="/Logo M.png" as="image" type="image/png" fetchpriority="high" />
+    
+    <!-- Preload critical font CSS with font-display: swap -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" as="style" />
+    
+    <!-- Load font stylesheet asynchronously with font-display: swap -->
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
+    
     <style>
-        /* Ensure font-display: swap is applied */
+        /* Ensure font-display: swap is applied for all font faces */
         @font-face {
             font-family: 'Outfit';
             font-display: swap;
