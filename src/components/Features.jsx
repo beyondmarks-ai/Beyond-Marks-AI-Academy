@@ -1,7 +1,25 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { lazy, Suspense } from 'react';
 import { Brain, Target, Zap, Users } from 'lucide-react';
 import './Features.css';
+
+// Lazy load framer-motion to prevent main-thread blocking (TBT reduction)
+const MotionSpan = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.span
+  }))
+);
+
+const MotionH2 = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.h2
+  }))
+);
+
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
 
 const features = [
     {
@@ -31,41 +49,52 @@ const Features = () => {
         <section className="features" id="features">
             <div className="container">
                 <div className="section-header">
-                    <motion.span
-                        className="subtitle"
-                        initial={{ opacity: 0 }}
-                        whileInView={{ opacity: 1 }}
-                        viewport={{ once: true }}
-                    >
-                        WHY CHOOSE US
-                    </motion.span>
-                    <motion.h2
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        Redefining Education with <span className="gradient-text">Intelligence</span>
-                    </motion.h2>
+                    <Suspense fallback={<span className="subtitle">WHY CHOOSE US</span>}>
+                        <MotionSpan
+                            className="subtitle"
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                        >
+                            WHY CHOOSE US
+                        </MotionSpan>
+                    </Suspense>
+                    <Suspense fallback={<h2>Redefining Education with <span className="gradient-text">Intelligence</span></h2>}>
+                        <MotionH2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: 0.2 }}
+                        >
+                            Redefining Education with <span className="gradient-text">Intelligence</span>
+                        </MotionH2>
+                    </Suspense>
                 </div>
 
                 <div className="features-grid">
                     {features.map((feature, index) => (
-                        <motion.div
-                            key={index}
-                            className="feature-card glass"
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            whileHover={{ y: -10 }}
-                        >
+                        <Suspense key={index} fallback={
+                            <div className="feature-card glass">
+                                <div className="icon-wrapper">{feature.icon}</div>
+                                <h3>{feature.title}</h3>
+                                <p>{feature.description}</p>
+                            </div>
+                        }>
+                            <MotionDiv
+                                className="feature-card glass"
+                                initial={{ opacity: 0, y: 30 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: index * 0.1 }}
+                                whileHover={{ y: -10 }}
+                            >
                             <div className="icon-wrapper">
                                 {feature.icon}
                             </div>
-                            <h3>{feature.title}</h3>
-                            <p>{feature.description}</p>
-                        </motion.div>
+                                <h3>{feature.title}</h3>
+                                <p>{feature.description}</p>
+                            </MotionDiv>
+                        </Suspense>
                     ))}
                 </div>
             </div>

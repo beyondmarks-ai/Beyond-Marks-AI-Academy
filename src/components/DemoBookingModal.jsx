@@ -1,8 +1,24 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, lazy, Suspense } from 'react';
 import { X, CheckCircle2, ArrowRight } from 'lucide-react';
 import './DemoBookingModal.css';
 import { createPortal } from 'react-dom';
+
+// Lazy load framer-motion to prevent main-thread blocking (TBT reduction)
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
+
+// AnimatePresence wrapper component
+const AnimatePresenceWrapper = lazy(() => 
+  import('framer-motion').then(module => {
+    const { AnimatePresence } = module;
+    return {
+      default: ({ children }) => <AnimatePresence>{children}</AnimatePresence>
+    };
+  })
+);
 
 const DemoBookingModal = ({ isOpen, onClose }) => {
     const [step, setStep] = useState('initial'); // initial, form, success
@@ -84,24 +100,25 @@ const DemoBookingModal = ({ isOpen, onClose }) => {
     // if (!isOpen) return null; // Removed as AnimatePresence handles unmounting
 
     return createPortal(
-        <AnimatePresence>
-            {isOpen && (
-                <>
-                    <motion.div
-                        className="modal-backdrop"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={onClose}
-                    />
-                    <div className="modal-wrapper">
-                        <motion.div
-                            className="modal-container"
-                            initial={{ opacity: 0, scale: 0.95, y: 50 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 50 }}
-                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        >
+        <Suspense fallback={isOpen ? <div className="modal-backdrop" onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 9998 }} /> : null}>
+            <AnimatePresenceWrapper>
+                {isOpen && (
+                    <>
+                        <MotionDiv
+                            className="modal-backdrop"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={onClose}
+                        />
+                        <div className="modal-wrapper">
+                            <MotionDiv
+                                className="modal-container"
+                                initial={{ opacity: 0, scale: 0.95, y: 50 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: 50 }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            >
                         {/* Wrapper for centering is handled by CSS?
                            No, we will just fix the motion props to include the centering X.
                            We want y to animate from slightly below (-50% + 20px) to center (-50%).
@@ -192,11 +209,12 @@ const DemoBookingModal = ({ isOpen, onClose }) => {
                                 )}
                             </div>
                         </div>
-                        </motion.div>
+                        </MotionDiv>
                     </div>
                 </>
             )}
-        </AnimatePresence>,
+            </AnimatePresenceWrapper>
+        </Suspense>,
         document.body
     );
 };

@@ -1,28 +1,45 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { lazy, Suspense } from 'react';
 import { X, Clock, AlertCircle } from 'lucide-react';
 import './ComingSoonModal.css';
 
+// Lazy load framer-motion to prevent main-thread blocking (TBT reduction)
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
+
+// AnimatePresence wrapper component
+const AnimatePresenceWrapper = lazy(() => 
+  import('framer-motion').then(module => {
+    const { AnimatePresence } = module;
+    return {
+      default: ({ children }) => <AnimatePresence>{children}</AnimatePresence>
+    };
+  })
+);
+
 const ComingSoonModal = ({ isOpen, onClose }) => {
     return (
-        <AnimatePresence>
-            {isOpen && (
-                <>
-                    <motion.div
-                        className="modal-backdrop"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        onClick={onClose}
-                    />
-                    <div className="modal-wrapper">
-                        <motion.div
-                            className="modal-container"
-                            initial={{ opacity: 0, scale: 0.95, y: 50 }}
-                            animate={{ opacity: 1, scale: 1, y: 0 }}
-                            exit={{ opacity: 0, scale: 0.95, y: 50 }}
-                            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                        >
+        <Suspense fallback={isOpen ? <div className="modal-backdrop" onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.8)', zIndex: 9998 }} /> : null}>
+            <AnimatePresenceWrapper>
+                {isOpen && (
+                    <>
+                        <MotionDiv
+                            className="modal-backdrop"
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={onClose}
+                        />
+                        <div className="modal-wrapper">
+                            <MotionDiv
+                                className="modal-container"
+                                initial={{ opacity: 0, scale: 0.95, y: 50 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.95, y: 50 }}
+                                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                            >
                             <button 
                                 className="modal-close" 
                                 onClick={onClose}
@@ -31,14 +48,14 @@ const ComingSoonModal = ({ isOpen, onClose }) => {
                                 <X size={20} />
                             </button>
                             <div className="modal-content">
-                                <motion.div
+                                <MotionDiv
                                     className="modal-icon"
                                     initial={{ scale: 0 }}
                                     animate={{ scale: 1 }}
                                     transition={{ delay: 0.2, duration: 0.5, type: "spring" }}
                                 >
                                     <AlertCircle size={48} />
-                                </motion.div>
+                                </MotionDiv>
                                 <h2 className="modal-title">We Apologize</h2>
                                 <p className="modal-message">
                                     We're sorry, but this feature is currently under development.
@@ -52,11 +69,12 @@ const ComingSoonModal = ({ isOpen, onClose }) => {
                                     </button>
                                 </div>
                             </div>
-                        </motion.div>
+                        </MotionDiv>
                     </div>
                 </>
             )}
-        </AnimatePresence>
+            </AnimatePresenceWrapper>
+        </Suspense>
     );
 };
 
