@@ -20,6 +20,73 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" /></noscript>
     
     <style>
+        /* Critical CSS - Inlined for faster FCP (above-the-fold content) */
+        :root {
+            --bg-color: #030305;
+            --text-main: #ffffff;
+            --primary: #3b82f6;
+            --secondary: #8b5cf6;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        /* Critical Navbar CSS */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            background: transparent !important;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Critical Hero CSS */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding-top: 100px;
+            padding-bottom: 40px;
+            overflow: hidden;
+            text-align: center;
+            background: radial-gradient(circle at center, #0a0a0f 0%, #030305 100%);
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
         /* Ensure font-display: swap is applied for all font faces */
         @font-face {
             font-family: 'Outfit';

@@ -14,10 +14,31 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
+    let ticking = false;
+    let wasScrolled = false;
+    
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      // Use requestAnimationFrame to batch reads and prevent forced reflows
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Read scroll position once per frame (batch read operation)
+          const currentScrollY = window.scrollY;
+          const shouldBeScrolled = currentScrollY > 50;
+          
+          // Only update state if it changed (prevents unnecessary re-renders and forced reflows)
+          if (shouldBeScrolled !== wasScrolled) {
+            setScrolled(shouldBeScrolled);
+            wasScrolled = shouldBeScrolled;
+          }
+          
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
-    window.addEventListener('scroll', handleScroll);
+    
+    // Use passive listener for better scroll performance
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
