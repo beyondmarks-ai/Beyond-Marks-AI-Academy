@@ -1,5 +1,4 @@
-import React, { useState, lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, lazy, Suspense, useMemo } from 'react';
 import { 
     Globe, 
     Users, 
@@ -22,9 +21,18 @@ import './WhyChooseUsPage.css';
 const Footer = lazy(() => import('../components/Footer'));
 const DemoBookingModal = lazy(() => import('../components/DemoBookingModal'));
 
+// Lazy load framer-motion only for hero section (non-critical)
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
+
 const WhyChooseUsPage = () => {
     const [showDemoModal, setShowDemoModal] = useState(false);
-    const features = [
+    
+    // Memoize arrays to prevent re-creation on every render
+    const features = useMemo(() => [
         {
             icon: <Globe size={32} />,
             title: 'Your Own Domain',
@@ -70,9 +78,9 @@ const WhyChooseUsPage = () => {
             title: 'Power/Internet Contingency',
             description: 'Classes never stop! In case of power/internet failure, we shift to projector-based theory or cognitive games to maintain engagement.'
         }
-    ];
+    ], []);
 
-    const differences = [
+    const differences = useMemo(() => [
         {
             title: '2 Days Free Demo Classes',
             description: 'Visit our physical center, meet Rakesh Kumar, and experience our teaching style before paying a single rupee. No commitment required!'
@@ -97,7 +105,7 @@ const WhyChooseUsPage = () => {
             title: 'No Age Limit',
             description: 'Minimum age 8 years, no maximum age. Whether you\'re a student or a professional, if you have curiosity, you belong here.'
         }
-    ];
+    ], []);
 
     return (
         <div className="page-wrapper why-choose-us-page">
@@ -112,55 +120,46 @@ const WhyChooseUsPage = () => {
                 {/* Hero Section */}
                 <section className="why-hero">
                     <div className="container">
-                        <motion.div
-                            className="hero-content"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
-                            <div className="hero-badge">
-                                <Sparkles size={16} />
-                                <span>What Makes Us Different</span>
-                            </div>
-                            <h1 className="hero-title">
-                                Why Choose <span className="gradient-text">Beyond Marks</span>?
-                            </h1>
-                            <p className="hero-subtitle">
-                                We don't just teach you to code. We build an ecosystem that transforms you into a production-ready developer with real-world experience.
-                            </p>
-                        </motion.div>
+                        <Suspense fallback={<div className="hero-content"><div className="hero-badge"><Sparkles size={16} /><span>What Makes Us Different</span></div><h1 className="hero-title">Why Choose <span className="gradient-text">Beyond Marks</span>?</h1><p className="hero-subtitle">We don't just teach you to code. We build an ecosystem that transforms you into a production-ready developer with real-world experience.</p></div>}>
+                            <MotionDiv
+                                className="hero-content"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                            >
+                                <div className="hero-badge">
+                                    <Sparkles size={16} />
+                                    <span>What Makes Us Different</span>
+                                </div>
+                                <h1 className="hero-title">
+                                    Why Choose <span className="gradient-text">Beyond Marks</span>?
+                                </h1>
+                                <p className="hero-subtitle">
+                                    We don't just teach you to code. We build an ecosystem that transforms you into a production-ready developer with real-world experience.
+                                </p>
+                            </MotionDiv>
+                        </Suspense>
                     </div>
                 </section>
 
                 {/* Unique Features Grid */}
                 <section className="features-section">
                     <div className="container">
-                        <motion.div
-                            className="section-header"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
+                        <div className="section-header section-header-fade-in">
                             <h2 className="section-title">Unique Features You Won't Find Elsewhere</h2>
                             <p className="section-subtitle">These are the exclusive benefits that set us apart</p>
-                        </motion.div>
+                        </div>
 
                         <div className="features-grid">
                             {features.map((feature, index) => (
-                                <motion.div
+                                <div
                                     key={index}
-                                    className="feature-card"
-                                    initial={{ opacity: 0, y: 30 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                                    whileHover={{ y: -5 }}
+                                    className={`feature-card feature-card-fade-in-${index + 1}`}
                                 >
                                     <div className="feature-icon">{feature.icon}</div>
                                     <h3 className="feature-title">{feature.title}</h3>
                                     <p className="feature-description">{feature.description}</p>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -169,33 +168,23 @@ const WhyChooseUsPage = () => {
                 {/* What Makes Us Different */}
                 <section className="differences-section">
                     <div className="container">
-                        <motion.div
-                            className="section-header"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6 }}
-                        >
+                        <div className="section-header section-header-fade-in">
                             <h2 className="section-title">What Makes Us Different?</h2>
                             <p className="section-subtitle">The Beyond Marks difference</p>
-                        </motion.div>
+                        </div>
 
                         <div className="differences-grid">
                             {differences.map((diff, index) => (
-                                <motion.div
+                                <div
                                     key={index}
-                                    className="difference-card"
-                                    initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                                    whileInView={{ opacity: 1, x: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                                    className={`difference-card difference-card-fade-in-${index + 1}`}
                                 >
                                     <div className="difference-icon">
                                         <CheckCircle2 size={24} />
                                     </div>
                                     <h3 className="difference-title">{diff.title}</h3>
                                     <p className="difference-description">{diff.description}</p>
-                                </motion.div>
+                                </div>
                             ))}
                         </div>
                     </div>
@@ -204,13 +193,7 @@ const WhyChooseUsPage = () => {
                 {/* CTA Section */}
                 <section className="cta-section">
                     <div className="container">
-                        <motion.div
-                            className="cta-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="cta-content cta-content-fade-in">
                             <h2 className="cta-title">Ready to Experience the Difference?</h2>
                             <p className="cta-text">
                                 Join us for 2 Days of Free Demo Classes. Visit our physical center, meet Rakesh Kumar, and see for yourself why Beyond Marks is different.
@@ -223,7 +206,7 @@ const WhyChooseUsPage = () => {
                                     Explore Courses
                                 </Link>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
             </main>

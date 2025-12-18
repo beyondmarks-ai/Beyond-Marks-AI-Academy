@@ -14,7 +14,7 @@ const HomePage = () => {
     }, []);
 
     return (
-        <div className="page-wrapper">
+        <div className="page-wrapper" style={{ background: '#030305', minHeight: '100vh' }}>
             <SEO
                 title="Beyond Marks AI Academy - Best AI Coaching Center in Bidar | Academy Near Me"
                 description="Beyond Marks AI Academy - Top AI coaching center in Bidar. Learn Python, AI, Machine Learning, and Full-Stack Development. 250+ live projects. Small batches. Own your domain. Join the best AI academy near you."

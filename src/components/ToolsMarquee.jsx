@@ -2,7 +2,6 @@ import React from 'react';
 import './ToolsMarquee.css';
 
 const tools = [
-    { name: 'OpenAI', logo: 'https://cdn.simpleicons.org/openai/ffffff' },
     { name: 'TensorFlow', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg' },
     { name: 'Python', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg' },
     { name: 'React', logo: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg' },
@@ -32,15 +31,6 @@ const ToolsMarquee = () => {
                                 loading="lazy"
                                 onError={(e) => {
                                     console.error(`Failed to load logo for ${tool.name}:`, tool.logo);
-                                    // Fallback: try alternative white source for OpenAI
-                                    if (tool.name === 'OpenAI') {
-                                        e.target.src = 'https://cdn.simpleicons.org/openai/ffffff';
-                                    }
-                                }}
-                                onLoad={() => {
-                                    if (tool.name === 'OpenAI') {
-                                        console.log('OpenAI logo loaded successfully');
-                                    }
                                 }}
                             />
                             <span>{tool.name}</span>
@@ -60,15 +50,6 @@ const ToolsMarquee = () => {
                                 loading="lazy"
                                 onError={(e) => {
                                     console.error(`Failed to load logo for ${tool.name}:`, tool.logo);
-                                    // Fallback: try alternative white source for OpenAI
-                                    if (tool.name === 'OpenAI') {
-                                        e.target.src = 'https://cdn.simpleicons.org/openai/ffffff';
-                                    }
-                                }}
-                                onLoad={() => {
-                                    if (tool.name === 'OpenAI') {
-                                        console.log('OpenAI logo loaded successfully');
-                                    }
                                 }}
                             />
                             <span>{tool.name}</span>

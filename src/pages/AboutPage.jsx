@@ -1,5 +1,4 @@
 import React, { lazy, Suspense } from 'react';
-import { motion } from 'framer-motion';
 import { Sparkles, Target, Users, Rocket, Quote } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import SEO from '../components/SEO';
@@ -7,6 +6,13 @@ import './AboutPage.css';
 
 // Lazy load Footer
 const Footer = lazy(() => import('../components/Footer'));
+
+// Lazy load framer-motion only for hero section (above fold, but non-critical)
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
 
 const AboutPage = () => {
     return (
@@ -25,12 +31,13 @@ const AboutPage = () => {
                     <div className="hero-glow-spot top-left" />
                     <div className="hero-glow-spot bottom-right" />
                     <div className="container">
-                        <motion.div
-                            className="hero-content"
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <Suspense fallback={<div className="hero-content"><div className="hero-two-column"><div className="hero-left"><h1 className="hero-title">We are building<br /><span className="gradient-text">the future</span><br /><span className="gradient-text">of education</span></h1></div><div className="hero-right"><p className="hero-description">Beyond Marks AI Academy enables students to master real-world AI skills through hands-on projects. We are solving complex problems in AI, automation, and technology education. We also believe that learning should be practical, not theoretical.</p></div></div></div>}>
+                            <MotionDiv
+                                className="hero-content"
+                                initial={{ opacity: 0, y: 30 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.8 }}
+                            >
                             <div className="hero-two-column">
                                 <div className="hero-left">
                                     <h1 className="hero-title">
@@ -47,20 +54,15 @@ const AboutPage = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </MotionDiv>
+                        </Suspense>
                     </div>
                 </section>
 
                 {/* Main Story Section */}
                 <section className="story-section">
                     <div className="container">
-                        <motion.div
-                            className="story-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="story-content story-fade-in-up">
                             <div className="story-two-column">
                                 <div className="story-left">
                                     <h2 className="story-title">
@@ -79,20 +81,14 @@ const AboutPage = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
                 {/* Why Section */}
                 <section className="why-section">
                     <div className="container">
-                        <motion.div
-                            className="why-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="why-content why-fade-in-up">
                             <div className="why-two-column">
                                 <div className="why-left">
                                     <h2 className="section-title">
@@ -108,20 +104,14 @@ const AboutPage = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
                 {/* What We Do Section */}
                 <section className="what-we-do-section">
                     <div className="container">
-                        <motion.div
-                            className="what-we-do-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="what-we-do-content what-we-do-fade-in-up">
                             <div className="what-two-column">
                                 <div className="what-left">
                                     <h2 className="section-title">
@@ -138,13 +128,7 @@ const AboutPage = () => {
                                 </div>
                             </div>
                             <div className="features-grid">
-                                <motion.div
-                                    className="feature-card"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.1 }}
-                                >
+                                <div className="feature-card feature-card-fade-in-1">
                                     <div className="feature-icon">
                                         <Target size={32} />
                                     </div>
@@ -152,14 +136,8 @@ const AboutPage = () => {
                                     <p className="feature-desc">
                                         Our curriculum is built around real-world problems—the kind people face every day.
                                     </p>
-                                </motion.div>
-                                <motion.div
-                                    className="feature-card"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.2 }}
-                                >
+                                </div>
+                                <div className="feature-card feature-card-fade-in-2">
                                     <div className="feature-icon">
                                         <Rocket size={32} />
                                     </div>
@@ -167,14 +145,8 @@ const AboutPage = () => {
                                     <p className="feature-desc">
                                         From voice assistants to automation workflows, our students don't just "learn" AI; they deploy it.
                                     </p>
-                                </motion.div>
-                                <motion.div
-                                    className="feature-card"
-                                    initial={{ opacity: 0, y: 20 }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true }}
-                                    transition={{ duration: 0.6, delay: 0.3 }}
-                                >
+                                </div>
+                                <div className="feature-card feature-card-fade-in-3">
                                     <div className="feature-icon">
                                         <Users size={32} />
                                     </div>
@@ -182,22 +154,16 @@ const AboutPage = () => {
                                     <p className="feature-desc">
                                         We focus on pure skill. Stop memorizing theory and start building the future.
                                     </p>
-                                </motion.div>
+                                </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
                 {/* Who Is This For Section */}
                 <section className="who-section">
                     <div className="container">
-                        <motion.div
-                            className="who-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="who-content who-fade-in-up">
                             <div className="who-two-column">
                                 <div className="who-left">
                                     <h2 className="section-title">
@@ -213,20 +179,14 @@ const AboutPage = () => {
                                     </p>
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
 
                 {/* CTA Section */}
                 <section className="cta-section">
                     <div className="container">
-                        <motion.div
-                            className="cta-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="cta-content cta-fade-in-up">
                             <div className="cta-two-column">
                                 <div className="cta-left">
                                     <h2 className="cta-title">
@@ -242,28 +202,20 @@ const AboutPage = () => {
                                     </p>
                                 </div>
                             </div>
-                            <motion.a
+                            <a
                                 href="/#courses"
-                                className="cta-button"
-                                whileHover={{ scale: 1.05 }}
-                                whileTap={{ scale: 0.95 }}
+                                className="cta-button cta-button-hover"
                             >
                                 Explore Our Courses
-                            </motion.a>
-                        </motion.div>
+                            </a>
+                        </div>
                     </div>
                 </section>
 
                 {/* Founder Quote Section */}
                 <section className="founder-section">
                     <div className="container">
-                        <motion.div
-                            className="founder-content"
-                            initial={{ opacity: 0, y: 40 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.8 }}
-                        >
+                        <div className="founder-content founder-fade-in-up">
                             <p className="founder-quote">
                                 It's time to move beyond the scorecard. It's time to get your hands dirty with real technology.
                             </p>
@@ -271,7 +223,7 @@ const AboutPage = () => {
                                 <p className="founder-name">— Rakesh Kumar</p>
                                 <p className="founder-title">Founder, Beyond Marks AI Academy</p>
                             </div>
-                        </motion.div>
+                        </div>
                     </div>
                 </section>
             </main>

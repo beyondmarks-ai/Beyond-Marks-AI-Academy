@@ -1,9 +1,11 @@
 import React, { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import './App.css';
 
-// Lazy load all pages for route-based code splitting
-// This reduces initial bundle size and improves TBT
-const HomePage = lazy(() => import('./pages/HomePage'));
+// HomePage loads synchronously (critical for initial render)
+import HomePage from './pages/HomePage';
+
+// Lazy load other pages for route-based code splitting
 const CoursesPage = lazy(() => import('./pages/CoursesPage'));
 const AboutPage = lazy(() => import('./pages/AboutPage'));
 const WhyChooseUsPage = lazy(() => import('./pages/WhyChooseUsPage'));
@@ -40,20 +42,65 @@ const PageLoader = () => (
 function App() {
   return (
     <Router>
-      <Suspense fallback={<PageLoader />}>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/courses" element={<CoursesPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/why-choose-us" element={<WhyChooseUsPage />} />
-
-          {/* Legal & Policy Pages */}
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-conditions" element={<TermsConditions />} />
-          <Route path="/refund-policy" element={<RefundPolicy />} />
-          <Route path="/student-code" element={<StudentCode />} />
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route 
+          path="/courses" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <CoursesPage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/about" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <AboutPage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/why-choose-us" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <WhyChooseUsPage />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/privacy-policy" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <PrivacyPolicy />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/terms-conditions" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <TermsConditions />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/refund-policy" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <RefundPolicy />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/student-code" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <StudentCode />
+            </Suspense>
+          } 
+        />
+      </Routes>
     </Router>
   );
 }

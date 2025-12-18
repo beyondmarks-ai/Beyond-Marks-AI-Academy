@@ -107,6 +107,67 @@
     }
 }
 
+/* Performance-optimized CSS animations (non-blocking, GPU accelerated) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpSmall {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply animations with Intersection Observer fallback (CSS-only) */
+.story-fade-in-up,
+.why-fade-in-up,
+.what-we-do-fade-in-up,
+.who-fade-in-up,
+.cta-fade-in-up,
+.founder-fade-in-up {
+    animation: fadeInUp 0.8s ease-out both;
+    will-change: transform, opacity;
+}
+
+.feature-card-fade-in-1 {
+    animation: fadeInUpSmall 0.6s ease-out 0.1s both;
+    will-change: transform, opacity;
+}
+
+.feature-card-fade-in-2 {
+    animation: fadeInUpSmall 0.6s ease-out 0.2s both;
+    will-change: transform, opacity;
+}
+
+.feature-card-fade-in-3 {
+    animation: fadeInUpSmall 0.6s ease-out 0.3s both;
+    will-change: transform, opacity;
+}
+
+.cta-button-hover {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cta-button-hover:hover {
+    transform: scale(1.05);
+}
+
+.cta-button-hover:active {
+    transform: scale(0.95);
+}
+
 .hero-two-column {
     display: grid;
     grid-template-columns: 1.2fr 0.8fr;

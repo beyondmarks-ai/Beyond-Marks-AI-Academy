@@ -209,6 +209,85 @@
     flex-wrap: wrap;
 }
 
+/* Performance-optimized CSS animations (non-blocking, GPU accelerated) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUpSmall {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInSide {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInSideRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Apply animations */
+.section-header-fade-in {
+    animation: fadeInUpSmall 0.6s ease-out both;
+    will-change: transform, opacity;
+}
+
+.feature-card-fade-in-1 { animation: fadeInUp 0.6s ease-out 0.1s both; will-change: transform, opacity; }
+.feature-card-fade-in-2 { animation: fadeInUp 0.6s ease-out 0.2s both; will-change: transform, opacity; }
+.feature-card-fade-in-3 { animation: fadeInUp 0.6s ease-out 0.3s both; will-change: transform, opacity; }
+.feature-card-fade-in-4 { animation: fadeInUp 0.6s ease-out 0.4s both; will-change: transform, opacity; }
+.feature-card-fade-in-5 { animation: fadeInUp 0.6s ease-out 0.5s both; will-change: transform, opacity; }
+.feature-card-fade-in-6 { animation: fadeInUp 0.6s ease-out 0.6s both; will-change: transform, opacity; }
+.feature-card-fade-in-7 { animation: fadeInUp 0.6s ease-out 0.7s both; will-change: transform, opacity; }
+.feature-card-fade-in-8 { animation: fadeInUp 0.6s ease-out 0.8s both; will-change: transform, opacity; }
+.feature-card-fade-in-9 { animation: fadeInUp 0.6s ease-out 0.9s both; will-change: transform, opacity; }
+
+.difference-card-fade-in-1 { animation: fadeInSide 0.6s ease-out 0.1s both; will-change: transform, opacity; }
+.difference-card-fade-in-2 { animation: fadeInSideRight 0.6s ease-out 0.2s both; will-change: transform, opacity; }
+.difference-card-fade-in-3 { animation: fadeInSide 0.6s ease-out 0.3s both; will-change: transform, opacity; }
+.difference-card-fade-in-4 { animation: fadeInSideRight 0.6s ease-out 0.4s both; will-change: transform, opacity; }
+.difference-card-fade-in-5 { animation: fadeInSide 0.6s ease-out 0.5s both; will-change: transform, opacity; }
+.difference-card-fade-in-6 { animation: fadeInSideRight 0.6s ease-out 0.6s both; will-change: transform, opacity; }
+
+.cta-content-fade-in {
+    animation: fadeInUp 0.8s ease-out both;
+    will-change: transform, opacity;
+}
+
+/* Hover effects using CSS */
+.feature-card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.2s ease;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .why-hero {

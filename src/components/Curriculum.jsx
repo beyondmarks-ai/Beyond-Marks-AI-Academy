@@ -1,5 +1,17 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, lazy, Suspense } from 'react';
+
+// Lazy load framer-motion to reduce main-thread blocking (heavy library ~157KB)
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
+
+const AnimatePresenceWrapper = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: ({ children }) => <module.AnimatePresence>{children}</module.AnimatePresence>
+  }))
+);
 import {
     Palette, Terminal, Globe, Share2, Sparkles,
     Smartphone, Flame, Cloud, Database, ChevronDown, ChevronUp, CheckCircle2,
@@ -459,16 +471,57 @@ const Curriculum = () => {
 
                 <div className="modules-grid">
                     {courses[activeTab].map((module) => (
-                        <motion.div
+                        <Suspense 
                             key={module.id}
-                            className="module-card"
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            whileHover={{ y: -5 }}
-                            onClick={() => setSelectedModule(module)}
-                            style={{ '--module-color': module.color }}
+                            fallback={
+                                <div 
+                                    className="module-card"
+                                    onClick={() => setSelectedModule(module)}
+                                    style={{ '--module-color': module.color }}
+                                >
+                                    <div className="card-glow" />
+                                    <div className="card-content">
+                                        <div className="card-top">
+                                            <div className="module-icon-wrapper">
+                                                {module.logo ? (
+                                                    <img 
+                                                        src={module.logo} 
+                                                        alt={`${module.title} logo`} 
+                                                        className="module-logo"
+                                                        width="48"
+                                                        height="48"
+                                                        loading="lazy"
+                                                    />
+                                                ) : (
+                                                    module.icon
+                                                )}
+                                            </div>
+                                            <div className="module-arrow">
+                                                <ArrowRight size={20} />
+                                            </div>
+                                        </div>
+                                        <div className="card-info">
+                                            <h3>{module.title}</h3>
+                                            <div className="card-meta">
+                                                <span className="meta-item">
+                                                    <BookOpen size={14} />
+                                                    {module.topics.length} Chapters
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
                         >
+                            <MotionDiv
+                                className="module-card"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                whileHover={{ y: -5 }}
+                                onClick={() => setSelectedModule(module)}
+                                style={{ '--module-color': module.color }}
+                            >
                             <div className="card-glow" />
                             <div className="card-content">
                                 <div className="card-top">
@@ -501,28 +554,30 @@ const Curriculum = () => {
                                     </div>
                                 </div>
                             </div>
-                        </motion.div>
+                        </MotionDiv>
+                        </Suspense>
                     ))}
                 </div>
 
-                <AnimatePresence>
-                    {selectedModule && (
-                        <>
-                            <motion.div
-                                className="drawer-backdrop"
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                exit={{ opacity: 0 }}
-                                onClick={() => setSelectedModule(null)}
-                            />
-                            <motion.div
-                                className="drawer-container"
-                                initial={{ x: '100%' }}
-                                animate={{ x: 0 }}
-                                exit={{ x: '100%' }}
-                                transition={{ type: "spring", damping: 25, stiffness: 200 }}
-                                style={{ '--module-color': selectedModule.color }}
-                            >
+                <Suspense fallback={null}>
+                    <AnimatePresenceWrapper>
+                        {selectedModule && (
+                            <>
+                                <MotionDiv
+                                    className="drawer-backdrop"
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    exit={{ opacity: 0 }}
+                                    onClick={() => setSelectedModule(null)}
+                                />
+                                <MotionDiv
+                                    className="drawer-container"
+                                    initial={{ x: '100%' }}
+                                    animate={{ x: 0 }}
+                                    exit={{ x: '100%' }}
+                                    transition={{ type: "spring", damping: 25, stiffness: 200 }}
+                                    style={{ '--module-color': selectedModule.color }}
+                                >
                                 <div className="drawer-header">
                                     <button 
                                         className="drawer-close" 
@@ -584,10 +639,11 @@ const Curriculum = () => {
                                         ))}
                                     </div>
                                 </div>
-                            </motion.div>
+                            </MotionDiv>
                         </>
-                    )}
-                </AnimatePresence>
+                        )}
+                    </AnimatePresenceWrapper>
+                </Suspense>
             </div>
         </section>
     );

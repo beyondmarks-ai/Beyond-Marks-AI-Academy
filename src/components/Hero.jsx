@@ -6,13 +6,6 @@ import './Hero.css';
 // Lazy load ToolsMarquee as it's below the fold
 const ToolsMarquee = lazy(() => import('./ToolsMarquee'));
 
-// Lazy load framer-motion for floating cards (below the fold, non-critical)
-const MotionDiv = lazy(() => 
-  import('framer-motion').then(module => ({
-    default: module.motion.div
-  }))
-);
-
 const Hero = () => {
     return (
         <section className="hero" id="home">
@@ -71,52 +64,26 @@ const Hero = () => {
                 </Suspense>
             </div>
 
-            {/* Abstract 3D Elements - Lazy load framer-motion for these decorative elements */}
+            {/* Abstract 3D Elements - Use CSS animations only (no framer-motion) */}
             <div className="hero-3d-elements">
-                <Suspense fallback={
-                    <>
-                        <div className="floating-card glass card-1 float-animation">
-                            <div className="card-icon" style={{ background: '#3b82f6' }}></div>
-                            <div className="card-lines">
-                                <div className="line long"></div>
-                                <div className="line short"></div>
-                            </div>
-                        </div>
-                        <div className="floating-card glass card-2 float-animation-delayed">
-                            <div className="card-icon" style={{ background: '#8b5cf6' }}></div>
-                            <div className="card-lines">
-                                <div className="line long"></div>
-                                <div className="line short"></div>
-                            </div>
-                        </div>
-                    </>
-                }>
-                    <MotionDiv
-                        className="floating-card glass card-1"
-                        animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
-                        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-                    >
-                        <div className="card-icon" style={{ background: '#3b82f6' }}></div>
-                        <div className="card-lines">
-                            <div className="line long"></div>
-                            <div className="line short"></div>
-                        </div>
-                    </MotionDiv>
-                    <MotionDiv
-                        className="floating-card glass card-2"
-                        animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
-                        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    >
-                        <div className="card-icon" style={{ background: '#8b5cf6' }}></div>
-                        <div className="card-lines">
-                            <div className="line long"></div>
-                            <div className="line short"></div>
-                        </div>
-                    </MotionDiv>
-                </Suspense>
+                <div className="floating-card glass card-1 float-animation">
+                    <div className="card-icon" style={{ background: '#3b82f6' }}></div>
+                    <div className="card-lines">
+                        <div className="line long"></div>
+                        <div className="line short"></div>
+                    </div>
+                </div>
+                <div className="floating-card glass card-2 float-animation-delayed">
+                    <div className="card-icon" style={{ background: '#8b5cf6' }}></div>
+                    <div className="card-lines">
+                        <div className="line long"></div>
+                        <div className="line short"></div>
+                    </div>
+                </div>
             </div>
         </section>
     );
 };
 
+// Temporarily removed React.memo to debug blank screen issue
 export default Hero;

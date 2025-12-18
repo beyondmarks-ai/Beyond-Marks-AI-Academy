@@ -1,11 +1,56 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, lazy, Suspense, useMemo, useCallback } from 'react';
 import {
     Rocket, Brain, ShieldCheck, FolderGit,
     Bot, Zap, Wand2, Code2,
     GraduationCap, UserCheck
 } from 'lucide-react';
 import './WhyChooseUs.css';
+
+// Lazy load framer-motion to reduce main-thread blocking
+const MotionDiv = lazy(() => 
+  import('framer-motion').then(module => ({
+    default: module.motion.div
+  }))
+);
+
+// Wrapper component for AnimatePresence
+const AnimatePresenceWrapper = lazy(() => 
+  import('framer-motion').then(module => {
+    const { AnimatePresence, motion } = module;
+    return {
+      default: ({ activeTab, activeContent }) => (
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            className="bento-grid"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: -20 }}
+            transition={{ duration: 0.4, ease: "easeOut" }}
+          >
+            {activeContent.map((item, index) => (
+              <motion.div
+                key={index}
+                className="bento-card glass"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className="card-icon-floating">
+                  {item.icon}
+                </div>
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+                <div className="card-shine" />
+              </motion.div>
+            ))}
+          </motion.div>
+        </AnimatePresence>
+      )
+    };
+  })
+);
 
 const contentData = {
     parents: [
@@ -58,6 +103,38 @@ const contentData = {
 const WhyChooseUs = () => {
     const [activeTab, setActiveTab] = useState('parents');
 
+    // Memoize content to prevent re-renders
+    const activeContent = useMemo(() => contentData[activeTab], [activeTab]);
+    
+    // Memoize callbacks
+    const handleTabChange = useCallback((tab) => {
+        setActiveTab(tab);
+    }, []);
+
+    // Fallback component with CSS animations
+    const TabIndicator = ({ isActive }) => (
+        isActive ? <div className="active-line active-line-animate" /> : null
+    );
+
+    const ContentGrid = ({ items }) => (
+        <div className="bento-grid bento-grid-fade-in">
+            {items.map((item, index) => (
+                <div
+                    key={index}
+                    className="bento-card glass bento-card-fade-in"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                    <div className="card-icon-floating">
+                        {item.icon}
+                    </div>
+                    <h3>{item.title}</h3>
+                    <p>{item.desc}</p>
+                    <div className="card-shine" />
+                </div>
+            ))}
+        </div>
+    );
+
     return (
         <section className="why-choose-us" id="features">
             <div className="container">
@@ -75,7 +152,7 @@ const WhyChooseUs = () => {
                         <div className="vertical-tabs">
                             <button
                                 className={`v-tab-btn ${activeTab === 'parents' ? 'active' : ''}`}
-                                onClick={() => setActiveTab('parents')}
+                                onClick={() => handleTabChange('parents')}
                             >
                                 <div className="tab-icon-box">
                                     <UserCheck size={20} />
@@ -84,12 +161,12 @@ const WhyChooseUs = () => {
                                     <span className="tab-label">For Parents</span>
                                     <span className="tab-sub">The Strategic Advantage</span>
                                 </div>
-                                {activeTab === 'parents' && <motion.div layoutId="activeTab" className="active-line" />}
+                                <TabIndicator isActive={activeTab === 'parents'} />
                             </button>
 
                             <button
                                 className={`v-tab-btn ${activeTab === 'students' ? 'active' : ''}`}
-                                onClick={() => setActiveTab('students')}
+                                onClick={() => handleTabChange('students')}
                             >
                                 <div className="tab-icon-box">
                                     <GraduationCap size={20} />
@@ -98,50 +175,20 @@ const WhyChooseUs = () => {
                                     <span className="tab-label">For Students</span>
                                     <span className="tab-sub">Unlock Superpowers</span>
                                 </div>
-                                {activeTab === 'students' && <motion.div layoutId="activeTab" className="active-line" />}
+                                <TabIndicator isActive={activeTab === 'students'} />
                             </button>
                         </div>
                     </div>
 
                     {/* Right Side: Content Grid */}
                     <div className="layout-content">
-                        <AnimatePresence mode="wait">
-                            <motion.div
-                                key={activeTab}
-                                className="bento-grid"
-                                initial={{ opacity: 0, x: 20 }}
-                                animate={{ opacity: 1, x: 0 }}
-                                exit={{ opacity: 0, x: -20 }}
-                                transition={{ duration: 0.4, ease: "easeOut" }}
-                            >
-                                {contentData[activeTab].map((item, index) => (
-                                    <motion.div
-                                        key={index}
-                                        className="bento-card glass"
-                                        initial={{ opacity: 0, y: 20 }}
-                                        animate={{ opacity: 1, y: 0 }}
-                                        transition={{ delay: index * 0.1 }}
-                                        whileHover={{ y: -5 }}
-                                    >
-                                        <div className="card-icon-floating">
-                                            {item.icon}
-                                        </div>
-                                        <h3>{item.title}</h3>
-                                        <p>{item.desc}</p>
-                                        <div className="card-shine" />
-                                    </motion.div>
-                                ))}
-                            </motion.div>
-                        </AnimatePresence>
+                        <Suspense fallback={<ContentGrid items={activeContent} />}>
+                            <AnimatePresenceWrapper activeTab={activeTab} activeContent={activeContent} />
+                        </Suspense>
                     </div>
                 </div>
 
-                <motion.div
-                    className="philosophy-section"
-                    initial={{ opacity: 0, y: 40 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                >
+                <div className="philosophy-section philosophy-section-fade-in">
                     <div className="philosophy-content">
                         <div className="quote-mark">&quot;</div>
                         <h3>The &quot;Beyond Marks&quot; Philosophy</h3>
@@ -151,7 +198,7 @@ const WhyChooseUs = () => {
                             the ones who can remember the most facts—they will be the ones who can <span className="highlight">ask the right questions</span> and <span className="highlight">build the best solutions</span>.
                         </p>
                     </div>
-                </motion.div>
+                </div>
 
             </div>
         </section>

@@ -1,22 +1,39 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 const SEO = ({ title, description, keywords, url, image, type = 'website' }) => {
-    const siteTitle = "Beyond Marks AI Academy";
-    const fullTitle = title ? `${title} | ${siteTitle}` : siteTitle;
+    // Constants used across multiple useMemo hooks
     const siteUrl = "https://beyondmarks.ai";
-    const fullUrl = url ? `${siteUrl}${url}` : siteUrl;
-    const defaultDescription = "Beyond Marks AI Academy - Top AI coaching center in Bidar. Learn Python, AI, Machine Learning, and Full-Stack Development. 250+ live projects. Small batches. Own your domain. Join the best AI academy near you.";
-    const metaDescription = description || defaultDescription;
-    const defaultKeywords = "Beyond Marks, Beyond Marks AI Academy, AI Academy Bidar, Academy Near Me, Python Course Bidar, AI Coaching Bidar, Machine Learning Course, Coding Classes Bidar, Best AI Academy, AI Training Center, Beyond Marks Academy, Rakesh Kumar AI Academy, AI Bootcamp Bidar, Full Stack Development Course, Generative AI Course";
-    const metaKeywords = keywords || defaultKeywords;
-    const ogImage = image || `${siteUrl}/og-image.jpg`;
+    const siteTitle = "Beyond Marks AI Academy";
+    
+    // Memoize computed values to prevent unnecessary recalculations
+    const fullTitle = useMemo(() => {
+        return title ? `${title} | ${siteTitle}` : siteTitle;
+    }, [title]);
+
+    const fullUrl = useMemo(() => {
+        return url ? `${siteUrl}${url}` : siteUrl;
+    }, [url]);
+
+    const metaDescription = useMemo(() => {
+        const defaultDescription = "Beyond Marks AI Academy - Top AI coaching center in Bidar. Learn Python, AI, Machine Learning, and Full-Stack Development. 250+ live projects. Small batches. Own your domain. Join the best AI academy near you.";
+        return description || defaultDescription;
+    }, [description]);
+
+    const metaKeywords = useMemo(() => {
+        const defaultKeywords = "Beyond Marks, Beyond Marks AI Academy, AI Academy Bidar, Academy Near Me, Python Course Bidar, AI Coaching Bidar, Machine Learning Course, Coding Classes Bidar, Best AI Academy, AI Training Center, Beyond Marks Academy, Rakesh Kumar AI Academy, AI Bootcamp Bidar, Full Stack Development Course, Generative AI Course";
+        return keywords || defaultKeywords;
+    }, [keywords]);
+
+    const ogImage = useMemo(() => {
+        return image || `${siteUrl}/og-image.jpg`;
+    }, [image]);
 
     // Structured Data for Local Business / Educational Organization
-    const structuredData = {
+    const structuredData = useMemo(() => ({
         "@context": "https://schema.org",
         "@type": "EducationalOrganization",
-        "name": "Beyond Marks AI Academy",
+        "name": siteTitle,
         "alternateName": "Beyond Marks",
         "url": siteUrl,
         "logo": `${siteUrl}/logo.png`,
@@ -75,7 +92,7 @@ const SEO = ({ title, description, keywords, url, image, type = 'website' }) => 
             "ratingValue": "4.9",
             "reviewCount": "150"
         }
-    };
+    }), [metaDescription, ogImage]);
 
     return (
         <Helmet>
@@ -128,4 +145,5 @@ const SEO = ({ title, description, keywords, url, image, type = 'website' }) => 
     );
 };
 
+// Temporarily removed React.memo to debug blank screen issue
 export default SEO;
