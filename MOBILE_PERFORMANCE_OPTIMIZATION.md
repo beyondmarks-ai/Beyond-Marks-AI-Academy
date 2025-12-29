@@ -147,3 +147,6 @@
 
 **Expected Result**: Mobile Score 92 → 95-97 | Mobile LCP 2.7s → ~2.2s
 
+
+
+

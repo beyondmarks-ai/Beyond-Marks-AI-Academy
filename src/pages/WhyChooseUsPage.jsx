@@ -19,7 +19,6 @@ import './WhyChooseUsPage.css';
 
 // Lazy load heavy components
 const Footer = lazy(() => import('../components/Footer'));
-const DemoBookingModal = lazy(() => import('../components/DemoBookingModal'));
 
 // Lazy load framer-motion only for hero section (non-critical)
 const MotionDiv = lazy(() => 
@@ -29,8 +28,6 @@ const MotionDiv = lazy(() =>
 );
 
 const WhyChooseUsPage = () => {
-    const [showDemoModal, setShowDemoModal] = useState(false);
-    
     // Memoize arrays to prevent re-creation on every render
     const features = useMemo(() => [
         {
@@ -199,9 +196,9 @@ const WhyChooseUsPage = () => {
                                 Join us for 2 Days of Free Demo Classes. Visit our physical center, meet Rakesh Kumar, and see for yourself why Beyond Marks is different.
                             </p>
                             <div className="cta-buttons">
-                                <button className="btn btn-primary" onClick={() => setShowDemoModal(true)}>
+                                <Link to="/workshop" className="btn btn-primary">
                                     Book Your Free Demo <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-                                </button>
+                                </Link>
                                 <Link to="/courses" className="btn btn-outline">
                                     Explore Courses
                                 </Link>
@@ -212,9 +209,6 @@ const WhyChooseUsPage = () => {
             </main>
             <Suspense fallback={null}>
                 <Footer />
-            </Suspense>
-            <Suspense fallback={null}>
-                <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
             </Suspense>
         </div>
     );

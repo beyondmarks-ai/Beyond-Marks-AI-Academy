@@ -271,3 +271,6 @@ Lighthouse flagged "Reduce unused JavaScript" (50KB savings potential).
 
 **Expected Result**: Desktop 61 → 92-96 | Mobile 91 → 95-97 | Accessibility/SEO 100/100 (Maintained)
 
+
+
+

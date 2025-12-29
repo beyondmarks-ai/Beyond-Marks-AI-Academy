@@ -175,10 +175,13 @@ ul {
   background-image: none !important;
 }
 
-/* Force transparent navbar on About Page (Mobile Fix) */
+/* Force transparent navbar on Specific Pages (Mobile & Desktop Fix) */
 .about-page-wrapper .navbar,
 .about-page-wrapper .nav-container,
-.about-page-wrapper .mobile-toggle {
+.about-page-wrapper .mobile-toggle,
+.workshop-page-wrapper .navbar,
+.workshop-page-wrapper .nav-container,
+.workshop-page-wrapper .mobile-toggle {
   background: transparent !important;
   background-color: transparent !important;
   box-shadow: none !important;

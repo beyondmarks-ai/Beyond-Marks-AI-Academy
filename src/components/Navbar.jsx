@@ -6,43 +6,11 @@ import './Navbar.css';
 
 // Lazy load modal - hybrid strategy: load on scroll (works for both mobile & desktop)
 // This prevents the form script from blocking LCP while ensuring it's ready when needed
-const DemoBookingModal = lazy(() => import('./DemoBookingModal'));
-
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [showDemoModal, setShowDemoModal] = useState(false);
-  const [loadForm, setLoadForm] = useState(false);
   const location = useLocation();
   
-  // Hybrid strategy: Load form script when user scrolls (works for both mobile & desktop)
-  // This prevents blocking LCP while ensuring script is ready when needed
-  useEffect(() => {
-    const handleScroll = () => {
-      // Load form script after user scrolls 400px (form section is below fold)
-      if (window.scrollY > 400 && !loadForm) {
-        setLoadForm(true);
-      }
-    };
-    
-    // Also load on interaction (button click) as fallback
-    const handleInteraction = () => {
-      if (!loadForm) {
-        setLoadForm(true);
-      }
-    };
-    
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    window.addEventListener('click', handleInteraction, { once: true });
-    window.addEventListener('touchstart', handleInteraction, { once: true });
-    
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('click', handleInteraction);
-      window.removeEventListener('touchstart', handleInteraction);
-    };
-  }, [loadForm]);
-
   useEffect(() => {
     let ticking = false;
     let wasScrolled = false;
@@ -105,16 +73,9 @@ const Navbar = () => {
           </div>
 
           <div className="nav-actions">
-            <button 
-              className="btn btn-primary" 
-              onClick={() => {
-                // Trigger form script load on button click (fallback)
-                if (!loadForm) setLoadForm(true);
-                setShowDemoModal(true);
-              }}
-            >
+            <Link to="/workshop" className="btn btn-primary">
               Join Now
-            </button>
+            </Link>
           </div>
 
           <button 
@@ -143,28 +104,18 @@ const Navbar = () => {
                 <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
               </div>
               <div className="mobile-menu-button mobile-menu-button-pop">
-                <button 
+                <Link 
+                  to="/workshop" 
                   className="btn btn-primary" 
-                  onClick={() => { 
-                    // Trigger form script load on button click (fallback)
-                    if (!loadForm) setLoadForm(true);
-                    setIsOpen(false); 
-                    setShowDemoModal(true); 
-                  }}
+                  onClick={() => setIsOpen(false)}
                 >
                   Join Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
         )}
       </nav>
-      {/* Load modal only after scroll/interaction to prevent blocking LCP (hybrid strategy) */}
-      {loadForm && (
-        <Suspense fallback={null}>
-          <DemoBookingModal isOpen={showDemoModal} onClose={() => setShowDemoModal(false)} />
-        </Suspense>
-      )}
     </>
   );
 };

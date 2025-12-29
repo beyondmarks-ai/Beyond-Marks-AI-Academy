@@ -247,3 +247,6 @@ LCP is 2.9s (needs to be <2.5s). The LCP element is the hero text "Master the Fu
 
 **Expected Result**: Mobile Score 88 → 95-97 | Mobile LCP 2.9s → ~2.3-2.4s | Render-blocking 270ms → 0ms
 
+
+
+

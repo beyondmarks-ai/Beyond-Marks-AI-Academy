@@ -1,4 +1,5 @@
-# Netlify redirects - serve sitemap.xml directly
-/sitemap.xml  /sitemap.xml  200
-/robots.txt   /robots.txt   200
+# Netlify redirects
+/*  /index.html  200
+
+
 

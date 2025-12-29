@@ -13,6 +13,7 @@ const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions'));
 const RefundPolicy = lazy(() => import('./pages/RefundPolicy'));
 const StudentCode = lazy(() => import('./pages/StudentCode'));
+const WorkshopPage = lazy(() => import('./pages/WorkshopPage'));
 
 // Loading fallback component
 const PageLoader = () => (
@@ -97,6 +98,14 @@ function App() {
           element={
             <Suspense fallback={<PageLoader />}>
               <StudentCode />
+            </Suspense>
+          } 
+        />
+        <Route 
+          path="/workshop" 
+          element={
+            <Suspense fallback={<PageLoader />}>
+              <WorkshopPage />
             </Suspense>
           } 
         />

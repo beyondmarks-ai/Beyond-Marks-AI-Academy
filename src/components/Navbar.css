@@ -186,7 +186,7 @@
     display: flex;
     align-items: center;
     gap: 40px;
-    background: transparent;
+    background: transparent !important;
     padding: 8px 30px;
     border-radius: 50px;
     border: none;
