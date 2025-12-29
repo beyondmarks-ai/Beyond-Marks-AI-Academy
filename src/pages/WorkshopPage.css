@@ -142,9 +142,10 @@
 /* Logistics & Details Section */
 .workshop-content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr; /* Adjust proportions to favor the form column more */
   gap: 60px;
   padding: 80px 0;
+  align-items: start; /* Align to the top */
 }
 
 @media (max-width: 768px) {
@@ -166,106 +167,142 @@
 }
 
 .details-column h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   margin-bottom: 32px;
+  letter-spacing: -0.5px;
 }
 
 .detail-group {
-  margin-bottom: 32px;
+  margin-bottom: 40px;
+  background: rgba(255, 255, 255, 0.01);
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: all 0.3s ease;
+}
+
+.detail-group:hover {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(59, 130, 246, 0.1);
 }
 
 .detail-group h3 {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   color: #3b82f6;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  font-weight: 700;
 }
 
 .detail-item {
   display: flex;
   align-items: flex-start;
-  gap: 16px;
-  margin-bottom: 16px;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.detail-item:last-child {
+  margin-bottom: 0;
 }
 
 .detail-icon {
   color: #3b82f6;
   flex-shrink: 0;
-  margin-top: 4px;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 10px;
+  border-radius: 12px;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .detail-text h4 {
-  font-size: 1.1rem;
-  margin-bottom: 4px;
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  font-weight: 600;
 }
 
 .detail-text p {
   color: #b8c5d3;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 /* Instructor Card */
 .instructor-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 24px;
-  border-radius: 16px;
+  gap: 24px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05), rgba(139, 92, 246, 0.05));
+  padding: 30px;
+  border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.05);
   margin-top: 40px;
 }
 
 .instructor-info h4 {
-  font-size: 1.25rem;
-  margin-bottom: 4px;
+  font-size: 1.35rem;
+  margin-bottom: 6px;
+  font-weight: 700;
 }
 
 .instructor-info .title {
   color: #3b82f6;
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 12px;
+  display: block;
 }
 
 .instructor-info .bio {
   color: #b8c5d3;
   font-size: 0.95rem;
+  line-height: 1.6;
 }
 
 /* Form Styles */
 .form-column {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(15, 15, 20, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   padding: 40px;
-  border-radius: 24px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
   position: sticky;
-  top: 100px;
+  top: 120px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 
 .form-header {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .form-header h2 {
-  font-size: 1.75rem;
+  font-size: 1.8rem;
   margin-bottom: 8px;
+  font-weight: 700;
 }
 
 .form-header p {
-  color: #b8c5d3;
+  color: #94a3b8;
+  font-size: 1rem;
 }
 
 .seats-left {
   display: inline-block;
   background: rgba(239, 68, 68, 0.1);
   color: #ef4444;
-  padding: 4px 12px;
+  padding: 6px 14px;
   border-radius: 100px;
   font-size: 0.85rem;
-  font-weight: 600;
-  margin-top: 12px;
+  font-weight: 700;
+  margin-top: 16px;
 }
 
 .registration-form .form-group {
@@ -274,29 +311,31 @@
 
 .registration-form label {
   display: block;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   font-size: 0.9rem;
-  font-weight: 500;
-  color: #e2e8f0;
+  font-weight: 600;
+  color: #94a3b8;
+  margin-left: 4px;
 }
 
 .registration-form input,
 .registration-form select {
   width: 100%;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 12px 16px;
-  border-radius: 8px;
+  padding: 14px 18px;
+  border-radius: 12px;
   color: #ffffff;
   font-size: 1rem;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .registration-form input:focus,
 .registration-form select:focus {
   outline: none;
   border-color: #3b82f6;
-  background: rgba(255, 255, 255, 0.08);
+  background: rgba(59, 130, 246, 0.05);
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
 }
 
 .registration-form select option {
@@ -309,13 +348,13 @@
   background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
   color: white;
   border: none;
-  padding: 16px;
+  padding: 14px;
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .submit-btn:hover {
