@@ -1,0 +1,124 @@
+/* --- Technical Deep Dive Section --- */
+.sb-tech-section {
+    padding: 100px 20px;
+    background: #030305;
+    position: relative;
+    overflow: hidden;
+}
+
+.sb-tech-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.sb-tech-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    background: linear-gradient(to right, #ffffff, #94a3b8);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.sb-tech-text {
+    color: var(--sb-text-muted);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.sb-tech-visual {
+    position: relative;
+    height: 400px;
+    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.1), transparent 70%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.sb-tech-visual::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 0.3;
+}
+
+/* --- Privacy Section --- */
+.sb-privacy-section {
+    padding: 100px 20px;
+    position: relative;
+    background: linear-gradient(to bottom, #0a0a0f, #030305);
+}
+
+.sb-privacy-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sb-privacy-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+    margin-top: 60px;
+}
+
+.sb-privacy-column {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 40px;
+}
+
+.sb-privacy-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sb-privacy-column h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+}
+
+.sb-privacy-item {
+    margin-bottom: 24px;
+}
+
+.sb-privacy-item h4 {
+    color: #e2e8f0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sb-privacy-item p {
+    color: var(--sb-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    padding-left: 28px;
+    /* Indent to align with text start */
+}
+
+@media (max-width: 900px) {
+    .sb-tech-grid {
+        grid-template-columns: 1fr;
+    }
+}
